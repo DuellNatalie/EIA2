@@ -1,3 +1,3 @@
 # EIA2
 
-HallÃ¶chen.
+Hallöchen.
