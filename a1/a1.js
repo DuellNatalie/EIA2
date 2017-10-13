@@ -16,6 +16,16 @@ var a1;
         //Himmel
         crc2.fillStyle = "#CEECF5";
         crc2.fillRect(0, 0, 800, 600);
+        //Hinterer Berg  
+        crc2.beginPath();
+        crc2.moveTo(150, 112);
+        crc2.lineTo(200, 50);
+        crc2.lineTo(750, 562);
+        crc2.closePath();
+        crc2.strokeStyle = "##3d668f";
+        crc2.stroke();
+        crc2.fillStyle = "#3d668f";
+        crc2.fill();
         //Berg
         crc2.beginPath();
         crc2.moveTo(0, 0);
