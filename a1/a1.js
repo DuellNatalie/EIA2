@@ -18,16 +18,6 @@ var a1;
         crc2.fillRect(0, 0, 800, 600);
         //Berg
         crc2.beginPath();
-        crc2.moveTo(150, 112);
-        crc2.lineTo(200, 50);
-        crc2.lineTo(750, 562);
-        crc2.closePath();
-        crc2.strokeStyle = "#c2c2c2";
-        crc2.stroke();
-        crc2.fillStyle = "#c2c2c2";
-        crc2.fill();
-        //Pisteaaa
-        crc2.beginPath();
         crc2.moveTo(0, 0);
         crc2.lineTo(800, 600);
         crc2.lineTo(0, 600);
