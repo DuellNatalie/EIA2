@@ -21,7 +21,6 @@ function init (): void {
     crc2.lineTo(0,600);
     crc2.lineTo(800,600);
     crc2.closePath();
-    crc2.stroke();
     crc2.fillStyle="#ffff00";
     crc2.fill();
     
@@ -32,7 +31,6 @@ function init (): void {
     crc2.lineTo(800,0);
     crc2.lineTo(800,600);
     crc2.closePath();
-    crc2.stroke();
     crc2.fillStyle="#CEECF5";
     crc2.fill();
     
