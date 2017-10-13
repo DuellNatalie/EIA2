@@ -42,12 +42,12 @@ window.addEventListener("load", init);
 //    crc2.fill();
 //    
 //    
-///*Lift-Linie*/
-//   crc2.moveTo(0,20)
-//    crc2.lineTo(800,570);
-//    crc2.strokeStyle="#000000";
-//    crc2.stroke();
-//    
+/*Lift-Linie*/
+crc2.moveTo(0,20)
+crc2.lineTo(800,570);
+crc2.strokeStyle="#000000";
+crc2.stroke();
+  
     }
     
     }
