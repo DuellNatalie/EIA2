@@ -11,11 +11,11 @@ function init() {
     console.log(canvas);
     let crc2 = canvas.getContext("2d");
     console.log(crc2);
-    /*Lift-Linie*/
+    /*Berg*/
     crc2.beginPath();
     crc2.moveTo(0, 50);
     crc2.lineTo(0, 600);
-    crc2.lineTo(800, 600);
+    crc2.lineTo(600, 600);
     crc2.closePath();
     crc2.stroke();
     crc2.fillStyle = "#ffffff";
@@ -30,6 +30,7 @@ function init() {
     crc2.stroke();
     crc2.fillStyle = "#CEECF5";
     crc2.fill();
+    /*Lift-Linie*/
     crc2.moveTo(0, 20);
     crc2.lineTo(800, 570);
     crc2.stroke();
