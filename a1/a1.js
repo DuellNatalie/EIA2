@@ -11,10 +11,7 @@ function init() {
     console.log(canvas);
     let crc2 = canvas.getContext("2d");
     console.log(crc2);
-    crc2.fillStyle = "#00ff00";
-    crc2.fillRect(0, 0, 200, 200);
-    crc2.beginPath();
-    crc2.moveTo(0, 100);
+    crc2.moveTo(0, 0);
     crc2.lineTo(800, 600);
     crc2.stroke();
 }
