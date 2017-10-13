@@ -6,3 +6,14 @@
     Code selbst geschrieben habe. Er wurde
     nicht kopiert und auch nicht diktiert. */
 
+window.addEventListener("load", init);
+
+function init (): void {
+    let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
+    console.log(canvas);
+    
+    let crc2:CanvasRenderingContext2D = canvas.getContext("2d");
+    console.log(crc2)
+    
+    
+    }
