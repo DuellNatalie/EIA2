@@ -33,8 +33,11 @@ function init() {
     crc2.fillStyle = "#CEECF5";
     crc2.fill();
     /*Lift-Linie*/
+    crc2.beginPath();
     crc2.moveTo(0, 20);
     crc2.lineTo(800, 570);
+    crc2.closePath();
     crc2.stroke();
+    crc2.strokeStyle = "#000000";
 }
 //# sourceMappingURL=a1.js.map
