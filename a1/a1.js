@@ -29,7 +29,7 @@ function init() {
     crc2.stroke();
     crc2.fillStyle = "#0000ff";
     crc2.fill();
-    crc2.moveTo(0, 30);
+    crc2.moveTo(0, 20);
     crc2.lineTo(800, 570);
     crc2.stroke();
 }
