@@ -35,7 +35,7 @@ window.addEventListener("load", init);
     crc2.fillStyle = "#c2c2c2";
     crc2.fill();
     
-    //Pisteaa
+    //Pisteaaa
     crc2.beginPath();
     crc2.moveTo(0, 0);
     crc2.lineTo(800, 600);

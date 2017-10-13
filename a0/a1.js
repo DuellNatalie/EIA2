@@ -7,9 +7,8 @@
     nicht kopiert und auch nicht diktiert. */
 window.addEventListener("load", init);
 function init() {
-    let name = prompt("Hier Ihren Namen eintragen:");
+    var name = prompt("Hier Ihren Namen eintragen:");
     if (name != null) {
         alert("Guten Tag, " + name + "! :)");
     }
 }
-//# sourceMappingURL=a1.js.map
