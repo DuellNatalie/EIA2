@@ -8,6 +8,7 @@
 
 window.addEventListener("load", init);
 
+namespace a1 {
 function init (): void {
     let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
     console.log(canvas);
@@ -43,4 +44,5 @@ function init (): void {
     crc2.strokeStyle="#000000";
     crc2.stroke();
     
+    }
     }
