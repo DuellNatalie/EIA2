@@ -36,6 +36,6 @@ function init (): void {
     crc2.fill();
     
      crc2.moveTo(0,0)
-    crc2.lineTo(800,600);
+    crc2.lineTo(800,550);
     crc2.stroke();
     }
