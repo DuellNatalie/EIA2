@@ -18,8 +18,9 @@ function init() {
     crc2.lineTo(800, 600);
     crc2.closePath();
     crc2.stroke();
-    crc2.fillStyle = "#00ff00";
+    crc2.fillStyle = "#000000";
     crc2.fill();
+    /*Himmel*/
     crc2.beginPath();
     crc2.moveTo(0, 50);
     crc2.lineTo(0, 0);
@@ -27,7 +28,7 @@ function init() {
     crc2.lineTo(800, 600);
     crc2.closePath();
     crc2.stroke();
-    crc2.fillStyle = "#0000ff";
+    crc2.fillStyle = "#CEECF5";
     crc2.fill();
     crc2.moveTo(0, 20);
     crc2.lineTo(800, 570);
