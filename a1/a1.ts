@@ -22,7 +22,7 @@ function init (): void {
     crc2.lineTo(800,600);
     crc2.closePath();
     crc2.stroke();
-    crc2.fillStyle="#000000";
+    crc2.fillStyle="#ffffff";
     crc2.fill();
     
     /*Himmel*/
