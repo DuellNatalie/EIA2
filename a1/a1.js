@@ -5,9 +5,9 @@
     Hiermit versichere ich, dass ich diesen
     Code selbst geschrieben habe. Er wurde
     nicht kopiert und auch nicht diktiert. */
-window.addEventListener("load", init);
 var a1;
 (function (a1) {
+    window.addEventListener("load", init);
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         console.log(canvas);

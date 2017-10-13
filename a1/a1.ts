@@ -6,9 +6,11 @@
     Code selbst geschrieben habe. Er wurde
     nicht kopiert und auch nicht diktiert. */
 
-window.addEventListener("load", init);
+
 
 namespace a1 {
+   
+    window.addEventListener("load", init);
 function init (): void {
     let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
     console.log(canvas);
@@ -45,4 +47,5 @@ function init (): void {
     crc2.stroke();
     
     }
+    
     }
