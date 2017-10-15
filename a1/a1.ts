@@ -62,7 +62,7 @@ window.addEventListener("load", init);
     crc2.beginPath();
     crc2.strokeStyle = "#000000";
     crc2.moveTo(50, 0);
-    crc2.lineTo(800, 550);
+    crc2.lineTo(800, 555);
     crc2.stroke();   
            
  //Baum 3
