@@ -8,10 +8,11 @@
 var a2;
 (function (a2) {
     window.addEventListener("load", init);
+    let crc2;
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         console.log(canvas);
-        let crc2 = canvas.getContext("2d");
+        crc2 = canvas.getContext("2d");
         console.log(crc2);
         //Himmel
         crc2.fillStyle = "#ceecf5";
@@ -94,6 +95,22 @@ var a2;
         crc2.beginPath();
         crc2.arc(535, 129, 22, 0, 2 * Math.PI);
         ;
+        crc2.fill();
+        //B�ume
+        for (let i = 0; i < 7; i++) {
+            let x = 20 * Math.random() * 380;
+            let y = 280 * Math.random() * 300;
+            drawTree(x, y, "#113b27");
+        }
+    }
+    function drawTree(_x, _y, _color) {
+        crc2.beginPath();
+        crc2.moveTo(_x, _y);
+        crc2.lineTo(_x + 30, _y + 30);
+        crc2.lineTo(_x - 30, _y + 30);
+        crc2.closePath();
+        crc2.stroke();
+        crc2.fillStyle = _color;
         crc2.fill();
     }
 })(a2 || (a2 = {}));
