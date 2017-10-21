@@ -105,7 +105,7 @@ namespace a2 {
         crc2.fill();
 
         //Bäume
-        for (let i: number = 0; i < 7; i++) {
+        for (let i:number = 0; i < 7; i++) {
             let x: number = 20 * Math.random() * 380;
             let y: number = 280 * Math.random() * 300;
             drawTree(x, y, "#113b27");
@@ -114,7 +114,7 @@ namespace a2 {
 
     }
 
-    function drawTree(_x: number, _y: number, _color: string): void {
+    function drawTree(_x:number, _y:number, _color:string): void {
 
         crc2.beginPath();
         crc2.moveTo(_x, _y);
