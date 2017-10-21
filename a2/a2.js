@@ -98,17 +98,18 @@ var a2;
         crc2.fill();
         //B�ume
         for (let i = 0; i < 7; i++) {
-            let x = 20 * Math.random() * 380;
-            let y = 280 * Math.random() * 300;
+            let x = 20 + Math.random() * 380;
+            let y = 280 + Math.random() * 300;
             drawTree(x, y, "#113b27");
         }
     }
     function drawTree(_x, _y, _color) {
         crc2.beginPath();
         crc2.moveTo(_x, _y);
-        crc2.lineTo(_x + 30, _y + 30);
-        crc2.lineTo(_x - 30, _y + 30);
+        crc2.lineTo(_x + 50, _y + 150);
+        crc2.lineTo(_x - 50, _y + 150);
         crc2.closePath();
+        crc2.strokeStyle = _color;
         crc2.stroke();
         crc2.fillStyle = _color;
         crc2.fill();
