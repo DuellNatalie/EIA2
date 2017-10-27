@@ -83,22 +83,22 @@ var a2;
         crc2.fillStyle = "#113b27";
         crc2.fill();
     }
-    function drawSnow(x, y) {
+    function drawSnow(_x, _y) {
         crc2.beginPath();
-        crc2.arc(x, y, 4, 0, 2 * Math.PI);
+        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
         crc2.fillStyle = "#ffffff";
         crc2.fill();
     }
-    function drawCloud(x, y) {
+    function drawCloud(_x, _y) {
         crc2.beginPath();
-        crc2.arc(x, y, 23, 0, 2 * Math.PI);
+        crc2.arc(_x, _y, 23, 0, 2 * Math.PI);
         crc2.fillStyle = "#ffffff";
         crc2.fill();
         crc2.beginPath();
-        crc2.arc(x + 23, y - 13, 25, 0, 2 * Math.PI);
+        crc2.arc(_x + 23, _y - 13, 25, 0, 2 * Math.PI);
         crc2.fill();
         crc2.beginPath();
-        crc2.arc(x + 36, y + 4, 22, 0, 2 * Math.PI);
+        crc2.arc(_x + 36, _y + 4, 22, 0, 2 * Math.PI);
         crc2.fill();
     }
 })(a2 || (a2 = {}));

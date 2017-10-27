@@ -5,8 +5,8 @@
     Hiermit versichere ich, dass ich diesen
     Code selbst geschrieben habe. Er wurde
     nicht kopiert und auch nicht diktiert. */
-var a2;
-(function (a2) {
+var a3;
+(function (a3) {
     window.addEventListener("load", init);
     let crc2;
     function init() {
@@ -101,5 +101,5 @@ var a2;
         crc2.arc(x + 36, y + 4, 22, 0, 2 * Math.PI);
         crc2.fill();
     }
-})(a2 || (a2 = {}));
+})(a3 || (a3 = {}));
 //# sourceMappingURL=a3.js.map
