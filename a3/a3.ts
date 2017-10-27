@@ -12,9 +12,7 @@ namespace a3 {
 
     window.addEventListener("load", init);
     let crc2: CanvasRenderingContext2D
-    
-    
-    
+ 
 
     function init(): void {
 
@@ -102,23 +100,23 @@ namespace a3 {
         crc2.fill();
     }
 
-    function drawSnow(x: number, y: number): void {
+    function drawSnow(_x: number, _y: number): void {
         crc2.beginPath();
-        crc2.arc(x, y, 4, 0, 2 * Math.PI);
+        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
         crc2.fillStyle = "#ffffff";
         crc2.fill();
     }
 
-    function drawCloud(x: number, y: number): void {
+    function drawCloud(_x: number, _y: number): void {
         crc2.beginPath();
-        crc2.arc(x, y, 23, 0, 2 * Math.PI);
+        crc2.arc(_x, _y, 23, 0, 2 * Math.PI);
         crc2.fillStyle = "#ffffff";
         crc2.fill();
         crc2.beginPath();
-        crc2.arc(x + 23, y - 13, 25, 0, 2 * Math.PI);
+        crc2.arc(_x + 23, _y - 13, 25, 0, 2 * Math.PI);
         crc2.fill();
         crc2.beginPath();
-        crc2.arc(x + 36, y + 4, 22, 0, 2 * Math.PI);
+        crc2.arc(_x + 36, _y + 4, 22, 0, 2 * Math.PI);
         crc2.fill();
 
     }
