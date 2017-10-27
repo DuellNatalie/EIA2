@@ -74,11 +74,11 @@ namespace a3 {
         }
         
         //Schnee
-        for (let i: number = 0; i < 300; i++) {
-            let x: number = 10 + Math.random() * 780;
-            let y: number = 10 + Math.random() * 580;
-            drawSnow(x, y);
-        }
+//        for (let i: number = 0; i < 300; i++) {
+//            let x: number = 10 + Math.random() * 780;
+//            let y: number = 10 + Math.random() * 580;
+//            drawSnow(x, y);
+//        }
 
         //Wolken
         for (let i: number = 0; i < 3; i++) {
@@ -102,12 +102,12 @@ namespace a3 {
         crc2.fill();
     }
 
-    function drawSnow(_x: number, _y: number): void {
-        crc2.beginPath();
-        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ffffff";
-        crc2.fill();
-    }
+//    function drawSnow(_x: number, _y: number): void {
+//        crc2.beginPath();
+//        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
+//        crc2.fillStyle = "#ffffff";
+//        crc2.fill();
+//    }
 
     function drawCloud(_x: number, _y: number): void {
         crc2.beginPath();

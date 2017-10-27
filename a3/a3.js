@@ -60,11 +60,11 @@ var a3;
             drawTree(x, y);
         }
         //Schnee
-        for (let i = 0; i < 300; i++) {
-            let x = 10 + Math.random() * 780;
-            let y = 10 + Math.random() * 580;
-            drawSnow(x, y);
-        }
+        //        for (let i: number = 0; i < 300; i++) {
+        //            let x: number = 10 + Math.random() * 780;
+        //            let y: number = 10 + Math.random() * 580;
+        //            drawSnow(x, y);
+        //        }
         //Wolken
         for (let i = 0; i < 3; i++) {
             let x = 300 + Math.random() * 420;
@@ -83,12 +83,12 @@ var a3;
         crc2.fillStyle = "#113b27";
         crc2.fill();
     }
-    function drawSnow(_x, _y) {
-        crc2.beginPath();
-        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ffffff";
-        crc2.fill();
-    }
+    //    function drawSnow(_x: number, _y: number): void {
+    //        crc2.beginPath();
+    //        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
+    //        crc2.fillStyle = "#ffffff";
+    //        crc2.fill();
+    //    }
     function drawCloud(_x, _y) {
         crc2.beginPath();
         crc2.arc(_x, _y, 23, 0, 2 * Math.PI);
