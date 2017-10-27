@@ -87,7 +87,9 @@ namespace a3 {
             drawCloud(x, y);
         }
     }
+  
 
+    
     function drawTree(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.moveTo(_x, _y);
