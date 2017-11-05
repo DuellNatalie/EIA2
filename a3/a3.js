@@ -61,9 +61,9 @@ var a3;
         crc2.lineTo(800, 555);
         crc2.stroke();
         //B�ume
-        for (let i = 0; i < 6; i++) {
-            let x = 60 + Math.random() * 380;
-            let y = 200 + Math.random() * 230;
+        for (let i = 0; i < 5; i++) {
+            let x = 60 + Math.random() * 300;
+            let y = 200 + Math.random() * 220;
             drawTree(x, y);
         }
         imagedata = crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -73,8 +73,8 @@ var a3;
         }
         //Wolken 
         for (let i = 0; i < 3; i++) {
-            CloudX[i] = 10 + Math.random() * 800;
-            CloudY[i] = 40 + Math.random() * 90;
+            CloudX[i] = Math.random() * 800;
+            CloudY[i] = 60 + Math.random() * 70;
         }
         //Schnee
         for (let i = 0; i < 300; i++) {
@@ -83,8 +83,8 @@ var a3;
         }
         //Fahrer
         for (let i = 0; i < 1; i++) {
-            SkiX[i] = -100;
-            SkiY[i] = 50;
+            SkiX[i] = 0;
+            SkiY[i] = 0;
         }
         animate();
     }
@@ -130,7 +130,6 @@ var a3;
         crc2.lineTo(x - 40, y + 35);
         crc2.fillStyle = Ski;
         crc2.fill();
-        //
         crc2.beginPath();
         crc2.moveTo(x - 50, y + 25);
         crc2.lineTo(x - 10, y + 55);
@@ -143,14 +142,14 @@ var a3;
         //Fahrer
         for (let i = 0; i < SkiX.length; i++) {
             if (SkiX[i] >= 800) {
-                SkiY[i] = 200;
-                SkiX[i] = 30;
+                SkiY[i] = 0;
+                SkiX[i] = 0;
             }
             SkiX[i] += 5;
-            SkiY[i] += 3;
+            SkiY[i] += 3.8;
             drawSki(SkiX[i], SkiY[i], "#80002a");
         }
-        //Wolken
+        //Wolken (Bewegen sich nur in X-Richtung)
         for (let i = 0; i < CloudX.length; i++) {
             if (CloudX[i] > 800) {
                 CloudX[i] = 0;
@@ -158,7 +157,7 @@ var a3;
             CloudX[i] += 1;
             drawCloud(CloudX[i], CloudY[i]);
         }
-        //Schnee
+        //Schnee (Bewegt sich nur in Y-Richtung)
         for (let i = 0; i < SnowX.length; i++) {
             if (SnowY[i] > 600) {
                 SnowY[i] = 0;
