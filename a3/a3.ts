@@ -4,7 +4,7 @@
     Datum: 27.10.2017
     Hiermit versichere ich, dass ich diesen
     Code selbst geschrieben habe. Er wurde
-    nicht kopiert und auch nicht diktiert. */
+    nicht kopiert und auch nicht diktiert.. */
 
 namespace a3 {
 
