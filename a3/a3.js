@@ -10,8 +10,6 @@ var a3;
     window.addEventListener("load", init);
     let crc2;
     let imagedata;
-    let arrayX = [];
-    let arrayY = [];
     let SnowX = [];
     let SnowY = [];
     let CloudX = [];
@@ -67,10 +65,6 @@ var a3;
             drawTree(x, y);
         }
         imagedata = crc2.getImageData(0, 0, canvas.width, canvas.height);
-        for (let i = 0; i < 800; i++) {
-            arrayX[i] = 10;
-            arrayY[i] = 100;
-        }
         //Wolken 
         for (let i = 0; i < 3; i++) {
             CloudX[i] = Math.random() * 800;
@@ -165,7 +159,7 @@ var a3;
             SnowY[i] += 3 + Math.round(Math.random() * 3);
             drawSnow(SnowX[i], SnowY[i]);
         }
-        window.setTimeout(animate, 80);
+        window.setTimeout(animate, 30);
     }
 })(a3 || (a3 = {}));
 //# sourceMappingURL=a3.js.map

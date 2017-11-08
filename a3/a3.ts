@@ -13,8 +13,6 @@ namespace a3 {
 
     let imagedata: ImageData;
 
-    let arrayX: number[] = [];
-    let arrayY: number[] = [];
     let SnowX: number[] = [];
     let SnowY: number[] = [];
     let CloudX: number[] = [];
@@ -82,10 +80,6 @@ namespace a3 {
         imagedata = crc2.getImageData(0, 0, canvas.width, canvas.height);
 
 
-        for (let i: number = 0; i < 800; i++) {
-            arrayX[i] = 10;
-            arrayY[i] = 100;
-        }
 
         //Wolken 
         for (let i: number = 0; i < 3; i++) {
@@ -198,7 +192,7 @@ namespace a3 {
             drawSnow(SnowX[i], SnowY[i]);
         }
 
-        window.setTimeout(animate, 80);
+        window.setTimeout(animate, 30);
 
     }
 }
