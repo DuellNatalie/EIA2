@@ -188,7 +188,7 @@ namespace a3 {
                 SnowY[i] = 0;
             }
             
-            SnowY[i] += 3 + Math.round(Math.random() * 3);
+            SnowY[i] += 3;
             drawSnow(SnowX[i], SnowY[i]);
         }
 
