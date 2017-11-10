@@ -70,6 +70,11 @@ var a4;
             SnowX[i] = Math.random() * 800;
             SnowY[i] = Math.random() * 600;
         }
+        //B�ume
+        for (let i = 0; i < 5; i++) {
+            BaumX[i] = 60 + Math.random() * 300;
+            BaumY[i] = 200 + Math.random() * 220;
+        }
         //Fahrer
         for (let i = 0; i < 3; i++) {
             Ski[i] = {
@@ -161,10 +166,8 @@ var a4;
             drawSnow(SnowX[i], SnowY[i]);
         }
         //B�ume
-        for (let i = 0; i < 5; i++) {
-            let BaumX = 60 + Math.random() * 300;
-            let BaumY = 200 + Math.random() * 220;
-            drawTree(BaumX, BaumY);
+        for (let i = 0; i < BaumX.length; i++) {
+            drawTree(BaumX[i], BaumY[i]);
         }
         window.setTimeout(animate, 30);
     }

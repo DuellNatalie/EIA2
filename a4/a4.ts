@@ -215,7 +215,7 @@ namespace a4 {
         for (let i: number = 0; i < BaumX.length; i++) {
             
             
-            drawTree(BaumX, BaumY);
+            drawTree(BaumX[i], BaumY[i]);
         }
 
     window.setTimeout(animate, 30);
