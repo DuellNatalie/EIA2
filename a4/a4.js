@@ -80,7 +80,7 @@ var a4;
             Ski[i] = {
                 x: Math.random() * 100,
                 y: Math.random() * 200,
-                dx: Math.random() * 2 + 1,
+                dx: Math.random() * 1 + 1.8,
                 dy: Math.random() * 3 + 1,
                 colorKopf: "hsl(" + Math.random() * 360 + ", 100%, 90%)",
                 colorBody: "hsl(" + Math.random() * 360 + ", 100%, 40%)"
