@@ -80,6 +80,8 @@ var a4;
             Ski[i] = {
                 x: Math.random() * 100,
                 y: Math.random() * 300,
+                dx: Math.random() * 2 - 1,
+                dy: Math.random() * 2 - 1,
                 colorKopf: "hsl(" + Math.random() * 360 + ", 100%, 90%)",
                 colorBody: "hsl(" + Math.random() * 360 + ", 100%, 40%)"
             };
@@ -89,8 +91,8 @@ var a4;
     function drawTree(_x, _y) {
         crc2.beginPath();
         crc2.moveTo(_x, _y);
-        crc2.lineTo(_x + 50, _y + 150);
-        crc2.lineTo(_x - 50, _y + 150);
+        crc2.lineTo(_x + 40, _y + 140);
+        crc2.lineTo(_x - 40, _y + 140);
         crc2.closePath();
         crc2.strokeStyle = "#004d26";
         crc2.stroke();
@@ -140,7 +142,7 @@ var a4;
         //Fahrer
         for (let i = 0; i < Ski.length; i++) {
             if (Ski[i].x >= 800) {
-                Ski[i].x = Math.random() * 100;
+                Ski[i].x = Math.random() * 10;
                 Ski[i].y = Math.random() * 300;
                 Ski[i].colorKopf = "hsl(" + Math.random() * 360 + ", 100%, 90%)";
                 Ski[i].colorBody = "hsl(" + Math.random() * 360 + ", 100%, 40%)";
