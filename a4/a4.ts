@@ -79,7 +79,7 @@ namespace a4 {
         crc2.lineTo(800, 555);
         crc2.stroke();
 
-       
+
 
 
         imagedata = crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -97,13 +97,13 @@ namespace a4 {
             SnowX[i] = Math.random() * 800;
             SnowY[i] = Math.random() * 600;
         }
-        
-        
+
+
         //Bäume
-        for (let i:number = 0; i < 5; i++) {
+        for (let i: number = 0; i < 5; i++) {
             BaumX[i] = 60 + Math.random() * 300;
             BaumY[i] = 200 + Math.random() * 220;
-            }
+        }
 
         //Fahrer
         for (let i: number = 0; i < 5; i++) {
@@ -187,46 +187,46 @@ namespace a4 {
                 Ski[i].colorKopf = "hsl(" + Math.random() * 360 + ", 100%, 90%)";
                 Ski[i].colorBody = "hsl(" + Math.random() * 360 + ", 100%, 40%)";
             }
-            Ski[i].x +=  Ski[i].dx;
+            Ski[i].x += Ski[i].dx;
             Ski[i].y += Ski[i].dy;
-            
-                
+
+
             drawSki(Ski[i]);
 
         }
-    
 
 
-    //Wolken (Bewegen sich nur in X-Richtung)
-    for (let i: number = 0; i < CloudX.length; i++) {
-        if (CloudX[i] > 800) {
-            CloudX[i] = 0;
+
+        //Wolken (Bewegen sich nur in X-Richtung)
+        for (let i: number = 0; i < CloudX.length; i++) {
+            if (CloudX[i] > 800) {
+                CloudX[i] = 0;
+            }
+
+            CloudX[i] += 1;
+            drawCloud(CloudX[i], CloudY[i]);
         }
 
-        CloudX[i] += 1;
-        drawCloud(CloudX[i], CloudY[i]);
-    }
+        //Schnee (Bewegt sich nur in Y-Richtung)
+        for (let i: number = 0; i < SnowX.length; i++) {
+            if (SnowY[i] > 600) {
+                SnowY[i] = 3;
+            }
 
-    //Schnee (Bewegt sich nur in Y-Richtung)
-    for (let i: number = 0; i < SnowX.length; i++) {
-        if (SnowY[i] > 600) {
-            SnowY[i] = 3;
+            SnowY[i] += 3;
+            drawSnow(SnowX[i], SnowY[i]);
         }
 
-        SnowY[i] += 3;
-        drawSnow(SnowX[i], SnowY[i]);
-    }
-        
-         //Bäume
+        //Bäume
         for (let i: number = 0; i < BaumX.length; i++) {
-            
-            
+
+
             drawTree(BaumX[i], BaumY[i]);
         }
 
-    window.setTimeout(animate, 30);
+        window.setTimeout(animate, 30);
 
 
 
-}
     }
+}
