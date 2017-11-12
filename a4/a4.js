@@ -76,12 +76,12 @@ var a4;
             BaumY[i] = 200 + Math.random() * 220;
         }
         //Fahrer
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 5; i++) {
             Ski[i] = {
                 x: Math.random() * 100,
-                y: Math.random() * 300,
-                dx: Math.random() * 2 - 1,
-                dy: Math.random() * 2 - 1,
+                y: Math.random() * 200,
+                dx: Math.random() * 2 + 1,
+                dy: Math.random() * 3 + 1,
                 colorKopf: "hsl(" + Math.random() * 360 + ", 100%, 90%)",
                 colorBody: "hsl(" + Math.random() * 360 + ", 100%, 40%)"
             };
@@ -141,14 +141,14 @@ var a4;
         crc2.putImageData(imagedata, 0, 0);
         //Fahrer
         for (let i = 0; i < Ski.length; i++) {
-            if (Ski[i].x >= 800) {
+            if (Ski[i].x >= 800 || Ski[i].y >= 600) {
                 Ski[i].x = Math.random() * 10;
                 Ski[i].y = Math.random() * 300;
                 Ski[i].colorKopf = "hsl(" + Math.random() * 360 + ", 100%, 90%)";
                 Ski[i].colorBody = "hsl(" + Math.random() * 360 + ", 100%, 40%)";
             }
-            Ski[i].x += 5;
-            Ski[i].y += 3.8;
+            Ski[i].x += Ski[i].dx;
+            Ski[i].y += Ski[i].dy;
             drawSki(Ski[i]);
         }
         //Wolken (Bewegen sich nur in X-Richtung)
