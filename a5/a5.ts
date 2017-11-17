@@ -116,7 +116,7 @@ namespace a5 {
         //                colorBody: "hMath.random() * 360 + ", 100%, 40%)"
         //            }
 
-       
+
 
         animate();
     }
@@ -181,7 +181,7 @@ namespace a5 {
         //NEU ///////////////////////////////////////////////////////////////////
         for (let i: number = 0; i < Ski.length; i++) {
             let s: SkiInfo = Ski[i];
-            
+
             s.update();
         }
 
@@ -206,8 +206,8 @@ namespace a5 {
         //            drawSki(Ski[i]);
         //
         //        }
-        
-        
+
+
 
 
 
