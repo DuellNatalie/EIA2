@@ -78,6 +78,7 @@ var a5;
         for (let i = 0; i < 5; i++) {
             let s = new a5.SkiInfo(Math.random() * 100, Math.random() * 200);
             s.setRandomStyle();
+            Ski[i] = s;
         }
         animate();
     }

@@ -102,7 +102,7 @@ namespace a5 {
         for (let i: number = 0; i < 5; i++) {
             let s: SkiInfo = new SkiInfo(Math.random() * 100, Math.random() * 200);
             s.setRandomStyle();
-            
+            Ski[i] = s;
         }
 
 
