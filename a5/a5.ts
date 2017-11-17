@@ -97,25 +97,13 @@ namespace a5 {
             BaumY[i] = 200 + Math.random() * 220;
         }
 
-        //Fahrer //NEU//////////////////////////////////////////////////////////////////////////////////////////
-
+        //Fahrer //
 
         for (let i: number = 0; i < 5; i++) {
             let s: SkiInfo = new SkiInfo(Math.random() * 100, Math.random() * 200);
             s.setRandomStyle();
             Ski[i] = s;
         }
-
-        //        for (let i: number = 0; i < 5; i++) {
-        //            Ski[i] = {
-        //                this._x: Math.random() * 100,
-        //                y: Math.random() * 200,
-        //                dx: Math.random() * 1 + 1.8,
-        //                dy: Math.random() * 3 + 1,
-        //                colorKopf: "hsl(" + Math.random() * 360 + ", 100%, 90%)",
-        //                colorBody: "hMath.random() * 360 + ", 100%, 40%)"
-        //            }
-
 
 
         animate();
@@ -154,62 +142,23 @@ namespace a5 {
         crc2.fill();
     }
 
-    //    function drawSki(s: SkiInfo): void {
-    //        //Mensch
-    //        crc2.beginPath();
-    //        crc2.arc(s.x, s.y, 10, 0, 2 * Math.PI);
-    //        crc2.fillStyle = s.colorKopf;
-    //        crc2.fill();
-    //        crc2.beginPath();
-    //        crc2.moveTo(s.x - 15, s.y - 1);
-    //        crc2.lineTo(s.x + 5, s.y + 15);
-    //        crc2.lineTo(s.x - 20, s.y + 50);
-    //        crc2.lineTo(s.x - 40, s.y + 35);
-    //        crc2.fillStyle = s.colorBody;
-    //        crc2.fill();
-    //        crc2.beginPath();
-    //        crc2.moveTo(s.x - 50, s.y + 25);
-    //        crc2.lineTo(s.x - 10, s.y + 55);
-    //        crc2.lineWidth = 5;
-    //        crc2.strokeStyle = "#000000";
-    //        crc2.stroke();
-    //    }
+   
 
     function animate(): void {
         crc2.putImageData(imagedata, 0, 0);
 
-        //NEU ///////////////////////////////////////////////////////////////////
-        for (let i: number = 0; i < Ski.length; i++) {
-            let s: SkiInfo = Ski[i];
-
-            s.update();
-        }
-
-
-
-
-
 
         //Fahrer
-        //        for (let i: number = 0; i < Ski.length; i++) {
-        //            if (Ski[i].x >= 800 || Ski[i].y >= 600) {
-        //
-        //                Ski[i].x = Math.random() * 10;
-        //                Ski[i].y = Math.random() * 300;
-        //                Ski[i].colorKopf = "hsl(" + Math.random() * 360 + ", 100%, 90%)";
-        //                Ski[i].colorBody = "hsl(" + Math.random() * 360 + ", 100%, 40%)";
-        //            }
-        //            Ski[i].x += Ski[i].dx;
-        //            S+=dy;
-        //
-        //
-        //            drawSki(Ski[i]);
-        //
-        //        }
-
-
-
-
+        for (let i: number = 0; i < Ski.length; i++) {
+            
+            if (Ski[i].x >= 800 || Ski[i].y >= 600) {
+            
+                Ski[i].x = Math.random() * 10;
+                Ski[i].y = Math.random() * 300;
+                
+            }
+             Ski[i].update();
+        }
 
         //Wolken (Bewegen sich nur in X-Richtung)
         for (let i: number = 0; i < CloudX.length; i++) {

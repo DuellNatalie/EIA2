@@ -25,10 +25,6 @@ namespace a5 {
             this.y = _y;
         }
 
-        sayHello(): void {
-            console.log("Hallo");
-        }
-
         update(): void {
             this.move();
             this.draw();

@@ -12,9 +12,6 @@ var a5;
             this.x = _x;
             this.y = _y;
         }
-        sayHello() {
-            console.log("Hallo");
-        }
         update() {
             this.move();
             this.draw();
