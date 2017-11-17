@@ -171,7 +171,7 @@ var a4;
         for (let i = 0; i < BaumX.length; i++) {
             drawTree(BaumX[i], BaumY[i]);
         }
-        window.setTimeout(animate, 30);
+        window.setTimeout(animate, 20);
     }
 })(a4 || (a4 = {}));
 //# sourceMappingURL=a4.js.map
