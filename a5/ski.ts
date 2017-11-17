@@ -8,8 +8,6 @@
 
 namespace a5 {
 
-
-
     export class SkiInfo {
         x: number;
         y: number;

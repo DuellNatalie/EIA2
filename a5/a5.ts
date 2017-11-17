@@ -102,7 +102,7 @@ namespace a5 {
         for (let i: number = 0; i < 5; i++) {
             let s: SkiInfo = new SkiInfo(Math.random() * 100, Math.random() * 200);
             s.setRandomStyle();
-            Ski[i] = s;
+            
         }
 
 
@@ -142,7 +142,7 @@ namespace a5 {
         crc2.fill();
     }
 
-   
+
 
     function animate(): void {
         crc2.putImageData(imagedata, 0, 0);
@@ -150,17 +150,17 @@ namespace a5 {
 
         //Fahrer
         for (let i: number = 0; i < Ski.length; i++) {
-            
+
             if (Ski[i].x >= 800 || Ski[i].y >= 600) {
-            
+
                 Ski[i].x = Math.random() * 10;
                 Ski[i].y = Math.random() * 300;
-                
+
             }
-            
-           
-            
-             Ski[i].update();
+
+
+
+            Ski[i].update();
         }
 
         //Wolken (Bewegen sich nur in X-Richtung)
