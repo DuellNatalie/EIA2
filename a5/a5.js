@@ -76,7 +76,7 @@ var a5;
         }
         //Fahrer //
         for (let i = 0; i < 5; i++) {
-            let s = new a5.SkiInfo(Math.random() * 100, Math.random() * 200);
+            let s = new a5.SkiInfo(Math.random() * 100, Math.random() * 200, Math.random() * 1 + 2, Math.random() * 3 + 1);
             s.setRandomStyle();
             Ski[i] = s;
         }

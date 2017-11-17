@@ -8,9 +8,11 @@
 var a5;
 (function (a5) {
     class SkiInfo {
-        constructor(_x, _y) {
+        constructor(_x, _y, _speedx, _speedy) {
             this.x = _x;
             this.y = _y;
+            this.speedx = _speedx;
+            this.speedy = _speedy;
         }
         update() {
             this.move();

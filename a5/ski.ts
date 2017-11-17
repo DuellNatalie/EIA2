@@ -11,16 +11,18 @@ namespace a5 {
     export class SkiInfo {
         x: number;
         y: number;
-        x2: number;
-        y2: number;
         dx: number;
         dy: number;
         colorKopf: string;
         colorBody: string;
+        speedx: number;
+        speedy: number;
 
-        constructor(_x: number, _y: number) {
+        constructor(_x: number, _y: number, _speedx: number, _speedy: number) {
             this.x = _x;
             this.y = _y;
+            this.speedx = _speedx;
+            this.speedy = _speedy;
         }
 
         update(): void {
