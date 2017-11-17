@@ -100,8 +100,8 @@ namespace a5 {
         //Fahrer //
 
         for (let i: number = 0; i < 5; i++) {
-   
-            
+
+
             let s: SkiInfo = new SkiInfo(Math.random() * 100, Math.random() * 200, Math.random() * 1 + 2, Math.random() * 3 + 1);
             s.setRandomStyle();
             Ski[i] = s;

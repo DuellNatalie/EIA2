@@ -32,7 +32,7 @@ namespace a5 {
 
         move(): void {
             this.x += Math.random() * 1 + 2;
-            this.y += Math.random() * 3 + 1; 
+            this.y += Math.random() * 3 + 1;
         }
 
         draw(): void {
@@ -56,7 +56,7 @@ namespace a5 {
 
         }
 
-        
+
         setRandomStyle(): void {
             this.dx = 30;
             this.dy = 50;
