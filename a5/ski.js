@@ -17,8 +17,8 @@ var a5;
             this.draw();
         }
         move() {
-            this.x += Math.random() * 1 + 2; // hier experimentieren um
-            this.y += Math.random() * 3 + 1; // andere Bewegungsmuster zu finden
+            this.x += Math.random() * 1 + 2;
+            this.y += Math.random() * 3 + 1;
         }
         draw() {
             a5.crc2.beginPath();
@@ -39,24 +39,6 @@ var a5;
             a5.crc2.strokeStyle = "#000000";
             a5.crc2.stroke();
         }
-        //        crc2.beginPath();
-        //        crc2.arc(s.x, s.y, 10, 0, 2 * Math.PI);
-        //        crc2.fillStyle = s.colorKopf;
-        //        crc2.fill();
-        //        crc2.beginPath();
-        //        crc2.moveTo(s.x - 15, s.y - 1);
-        //        crc2.lineTo(s.x + 5, s.y + 15);
-        //        crc2.lineTo(s.x - 20, s.y + 50);
-        //        crc2.lineTo(s.x - 40, s.y + 35);
-        //        crc2.fillStyle = s.colorBody;
-        //        crc2.fill();
-        //        crc2.beginPath();
-        //        crc2.moveTo(s.x - 50, s.y + 25);
-        //        crc2.lineTo(s.x - 10, s.y + 55);
-        //        crc2.lineWidth = 5;
-        //        crc2.strokeStyle = "#000000";
-        //        crc2.stroke();
-        //    }
         setRandomStyle() {
             this.dx = 30;
             this.dy = 50;

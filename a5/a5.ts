@@ -157,6 +157,9 @@ namespace a5 {
                 Ski[i].y = Math.random() * 300;
                 
             }
+            
+           
+            
              Ski[i].update();
         }
 
