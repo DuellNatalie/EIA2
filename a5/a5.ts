@@ -13,9 +13,10 @@ namespace a5 {
     let imagedata: ImageData;
 
     let Snow: snowInfo[] = [];
-
     let Cloud: cloudInfo[] = [];
     let Ski: SkiInfo[] = [];
+    
+    
     let BaumX: number[] = [];
     let BaumY: number[] = [];
 
@@ -121,9 +122,6 @@ namespace a5 {
         crc2.fillStyle = "#113b27";
         crc2.fill();
     }
-
-
-
 
 
     function animate(): void {
