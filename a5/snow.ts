@@ -18,12 +18,12 @@ namespace a5 {
 
         }
 
-       draw(): void {
-           crc2.beginPath();
-        crc2.arc(this.snowx, this.snowy, 4, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ffffff";
-        crc2.fill();
-           }
+        draw(): void {
+            crc2.beginPath();
+            crc2.arc(this.snowx, this.snowy, 4, 0, 2 * Math.PI);
+            crc2.fillStyle = "#ffffff";
+            crc2.fill();
+        }
 
 
         move(): void {

@@ -13,7 +13,7 @@ namespace a5 {
     let imagedata: ImageData;
 
     let Snow: snowInfo[] = [];
-    
+
     let Cloud: cloudInfo[] = [];
     let Ski: SkiInfo[] = [];
     let BaumX: number[] = [];
@@ -73,21 +73,21 @@ namespace a5 {
 
 
 
-        
+
 
 
 
         //Wolken 
         for (let i: number = 0; i < 3; i++) {
-            let s: cloudInfo = new cloudInfo (Math.random() * 800, 60 + Math.random() * 70);
-        Cloud[i] = s;
+            let s: cloudInfo = new cloudInfo(Math.random() * 800, 60 + Math.random() * 70);
+            Cloud[i] = s;
         }
 
         //Schnee
         for (let i: number = 0; i < 300; i++) {
-            let s: snowInfo = new snowInfo (Math.random() * 800, 60 + Math.random() * 600);
-        Snow[i] = s;
-           
+            let s: snowInfo = new snowInfo(Math.random() * 800, 60 + Math.random() * 600);
+            Snow[i] = s;
+
         }
 
 
@@ -106,7 +106,7 @@ namespace a5 {
             Ski[i] = s;
         }
 
-imagedata = crc2.getImageData(0, 0, canvas.width, canvas.height);
+        imagedata = crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }
 
@@ -123,12 +123,12 @@ imagedata = crc2.getImageData(0, 0, canvas.width, canvas.height);
         crc2.fill();
     }
 
-//    function drawSnow(_x: number, _y: number): void {
-//        crc2.beginPath();
-//        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
-//        crc2.fillStyle = "#ffffff";
-//        crc2.fill();
-//    }
+    //    function drawSnow(_x: number, _y: number): void {
+    //        crc2.beginPath();
+    //        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
+    //        crc2.fillStyle = "#ffffff";
+    //        crc2.fill();
+    //    }
 
 
 
