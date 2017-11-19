@@ -91,12 +91,6 @@ var a5;
         a5.crc2.fillStyle = "#113b27";
         a5.crc2.fill();
     }
-    //    function drawSnow(_x: number, _y: number): void {
-    //        crc2.beginPath();
-    //        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
-    //        crc2.fillStyle = "#ffffff";
-    //        crc2.fill();
-    //    }
     function animate() {
         a5.crc2.putImageData(imagedata, 0, 0);
         //Fahrer
@@ -108,12 +102,12 @@ var a5;
             Ski[i].update();
         }
         //Wolken (Bewegen sich nur in X-Richtung)
-        for (let i = 0; i < a5.cloudInfo.length; i++) {
+        for (let i = 0; i < Cloud.length; i++) {
             let s = Cloud[i];
             s.move();
         }
         //Schnee (Bewegt sich nur in Y-Richtung)
-        for (let i = 0; i < a5.snowInfo.length; i++) {
+        for (let i = 0; i < Snow.length; i++) {
             let s = Snow[i];
             s.move();
         }
