@@ -27,7 +27,7 @@ namespace a5 {
 
 
         move(): void {
-            if (this.snowy > 600) {
+            if (this.snowy > 590) {
                 this.snowy = 0;
             }
             this.snowy += 3;

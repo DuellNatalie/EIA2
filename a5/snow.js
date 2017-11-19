@@ -19,7 +19,7 @@ var a5;
             a5.crc2.fill();
         }
         move() {
-            if (this.snowy > 600) {
+            if (this.snowy > 590) {
                 this.snowy = 0;
             }
             this.snowy += 3;

@@ -122,12 +122,6 @@ namespace a5 {
         crc2.fill();
     }
 
-    //    function drawSnow(_x: number, _y: number): void {
-    //        crc2.beginPath();
-    //        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
-    //        crc2.fillStyle = "#ffffff";
-    //        crc2.fill();
-    //    }
 
 
 
@@ -149,13 +143,13 @@ namespace a5 {
         }
 
         //Wolken (Bewegen sich nur in X-Richtung)
-        for (let i: number = 0; i < cloudInfo.length; i++) {
+        for (let i: number = 0; i < Cloud.length; i++) {
             let s: cloudInfo = Cloud[i];
             s.move();
         }
 
         //Schnee (Bewegt sich nur in Y-Richtung)
-        for (let i: number = 0; i < snowInfo.length; i++) {
+        for (let i: number = 0; i < Snow.length; i++) {
             let s: snowInfo = Snow[i]
             s.move();
             }
