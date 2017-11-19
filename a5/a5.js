@@ -10,8 +10,7 @@ var a5;
     let imagedata;
     let SnowX = [];
     let SnowY = [];
-    let CloudX = [];
-    let CloudY = [];
+    let Cloud = [];
     let Ski = [];
     let BaumX = [];
     let BaumY = [];
@@ -58,11 +57,10 @@ var a5;
         a5.crc2.moveTo(50, 0);
         a5.crc2.lineTo(800, 555);
         a5.crc2.stroke();
-        imagedata = a5.crc2.getImageData(0, 0, canvas.width, canvas.height);
         //Wolken 
         for (let i = 0; i < 3; i++) {
-            CloudX[i] = Math.random() * 800;
-            CloudY[i] = 60 + Math.random() * 70;
+            let s = new a5.cloudInfo(Math.random() * 800, 60 + Math.random() * 70);
+            Cloud[i] = s;
         }
         //Schnee
         for (let i = 0; i < 300; i++) {
@@ -76,10 +74,11 @@ var a5;
         }
         //Fahrer //
         for (let i = 0; i < 5; i++) {
-            let s = new a5.SkiInfo(Math.random() * 100, Math.random() * 200, Math.random() * 1 + 2, Math.random() * 3 + 1);
+            let s = new a5.SkiInfo(0, 0, Math.random() * 1 + 2, Math.random() * 3 + 1);
             s.setRandomStyle();
             Ski[i] = s;
         }
+        imagedata = a5.crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }
     function drawTree(_x, _y) {
@@ -99,18 +98,6 @@ var a5;
         a5.crc2.fillStyle = "#ffffff";
         a5.crc2.fill();
     }
-    function drawCloud(_x, _y) {
-        a5.crc2.beginPath();
-        a5.crc2.arc(_x, _y, 23, 0, 2 * Math.PI);
-        a5.crc2.fillStyle = "#ffffff";
-        a5.crc2.fill();
-        a5.crc2.beginPath();
-        a5.crc2.arc(_x + 23, _y - 13, 25, 0, 2 * Math.PI);
-        a5.crc2.fill();
-        a5.crc2.beginPath();
-        a5.crc2.arc(_x + 36, _y + 4, 22, 0, 2 * Math.PI);
-        a5.crc2.fill();
-    }
     function animate() {
         a5.crc2.putImageData(imagedata, 0, 0);
         //Fahrer
@@ -122,12 +109,9 @@ var a5;
             Ski[i].update();
         }
         //Wolken (Bewegen sich nur in X-Richtung)
-        for (let i = 0; i < CloudX.length; i++) {
-            if (CloudX[i] > 800) {
-                CloudX[i] = 0;
-            }
-            CloudX[i] += 1;
-            drawCloud(CloudX[i], CloudY[i]);
+        for (let i = 0; i < a5.cloudInfo.length; i++) {
+            let s = Cloud[i];
+            s.move();
         }
         //Schnee (Bewegt sich nur in Y-Richtung)
         for (let i = 0; i < SnowX.length; i++) {
@@ -141,7 +125,7 @@ var a5;
         for (let i = 0; i < BaumX.length; i++) {
             drawTree(BaumX[i], BaumY[i]);
         }
-        window.setTimeout(animate, 30);
+        window.setTimeout(animate, 20);
     }
 })(a5 || (a5 = {}));
 //# sourceMappingURL=a5.js.map

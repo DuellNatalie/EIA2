@@ -12,10 +12,9 @@ namespace a5 {
 
     let imagedata: ImageData;
 
-    let SnowX: number[] = [];
-    let SnowY: number[] = [];
-    let CloudX: number[] = [];
-    let CloudY: number[] = [];
+    let Snow: snowInfo[] = [];
+    
+    let Cloud: cloudInfo[] = [];
     let Ski: SkiInfo[] = [];
     let BaumX: number[] = [];
     let BaumY: number[] = [];
@@ -74,20 +73,21 @@ namespace a5 {
 
 
 
-        imagedata = crc2.getImageData(0, 0, canvas.width, canvas.height);
+        
 
 
 
         //Wolken 
         for (let i: number = 0; i < 3; i++) {
-            CloudX[i] = Math.random() * 800;
-            CloudY[i] = 60 + Math.random() * 70;
+            let s: cloudInfo = new cloudInfo (Math.random() * 800, 60 + Math.random() * 70);
+        Cloud[i] = s;
         }
 
         //Schnee
         for (let i: number = 0; i < 300; i++) {
-            SnowX[i] = Math.random() * 800;
-            SnowY[i] = Math.random() * 600;
+            let s: snowInfo = new snowInfo (Math.random() * 800, 60 + Math.random() * 600);
+        Snow[i] = s;
+           
         }
 
 
@@ -101,12 +101,12 @@ namespace a5 {
 
         for (let i: number = 0; i < 5; i++) {
 
-            let s: SkiInfo = new SkiInfo(Math.random() * 100, Math.random() * 200, Math.random() * 1 + 2, Math.random() * 3 + 1);
+            let s: SkiInfo = new SkiInfo(0, 0, Math.random() * 1 + 2, Math.random() * 3 + 1);
             s.setRandomStyle();
             Ski[i] = s;
         }
 
-
+imagedata = crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }
 
@@ -123,25 +123,13 @@ namespace a5 {
         crc2.fill();
     }
 
-    function drawSnow(_x: number, _y: number): void {
-        crc2.beginPath();
-        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ffffff";
-        crc2.fill();
-    }
+//    function drawSnow(_x: number, _y: number): void {
+//        crc2.beginPath();
+//        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
+//        crc2.fillStyle = "#ffffff";
+//        crc2.fill();
+//    }
 
-    function drawCloud(_x: number, _y: number): void {
-        crc2.beginPath();
-        crc2.arc(_x, _y, 23, 0, 2 * Math.PI);
-        crc2.fillStyle = "#ffffff";
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(_x + 23, _y - 13, 25, 0, 2 * Math.PI);
-        crc2.fill();
-        crc2.beginPath();
-        crc2.arc(_x + 36, _y + 4, 22, 0, 2 * Math.PI);
-        crc2.fill();
-    }
 
 
 
@@ -165,13 +153,9 @@ namespace a5 {
         }
 
         //Wolken (Bewegen sich nur in X-Richtung)
-        for (let i: number = 0; i < CloudX.length; i++) {
-            if (CloudX[i] > 800) {
-                CloudX[i] = 0;
-            }
-
-            CloudX[i] += 1;
-            drawCloud(CloudX[i], CloudY[i]);
+        for (let i: number = 0; i < cloudInfo.length; i++) {
+            let s: cloudInfo = Cloud[i];
+            s.move();
         }
 
         //Schnee (Bewegt sich nur in Y-Richtung)
@@ -191,7 +175,7 @@ namespace a5 {
             drawTree(BaumX[i], BaumY[i]);
         }
 
-        window.setTimeout(animate, 30);
+        window.setTimeout(animate, 20);
 
 
 
