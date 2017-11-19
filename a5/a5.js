@@ -7,13 +7,13 @@
     nicht kopiert und auch nicht diktiert. */
 var a5;
 (function (a5) {
+    window.addEventListener("load", init);
     let imagedata;
     let Snow = [];
     let Cloud = [];
     let Ski = [];
     let BaumX = [];
     let BaumY = [];
-    window.addEventListener("load", init);
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         a5.crc2 = canvas.getContext("2d");
@@ -115,13 +115,13 @@ var a5;
         //Schnee (Bewegt sich nur in Y-Richtung)
         for (let i = 0; i < a5.snowInfo.length; i++) {
             let s = Snow[i];
-            s.move;
+            s.move();
         }
         //B�ume
         for (let i = 0; i < BaumX.length; i++) {
             drawTree(BaumX[i], BaumY[i]);
         }
-        window.setTimeout(animate, 20);
+        window.setTimeout(animate, 25);
     }
 })(a5 || (a5 = {}));
 //# sourceMappingURL=a5.js.map

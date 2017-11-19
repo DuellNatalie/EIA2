@@ -8,8 +8,8 @@
 
 namespace a5 {
 
+    window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
-
     let imagedata: ImageData;
 
     let Snow: snowInfo[] = [];
@@ -19,7 +19,6 @@ namespace a5 {
     let BaumX: number[] = [];
     let BaumY: number[] = [];
 
-    window.addEventListener("load", init);
 
 
     function init(): void {
@@ -158,7 +157,7 @@ namespace a5 {
         //Schnee (Bewegt sich nur in Y-Richtung)
         for (let i: number = 0; i < snowInfo.length; i++) {
             let s: snowInfo = Snow[i]
-            s.move
+            s.move();
             }
 
             
@@ -169,7 +168,7 @@ namespace a5 {
             drawTree(BaumX[i], BaumY[i]);
         }
 
-        window.setTimeout(animate, 20);
+        window.setTimeout(animate, 25);
 
 
 
