@@ -8,8 +8,7 @@
 var a5;
 (function (a5) {
     let imagedata;
-    let SnowX = [];
-    let SnowY = [];
+    let Snow = [];
     let Cloud = [];
     let Ski = [];
     let BaumX = [];
@@ -64,8 +63,8 @@ var a5;
         }
         //Schnee
         for (let i = 0; i < 300; i++) {
-            SnowX[i] = Math.random() * 800;
-            SnowY[i] = Math.random() * 600;
+            let s = new a5.snowInfo(Math.random() * 800, 60 + Math.random() * 600);
+            Snow[i] = s;
         }
         //B�ume
         for (let i = 0; i < 5; i++) {
@@ -92,12 +91,12 @@ var a5;
         a5.crc2.fillStyle = "#113b27";
         a5.crc2.fill();
     }
-    function drawSnow(_x, _y) {
-        a5.crc2.beginPath();
-        a5.crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
-        a5.crc2.fillStyle = "#ffffff";
-        a5.crc2.fill();
-    }
+    //    function drawSnow(_x: number, _y: number): void {
+    //        crc2.beginPath();
+    //        crc2.arc(_x, _y, 4, 0, 2 * Math.PI);
+    //        crc2.fillStyle = "#ffffff";
+    //        crc2.fill();
+    //    }
     function animate() {
         a5.crc2.putImageData(imagedata, 0, 0);
         //Fahrer
@@ -114,12 +113,9 @@ var a5;
             s.move();
         }
         //Schnee (Bewegt sich nur in Y-Richtung)
-        for (let i = 0; i < SnowX.length; i++) {
-            if (SnowY[i] > 600) {
-                SnowY[i] = 3;
-            }
-            SnowY[i] += 3;
-            drawSnow(SnowX[i], SnowY[i]);
+        for (let i = 0; i < a5.snowInfo.length; i++) {
+            let s = Snow[i];
+            s.move;
         }
         //B�ume
         for (let i = 0; i < BaumX.length; i++) {

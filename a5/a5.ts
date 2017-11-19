@@ -144,10 +144,7 @@ namespace a5 {
 
                 Ski[i].x = Math.random() * 10;
                 Ski[i].y = Math.random() * 300;
-
             }
-
-
 
             Ski[i].update();
         }
@@ -159,15 +156,12 @@ namespace a5 {
         }
 
         //Schnee (Bewegt sich nur in Y-Richtung)
-        for (let i: number = 0; i < SnowX.length; i++) {
-            if (SnowY[i] > 600) {
-                SnowY[i] = 3;
+        for (let i: number = 0; i < snowInfo.length; i++) {
+            let s: snowInfo = Snow[i]
+            s.move
             }
 
-            SnowY[i] += 3;
-            drawSnow(SnowX[i], SnowY[i]);
-        }
-
+            
         //Bäume
         for (let i: number = 0; i < BaumX.length; i++) {
 
