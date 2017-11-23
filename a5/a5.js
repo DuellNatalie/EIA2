@@ -80,17 +80,7 @@ var a5;
         imagedata = a5.crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }
-    //    function drawTree(_x: number, _y: number): void {
-    //        crc2.beginPath();
-    //        crc2.moveTo(_x, _y);
-    //        crc2.lineTo(_x + 40, _y + 140);
-    //        crc2.lineTo(_x - 40, _y + 140);
-    //        crc2.closePath();
-    //        crc2.strokeStyle = "#004d26";
-    //        crc2.stroke();
-    //        crc2.fillStyle = "#113b27";
-    //        crc2.fill();
-    //    }
+    //ANIMATAION/////////////////////////////////////////////////
     function animate() {
         a5.crc2.putImageData(imagedata, 0, 0);
         //Fahrer
