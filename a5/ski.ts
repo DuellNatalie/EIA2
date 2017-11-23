@@ -9,6 +9,7 @@
 namespace a5 {
 
     export class SkiInfo {
+        
         x: number;
         y: number;
         colorKopf: string;
@@ -16,7 +17,9 @@ namespace a5 {
         speedx: number;
         speedy: number;
 
+        
         constructor(_x: number, _y: number, _speedx: number, _speedy: number, _colorKopf: string, _colorBody: string) {
+            
             this.x = _x;
             this.y = _y;
             this.speedx = _speedx;
@@ -27,9 +30,8 @@ namespace a5 {
         }
 
 
-
-
         draw(): void {
+            
             crc2.beginPath();
             crc2.arc(this.x, this.y, 10, 0, 2 * Math.PI)
             crc2.fillStyle = this.colorKopf;
@@ -50,6 +52,7 @@ namespace a5 {
 
         }
         
+        
         move(): void {
 
             if (this.x >= 800 || this.y >= 600) {
@@ -57,12 +60,10 @@ namespace a5 {
                 this.y = Math.random() * 300;
 
             }
+            
             this.x += this.speedx;
             this.y += this.speedy;
             this.draw();
-
-
-
         }
 
 

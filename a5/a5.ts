@@ -15,11 +15,7 @@ namespace a5 {
     let Snow: snowInfo[] = [];
     let Cloud: cloudInfo[] = [];
     let Ski: SkiInfo[] = [];
-    let Baum: baumInfo[] =[];
-    
-//    let BaumX: number[] = [];
-//    let BaumY: number[] = [];
-
+    let Baum: baumInfo[] = [];
 
 
     function init(): void {
@@ -73,12 +69,15 @@ namespace a5 {
 
         //Wolken 
         for (let i: number = 0; i < 3; i++) {
+            
             let s: cloudInfo = new cloudInfo(Math.random() * 800, 60 + Math.random() * 70);
             Cloud[i] = s;
         }
+        
 
         //Schnee
         for (let i: number = 0; i < 300; i++) {
+            
             let s: snowInfo = new snowInfo(Math.random() * 800, 60 + Math.random() * 600);
             Snow[i] = s;
 
@@ -87,15 +86,17 @@ namespace a5 {
 
         //Bäume
         for (let i: number = 0; i < 5; i++) {
+            
             let s: baumInfo = new baumInfo(60 + Math.random() * 300, 200 + Math.random() * 220)
-           Baum[i] = s;
+            Baum[i] = s;
         }
 
+        
         //Fahrer //
 
         for (let i: number = 0; i < 5; i++) {
 
-            let s: SkiInfo = new SkiInfo(Math.random() * 10, Math.random() * 300, Math.random() * 1 + 1.8, Math.random() * 2.5 + 1, "hsl(" + Math.random() * 360 + ", 100%, 90%)", "hsl(" + Math.random() * 360 + ", 100%, 50%)"); 
+            let s: SkiInfo = new SkiInfo(Math.random() * 10, Math.random() * 300, Math.random() * 1 + 1.8, Math.random() * 2.5 + 1, "hsl(" + Math.random() * 360 + ", 100%, 90%)", "hsl(" + Math.random() * 360 + ", 100%, 50%)");
             Ski[i] = s;
         }
 
@@ -105,7 +106,7 @@ namespace a5 {
 
 
 
-//ANIMATAION/////////////////////////////////////////////////
+    //ANIMATAION/////////////////////////////////////////////////
     function animate(): void {
         crc2.putImageData(imagedata, 0, 0);
 
@@ -119,22 +120,22 @@ namespace a5 {
         //Wolken (Bewegen sich nur in X-Richtung)
         for (let i: number = 0; i < Cloud.length; i++) {
             let s: cloudInfo = Cloud[i];
-            s.move();
+            Cloud[i].move();
         }
 
         //Schnee (Bewegt sich nur in Y-Richtung)
         for (let i: number = 0; i < Snow.length; i++) {
             let s: snowInfo = Snow[i]
-            s.move();
-            }
+            Snow[i].move();
+        }
 
-            
+
         //Bäume
         for (let i: number = 0; i < Baum.length; i++) {
 
 
             let s: baumInfo = Baum[i];
-            s.draw();
+            Baum[i].draw();
         }
 
         window.setTimeout(animate, 25);

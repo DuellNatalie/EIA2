@@ -13,8 +13,6 @@ var a5;
     let Cloud = [];
     let Ski = [];
     let Baum = [];
-    //    let BaumX: number[] = [];
-    //    let BaumY: number[] = [];
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         a5.crc2 = canvas.getContext("2d");
@@ -90,17 +88,17 @@ var a5;
         //Wolken (Bewegen sich nur in X-Richtung)
         for (let i = 0; i < Cloud.length; i++) {
             let s = Cloud[i];
-            s.move();
+            Cloud[i].move();
         }
         //Schnee (Bewegt sich nur in Y-Richtung)
         for (let i = 0; i < Snow.length; i++) {
             let s = Snow[i];
-            s.move();
+            Snow[i].move();
         }
         //B�ume
         for (let i = 0; i < Baum.length; i++) {
             let s = Baum[i];
-            s.draw();
+            Baum[i].draw();
         }
         window.setTimeout(animate, 25);
     }
