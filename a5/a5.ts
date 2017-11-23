@@ -132,8 +132,6 @@ namespace a5 {
 
         //Bäume
         for (let i: number = 0; i < Baum.length; i++) {
-
-
             
             Baum[i].draw();
         }

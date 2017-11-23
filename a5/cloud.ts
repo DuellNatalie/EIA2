@@ -34,7 +34,7 @@ namespace a5 {
 
         move(): void {
             if (this.cloudx > 820) {
-                this.cloudx = 0;
+                this.cloudx = -20;
             }
             this.cloudx += 1;
             this.draw();
