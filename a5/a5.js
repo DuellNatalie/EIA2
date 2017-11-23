@@ -58,22 +58,18 @@ var a5;
         //Wolken 
         for (let i = 0; i < 3; i++) {
             let s = new a5.cloudInfo(Math.random() * 800, 60 + Math.random() * 70);
-            Cloud[i] = s;
         }
         //Schnee
         for (let i = 0; i < 300; i++) {
             let s = new a5.snowInfo(Math.random() * 800, 60 + Math.random() * 600);
-            Snow[i] = s;
         }
         //B�ume
         for (let i = 0; i < 5; i++) {
             let s = new a5.baumInfo(60 + Math.random() * 300, 200 + Math.random() * 220);
-            Baum[i] = s;
         }
         //Fahrer //
         for (let i = 0; i < 5; i++) {
             let s = new a5.SkiInfo(Math.random() * 10, Math.random() * 300, Math.random() * 1 + 1.8, Math.random() * 2.5 + 1, "hsl(" + Math.random() * 360 + ", 100%, 90%)", "hsl(" + Math.random() * 360 + ", 100%, 50%)");
-            Ski[i] = s;
         }
         imagedata = a5.crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
@@ -87,17 +83,14 @@ var a5;
         }
         //Wolken (Bewegen sich nur in X-Richtung)
         for (let i = 0; i < Cloud.length; i++) {
-            let s = Cloud[i];
             Cloud[i].move();
         }
         //Schnee (Bewegt sich nur in Y-Richtung)
         for (let i = 0; i < Snow.length; i++) {
-            let s = Snow[i];
             Snow[i].move();
         }
         //B�ume
         for (let i = 0; i < Baum.length; i++) {
-            let s = Baum[i];
             Baum[i].draw();
         }
         window.setTimeout(animate, 25);

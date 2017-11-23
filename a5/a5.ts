@@ -71,7 +71,7 @@ namespace a5 {
         for (let i: number = 0; i < 3; i++) {
             
             let s: cloudInfo = new cloudInfo(Math.random() * 800, 60 + Math.random() * 70);
-            Cloud[i] = s;
+           
         }
         
 
@@ -79,7 +79,7 @@ namespace a5 {
         for (let i: number = 0; i < 300; i++) {
             
             let s: snowInfo = new snowInfo(Math.random() * 800, 60 + Math.random() * 600);
-            Snow[i] = s;
+            
 
         }
 
@@ -88,7 +88,7 @@ namespace a5 {
         for (let i: number = 0; i < 5; i++) {
             
             let s: baumInfo = new baumInfo(60 + Math.random() * 300, 200 + Math.random() * 220)
-            Baum[i] = s;
+           
         }
 
         
@@ -97,7 +97,7 @@ namespace a5 {
         for (let i: number = 0; i < 5; i++) {
 
             let s: SkiInfo = new SkiInfo(Math.random() * 10, Math.random() * 300, Math.random() * 1 + 1.8, Math.random() * 2.5 + 1, "hsl(" + Math.random() * 360 + ", 100%, 90%)", "hsl(" + Math.random() * 360 + ", 100%, 50%)");
-            Ski[i] = s;
+            
         }
 
         imagedata = crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -119,13 +119,13 @@ namespace a5 {
 
         //Wolken (Bewegen sich nur in X-Richtung)
         for (let i: number = 0; i < Cloud.length; i++) {
-            let s: cloudInfo = Cloud[i];
+            
             Cloud[i].move();
         }
 
         //Schnee (Bewegt sich nur in Y-Richtung)
         for (let i: number = 0; i < Snow.length; i++) {
-            let s: snowInfo = Snow[i]
+            
             Snow[i].move();
         }
 
@@ -134,7 +134,7 @@ namespace a5 {
         for (let i: number = 0; i < Baum.length; i++) {
 
 
-            let s: baumInfo = Baum[i];
+            
             Baum[i].draw();
         }
 
