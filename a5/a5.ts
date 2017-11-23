@@ -78,7 +78,7 @@ namespace a5 {
         //Schnee
         for (let i: number = 0; i < 300; i++) {
 
-            let s: snowInfo = new snowInfo(Math.random() * 800, 60 + Math.random() * 600);
+            let s: snowInfo = new snowInfo(Math.random() * 800, Math.random() * 600);
             Snow[i] = s;
 
         }
