@@ -69,15 +69,15 @@ namespace a5 {
 
         //Wolken 
         for (let i: number = 0; i < 3; i++) {
-            
+
             let s: cloudInfo = new cloudInfo(Math.random() * 800, 60 + Math.random() * 70);
             Cloud[i] = s;
         }
-        
+
 
         //Schnee
         for (let i: number = 0; i < 300; i++) {
-            
+
             let s: snowInfo = new snowInfo(Math.random() * 800, 60 + Math.random() * 600);
             Snow[i] = s;
 
@@ -86,12 +86,12 @@ namespace a5 {
 
         //Bäume
         for (let i: number = 0; i < 5; i++) {
-            
+
             let s: baumInfo = new baumInfo(60 + Math.random() * 300, 200 + Math.random() * 220)
             Baum[i] = s;
         }
 
-        
+
         //Fahrer //
 
         for (let i: number = 0; i < 5; i++) {
@@ -119,26 +119,24 @@ namespace a5 {
 
         //Wolken (Bewegen sich nur in X-Richtung)
         for (let i: number = 0; i < Cloud.length; i++) {
-            
+
             Cloud[i].move();
         }
 
         //Schnee (Bewegt sich nur in Y-Richtung)
         for (let i: number = 0; i < Snow.length; i++) {
-            
+
             Snow[i].move();
         }
 
 
         //Bäume
         for (let i: number = 0; i < Baum.length; i++) {
-            
+
             Baum[i].draw();
         }
 
         window.setTimeout(animate, 25);
-
-
 
     }
 }
