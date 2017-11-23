@@ -26,7 +26,7 @@ var a5;
         }
         move() {
             if (this.cloudx > 820) {
-                this.cloudy = 0;
+                this.cloudx = 0;
             }
             this.cloudx += 1;
             this.draw();

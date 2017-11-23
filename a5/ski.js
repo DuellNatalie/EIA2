@@ -8,19 +8,13 @@
 var a5;
 (function (a5) {
     class SkiInfo {
-        constructor(_x, _y, _speedx, _speedy) {
+        constructor(_x, _y, _speedx, _speedy, _colorKopf, _colorBody) {
             this.x = _x;
             this.y = _y;
             this.speedx = _speedx;
             this.speedy = _speedy;
-        }
-        update() {
-            this.move();
-            this.draw();
-        }
-        move() {
-            this.x += Math.random() * 1 + 2;
-            this.y += Math.random() * 3 + 1;
+            this.colorKopf = _colorKopf;
+            this.colorBody = _colorBody;
         }
         draw() {
             a5.crc2.beginPath();
@@ -41,11 +35,14 @@ var a5;
             a5.crc2.strokeStyle = "#000000";
             a5.crc2.stroke();
         }
-        setRandomStyle() {
-            this.dx = 30;
-            this.dy = 50;
-            this.colorKopf = "hsl(" + Math.random() * 360 + ", 100%, 90%)";
-            this.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+        move() {
+            if (this.x >= 800 || this.y >= 600) {
+                this.x = Math.random() * 10;
+                this.y = Math.random() * 300;
+            }
+            this.x += this.speedx;
+            this.y += this.speedy;
+            this.draw();
         }
     }
     a5.SkiInfo = SkiInfo;

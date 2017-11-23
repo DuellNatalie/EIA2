@@ -73,8 +73,7 @@ var a5;
         }
         //Fahrer //
         for (let i = 0; i < 5; i++) {
-            let s = new a5.SkiInfo(0, 0, Math.random() * 1 + 2, Math.random() * 3 + 1);
-            s.setRandomStyle();
+            let s = new a5.SkiInfo(Math.random() * 10, Math.random() * 300, Math.random() * 1 + 1.8, Math.random() * 2.5 + 1, "hsl(" + Math.random() * 360 + ", 100%, 90%)", "hsl(" + Math.random() * 360 + ", 100%, 50%)");
             Ski[i] = s;
         }
         imagedata = a5.crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -95,11 +94,7 @@ var a5;
         a5.crc2.putImageData(imagedata, 0, 0);
         //Fahrer
         for (let i = 0; i < Ski.length; i++) {
-            if (Ski[i].x >= 800 || Ski[i].y >= 600) {
-                Ski[i].x = Math.random() * 10;
-                Ski[i].y = Math.random() * 300;
-            }
-            Ski[i].update();
+            Ski[i].move();
         }
         //Wolken (Bewegen sich nur in X-Richtung)
         for (let i = 0; i < Cloud.length; i++) {

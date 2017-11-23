@@ -11,33 +11,27 @@ namespace a5 {
     export class SkiInfo {
         x: number;
         y: number;
-        dx: number;
-        dy: number;
         colorKopf: string;
         colorBody: string;
         speedx: number;
         speedy: number;
 
-        constructor(_x: number, _y: number, _speedx: number, _speedy: number) {
+        constructor(_x: number, _y: number, _speedx: number, _speedy: number, _colorKopf: string, _colorBody: string) {
             this.x = _x;
             this.y = _y;
             this.speedx = _speedx;
             this.speedy = _speedy;
+            this.colorKopf = _colorKopf;
+            this.colorBody = _colorBody;
+            
         }
 
-        update(): void {
-            this.move();
-            this.draw();
-        }
 
-        move(): void {
-            this.x += Math.random() * 1 + 2;
-            this.y += Math.random() * 3 + 1;
-        }
+
 
         draw(): void {
             crc2.beginPath();
-            crc2.arc(this.x, this.y, 10, 0, 2 * Math.PI);
+            crc2.arc(this.x, this.y, 10, 0, 2 * Math.PI)
             crc2.fillStyle = this.colorKopf;
             crc2.fill();
             crc2.beginPath();
@@ -55,15 +49,21 @@ namespace a5 {
             crc2.stroke();
 
         }
+        
+        move(): void {
+
+            if (this.x >= 800 || this.y >= 600) {
+                this.x = Math.random() * 10;
+                this.y = Math.random() * 300;
+
+            }
+            this.x += this.speedx;
+            this.y += this.speedy;
+            this.draw();
 
 
-        setRandomStyle(): void {
-            this.dx = 30;
-            this.dy = 50;
-            this.colorKopf = "hsl(" + Math.random() * 360 + ", 100%, 90%)";
-            this.colorBody = "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+
         }
-
 
 
     }

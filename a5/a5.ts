@@ -71,12 +71,6 @@ namespace a5 {
         crc2.stroke();
 
 
-
-
-
-
-
-
         //Wolken 
         for (let i: number = 0; i < 3; i++) {
             let s: cloudInfo = new cloudInfo(Math.random() * 800, 60 + Math.random() * 70);
@@ -101,8 +95,7 @@ namespace a5 {
 
         for (let i: number = 0; i < 5; i++) {
 
-            let s: SkiInfo = new SkiInfo(0, 0, Math.random() * 1 + 2, Math.random() * 3 + 1);
-            s.setRandomStyle();
+            let s: SkiInfo = new SkiInfo(Math.random() * 10, Math.random() * 300, Math.random() * 1 + 1.8, Math.random() * 2.5 + 1, "hsl(" + Math.random() * 360 + ", 100%, 90%)", "hsl(" + Math.random() * 360 + ", 100%, 50%)"); 
             Ski[i] = s;
         }
 
@@ -131,13 +124,7 @@ namespace a5 {
         //Fahrer
         for (let i: number = 0; i < Ski.length; i++) {
 
-            if (Ski[i].x >= 800 || Ski[i].y >= 600) {
-
-                Ski[i].x = Math.random() * 10;
-                Ski[i].y = Math.random() * 300;
-            }
-
-            Ski[i].update();
+            Ski[i].move();
         }
 
         //Wolken (Bewegen sich nur in X-Richtung)
