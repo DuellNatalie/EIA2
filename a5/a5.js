@@ -12,8 +12,9 @@ var a5;
     let Snow = [];
     let Cloud = [];
     let Ski = [];
-    let BaumX = [];
-    let BaumY = [];
+    let Baum = [];
+    //    let BaumX: number[] = [];
+    //    let BaumY: number[] = [];
     function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         a5.crc2 = canvas.getContext("2d");
@@ -68,8 +69,8 @@ var a5;
         }
         //B�ume
         for (let i = 0; i < 5; i++) {
-            BaumX[i] = 60 + Math.random() * 300;
-            BaumY[i] = 200 + Math.random() * 220;
+            let s = new a5.baumInfo(60 + Math.random() * 300, 200 + Math.random() * 220);
+            Baum[i] = s;
         }
         //Fahrer //
         for (let i = 0; i < 5; i++) {
@@ -79,17 +80,17 @@ var a5;
         imagedata = a5.crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }
-    function drawTree(_x, _y) {
-        a5.crc2.beginPath();
-        a5.crc2.moveTo(_x, _y);
-        a5.crc2.lineTo(_x + 40, _y + 140);
-        a5.crc2.lineTo(_x - 40, _y + 140);
-        a5.crc2.closePath();
-        a5.crc2.strokeStyle = "#004d26";
-        a5.crc2.stroke();
-        a5.crc2.fillStyle = "#113b27";
-        a5.crc2.fill();
-    }
+    //    function drawTree(_x: number, _y: number): void {
+    //        crc2.beginPath();
+    //        crc2.moveTo(_x, _y);
+    //        crc2.lineTo(_x + 40, _y + 140);
+    //        crc2.lineTo(_x - 40, _y + 140);
+    //        crc2.closePath();
+    //        crc2.strokeStyle = "#004d26";
+    //        crc2.stroke();
+    //        crc2.fillStyle = "#113b27";
+    //        crc2.fill();
+    //    }
     function animate() {
         a5.crc2.putImageData(imagedata, 0, 0);
         //Fahrer
@@ -107,8 +108,9 @@ var a5;
             s.move();
         }
         //B�ume
-        for (let i = 0; i < BaumX.length; i++) {
-            drawTree(BaumX[i], BaumY[i]);
+        for (let i = 0; i < Baum.length; i++) {
+            let s = Baum[i];
+            s.draw();
         }
         window.setTimeout(animate, 25);
     }

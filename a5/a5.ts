@@ -15,10 +15,10 @@ namespace a5 {
     let Snow: snowInfo[] = [];
     let Cloud: cloudInfo[] = [];
     let Ski: SkiInfo[] = [];
+    let Baum: baumInfo[] =[];
     
-    
-    let BaumX: number[] = [];
-    let BaumY: number[] = [];
+//    let BaumX: number[] = [];
+//    let BaumY: number[] = [];
 
 
 
@@ -87,8 +87,8 @@ namespace a5 {
 
         //Bäume
         for (let i: number = 0; i < 5; i++) {
-            BaumX[i] = 60 + Math.random() * 300;
-            BaumY[i] = 200 + Math.random() * 220;
+            let s: baumInfo = new baumInfo(60 + Math.random() * 300, 200 + Math.random() * 220)
+           Baum[i] = s;
         }
 
         //Fahrer //
@@ -104,17 +104,17 @@ namespace a5 {
     }
 
 
-    function drawTree(_x: number, _y: number): void {
-        crc2.beginPath();
-        crc2.moveTo(_x, _y);
-        crc2.lineTo(_x + 40, _y + 140);
-        crc2.lineTo(_x - 40, _y + 140);
-        crc2.closePath();
-        crc2.strokeStyle = "#004d26";
-        crc2.stroke();
-        crc2.fillStyle = "#113b27";
-        crc2.fill();
-    }
+//    function drawTree(_x: number, _y: number): void {
+//        crc2.beginPath();
+//        crc2.moveTo(_x, _y);
+//        crc2.lineTo(_x + 40, _y + 140);
+//        crc2.lineTo(_x - 40, _y + 140);
+//        crc2.closePath();
+//        crc2.strokeStyle = "#004d26";
+//        crc2.stroke();
+//        crc2.fillStyle = "#113b27";
+//        crc2.fill();
+//    }
 
 
     function animate(): void {
@@ -141,10 +141,11 @@ namespace a5 {
 
             
         //Bäume
-        for (let i: number = 0; i < BaumX.length; i++) {
+        for (let i: number = 0; i < Baum.length; i++) {
 
 
-            drawTree(BaumX[i], BaumY[i]);
+            let s: baumInfo = Baum[i];
+            s.draw();
         }
 
         window.setTimeout(animate, 25);
