@@ -8,22 +8,22 @@
 
 namespace a6 {
 
-    export class SkiInfo {
+    export class Skier extends Move{
         
         x: number;
         y: number;
         colorKopf: string;
         colorBody: string;
-        speedx: number;
-        speedy: number;
+        dx: number;
+        dy: number;
 
         
-        constructor(_x: number, _y: number, _speedx: number, _speedy: number, _colorKopf: string, _colorBody: string) {
+        constructor(_x: number, _y: number, _dx: number, _dy: number, _colorKopf: string, _colorBody: string) {
             
-            this.x = _x;
-            this.y = _y;
-            this.speedx = _speedx;
-            this.speedy = _speedy;
+            super(_x, _y)
+            
+            this.dx = _dx;
+            this.dy = _dy;
             this.colorKopf = _colorKopf;
             this.colorBody = _colorBody;
             
@@ -62,8 +62,8 @@ namespace a6 {
 
             }
             
-            this.x += this.speedx;
-            this.y += this.speedy;
+            this.x += this.dx;
+            this.y += this.dy;
             this.draw();
         }
     }

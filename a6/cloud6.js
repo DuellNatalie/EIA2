@@ -7,31 +7,30 @@
     nicht kopiert und auch nicht diktiert. */
 var a6;
 (function (a6) {
-    class cloudInfo {
-        constructor(_cloudx, _cloudy) {
-            this.cloudx = _cloudx;
-            this.cloudy = _cloudy;
+    class Clouds extends a6.Move {
+        constructor(_x, _y) {
+            super(_x, _y);
         }
         draw() {
             a6.crc2.beginPath();
-            a6.crc2.arc(this.cloudx, this.cloudy, 23, 0, 2 * Math.PI);
+            a6.crc2.arc(this.x, this.y, 23, 0, 2 * Math.PI);
             a6.crc2.fillStyle = "#ffffff";
             a6.crc2.fill();
             a6.crc2.beginPath();
-            a6.crc2.arc(this.cloudx + 23, this.cloudy - 13, 25, 0, 2 * Math.PI);
+            a6.crc2.arc(this.x + 23, this.y - 13, 25, 0, 2 * Math.PI);
             a6.crc2.fill();
             a6.crc2.beginPath();
-            a6.crc2.arc(this.cloudx + 36, this.cloudy + 4, 22, 0, 2 * Math.PI);
+            a6.crc2.arc(this.x + 36, this.y + 4, 22, 0, 2 * Math.PI);
             a6.crc2.fill();
         }
         move() {
-            if (this.cloudx > 820) {
-                this.cloudx = -20;
+            if (this.x > 820) {
+                this.x = -20;
             }
-            this.cloudx += 1;
+            this.x += 1;
             this.draw();
         }
     }
-    a6.cloudInfo = cloudInfo;
+    a6.Clouds = Clouds;
 })(a6 || (a6 = {}));
 //# sourceMappingURL=cloud6.js.map

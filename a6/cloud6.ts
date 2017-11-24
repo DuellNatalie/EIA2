@@ -8,29 +8,28 @@
 
 namespace a6 {
 
-    export class cloudInfo {
+    export class Clouds extends Move {
         
-        cloudx: number;
-        cloudy: number;
+        x: number;
+        y: number;
 
-        constructor(_cloudx: number, _cloudy: number) {
+        constructor(_x: number, _y: number) {
             
-            this.cloudx = _cloudx;
-            this.cloudy = _cloudy;
+            super(_x, _y)
 
         }
 
         draw(): void{
             
             crc2.beginPath();
-            crc2.arc(this.cloudx, this.cloudy, 23, 0, 2 * Math.PI);
+            crc2.arc(this.x, this.y, 23, 0, 2 * Math.PI);
             crc2.fillStyle = "#ffffff";
             crc2.fill();
             crc2.beginPath();
-            crc2.arc(this.cloudx + 23, this.cloudy - 13, 25, 0, 2 * Math.PI);
+            crc2.arc(this.x + 23, this.y - 13, 25, 0, 2 * Math.PI);
             crc2.fill();
             crc2.beginPath();
-            crc2.arc(this.cloudx + 36, this.cloudy + 4, 22, 0, 2 * Math.PI);
+            crc2.arc(this.x + 36, this.y + 4, 22, 0, 2 * Math.PI);
             crc2.fill();
             
         }
@@ -38,13 +37,13 @@ namespace a6 {
 
         move(): void {
             
-            if (this.cloudx > 820) {
+            if (this.x > 820) {
                 
-                this.cloudx = -20;
+                this.x = -20;
                 
             }
             
-            this.cloudx += 1;
+            this.x += 1;
             this.draw();
        
         }

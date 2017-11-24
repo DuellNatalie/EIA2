@@ -8,7 +8,7 @@
 
 namespace a6 {
     
-   export class move { 
+   export class Move { 
    
             x: number;
             y: number;
@@ -30,7 +30,7 @@ namespace a6 {
     
     move(): void {
         
-        this.draw();
+      this.draw();
         
         }
     

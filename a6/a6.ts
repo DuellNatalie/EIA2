@@ -12,13 +12,11 @@ namespace a6 {
     export let crc2: CanvasRenderingContext2D;
     let imagedata: ImageData;
 
-    let Snow: snowInfo[] = [];
-    let Cloud: cloudInfo[] = [];
-    let Ski: SkiInfo[] = [];
-    let Baum: baumInfo[] = [];
+    let shapes: Move[] = [];
+    let tree: Trees[] = [];
 
 
-    function init(): void {
+    function init(_event: Event): void {
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
 
@@ -67,19 +65,20 @@ namespace a6 {
         crc2.stroke();
 
 
-        //Wolken 
+        //Wolken  
         for (let i: number = 0; i < 3; i++) {
 
-            let s: cloudInfo = new cloudInfo(Math.random() * 800, 60 + Math.random() * 70);
-            Cloud[i] = s;
+            let c: Clouds = new Clouds(Math.random() * 800, 60 + Math.random() * 70);
+            shapes.push(c);
+
         }
 
 
-        //Schnee
+        // SCHNEE
         for (let i: number = 0; i < 300; i++) {
 
-            let s: snowInfo = new snowInfo(Math.random() * 800, Math.random() * 600);
-            Snow[i] = s;
+            let s: Snowflake = new Snowflake(Math.random() * 800, Math.random() * 600);
+            shapes.push(s);
 
         }
 
@@ -87,21 +86,24 @@ namespace a6 {
         //Bäume
         for (let i: number = 0; i < 5; i++) {
 
-            let s: baumInfo = new baumInfo(60 + Math.random() * 300, 200 + Math.random() * 220)
-            Baum[i] = s;
+            let s: Trees = new Trees(60 + Math.random() * 300, 200 + Math.random() * 220)
+            tree[i] = s;
+
         }
 
 
-        //Fahrer //
-
+        //Fahrer
         for (let i: number = 0; i < 5; i++) {
 
-            let s: SkiInfo = new SkiInfo(Math.random() * 10, Math.random() * 300, Math.random() * 1 + 1.8, Math.random() * 2.5 + 1, "hsl(" + Math.random() * 360 + ", 100%, 90%)", "hsl(" + Math.random() * 360 + ", 100%, 50%)");
-            Ski[i] = s;
+            let f: Skier = new Skier(Math.random() * 10, Math.random() * 300, Math.random() * 1 + 1.5, Math.random() * 2.5 + 1, "hsl(" + Math.random() * 360 + ", 100%, 90%)", "hsl(" + Math.random() * 360 + ", 100%, 50%)");
+            shapes.push(f);
+
         }
+
 
         imagedata = crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
+
     }
 
 
@@ -111,29 +113,18 @@ namespace a6 {
         crc2.putImageData(imagedata, 0, 0);
 
 
-        //Fahrer
-        for (let i: number = 0; i < Ski.length; i++) {
+        for (let i: number = 0; i < shapes.length; i++) {
+            let s: Move = shapes[i];
+            s.move();
 
-            Ski[i].move();
-        }
-
-        //Wolken (Bewegen sich nur in X-Richtung)
-        for (let i: number = 0; i < Cloud.length; i++) {
-
-            Cloud[i].move();
-        }
-
-        //Schnee (Bewegt sich nur in Y-Richtung)
-        for (let i: number = 0; i < Snow.length; i++) {
-
-            Snow[i].move();
         }
 
 
         //Bäume
-        for (let i: number = 0; i < Baum.length; i++) {
+        for (let i: number = 0; i < tree.length; i++) {
 
-            Baum[i].draw();
+            tree[i].draw();
+
         }
 
         window.setTimeout(animate, 25);

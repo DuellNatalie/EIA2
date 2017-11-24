@@ -7,7 +7,7 @@
     nicht kopiert und auch nicht diktiert. */
 var a6;
 (function (a6) {
-    class move {
+    class Move {
         constructor(_x, _y) {
             this.x = _x;
             this.y = _y;
@@ -19,6 +19,6 @@ var a6;
             this.draw();
         }
     }
-    a6.move = move;
+    a6.Move = Move;
 })(a6 || (a6 = {}));
 //# sourceMappingURL=move.js.map

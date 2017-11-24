@@ -8,22 +8,22 @@
 
 namespace a6 {
 
-    export class snowInfo {
+    export class Snowflake extends Move {
         
-        snowx: number;
-        snowy: number;
+        x: number;
+        y: number;
 
-        constructor(_snowx: number, _snowy: number) {
+        constructor(_x: number, _y: number) {
             
-            this.snowx = _snowx;
-            this.snowy = _snowy;
+           super(_x, _y)
+
 
         }
 
         draw(): void {
             
             crc2.beginPath();
-            crc2.arc(this.snowx, this.snowy, 4, 0, 2 * Math.PI);
+            crc2.arc(this.x, this.y, 4, 0, 2 * Math.PI);
             crc2.fillStyle = "#ffffff";
             crc2.fill();
             
@@ -32,13 +32,13 @@ namespace a6 {
 
         move(): void {
             
-            if (this.snowy > 590) {
+            if (this.y > 590) {
                 
-                this.snowy = 0;
+                this.y = 0;
                 
             }
             
-            this.snowy += 3;
+            this.y += 3;
             this.draw();
             
         }

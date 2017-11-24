@@ -9,11 +9,9 @@ var a6;
 (function (a6) {
     window.addEventListener("load", init);
     let imagedata;
-    let Snow = [];
-    let Cloud = [];
-    let Ski = [];
-    let Baum = [];
-    function init() {
+    let shapes = [];
+    let tree = [];
+    function init(_event) {
         let canvas = document.getElementsByTagName("canvas")[0];
         a6.crc2 = canvas.getContext("2d");
         //Himmel
@@ -55,25 +53,25 @@ var a6;
         a6.crc2.moveTo(50, 0);
         a6.crc2.lineTo(800, 555);
         a6.crc2.stroke();
-        //Wolken 
+        //Wolken  
         for (let i = 0; i < 3; i++) {
-            let s = new a6.cloudInfo(Math.random() * 800, 60 + Math.random() * 70);
-            Cloud[i] = s;
+            let c = new a6.Clouds(Math.random() * 800, 60 + Math.random() * 70);
+            shapes.push(c);
         }
-        //Schnee
+        // SCHNEE
         for (let i = 0; i < 300; i++) {
-            let s = new a6.snowInfo(Math.random() * 800, Math.random() * 600);
-            Snow[i] = s;
+            let s = new a6.Snowflake(Math.random() * 800, Math.random() * 600);
+            shapes.push(s);
         }
         //B�ume
         for (let i = 0; i < 5; i++) {
-            let s = new a6.baumInfo(60 + Math.random() * 300, 200 + Math.random() * 220);
-            Baum[i] = s;
+            let s = new a6.Trees(60 + Math.random() * 300, 200 + Math.random() * 220);
+            tree[i] = s;
         }
-        //Fahrer //
+        //Fahrer
         for (let i = 0; i < 5; i++) {
-            let s = new a6.SkiInfo(Math.random() * 10, Math.random() * 300, Math.random() * 1 + 1.8, Math.random() * 2.5 + 1, "hsl(" + Math.random() * 360 + ", 100%, 90%)", "hsl(" + Math.random() * 360 + ", 100%, 50%)");
-            Ski[i] = s;
+            let f = new a6.Skier(Math.random() * 10, Math.random() * 300, Math.random() * 1 + 1.5, Math.random() * 2.5 + 1, "hsl(" + Math.random() * 360 + ", 100%, 90%)", "hsl(" + Math.random() * 360 + ", 100%, 50%)");
+            shapes.push(f);
         }
         imagedata = a6.crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
@@ -81,21 +79,13 @@ var a6;
     //ANIMATAION/////////////////////////////////////////////////
     function animate() {
         a6.crc2.putImageData(imagedata, 0, 0);
-        //Fahrer
-        for (let i = 0; i < Ski.length; i++) {
-            Ski[i].move();
-        }
-        //Wolken (Bewegen sich nur in X-Richtung)
-        for (let i = 0; i < Cloud.length; i++) {
-            Cloud[i].move();
-        }
-        //Schnee (Bewegt sich nur in Y-Richtung)
-        for (let i = 0; i < Snow.length; i++) {
-            Snow[i].move();
+        for (let i = 0; i < shapes.length; i++) {
+            let s = shapes[i];
+            s.move();
         }
         //B�ume
-        for (let i = 0; i < Baum.length; i++) {
-            Baum[i].draw();
+        for (let i = 0; i < tree.length; i++) {
+            tree[i].draw();
         }
         window.setTimeout(animate, 25);
     }

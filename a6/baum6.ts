@@ -8,15 +8,15 @@
 
 namespace a6 {
     
-    export class baumInfo {
+    export class Trees {
         
-        baumx: number;
-        baumy: number
+        x: number;
+        y: number
 
-        constructor(_baumx: number, _baumy: number) {
+        constructor(_x: number, _y: number) {
             
-            this.baumx = _baumx;
-            this.baumy = _baumy
+            this.x = _x;
+            this.y = _y
             
         }
 
@@ -24,9 +24,9 @@ namespace a6 {
         draw(): void {
             
             crc2.beginPath();
-            crc2.moveTo(this.baumx, this.baumy);
-            crc2.lineTo(this.baumx + 40, this.baumy + 140);
-            crc2.lineTo(this.baumx - 40, this.baumy + 140);
+            crc2.moveTo(this.x, this.y);
+            crc2.lineTo(this.x + 40, this.y + 140);
+            crc2.lineTo(this.x - 40, this.y + 140);
             crc2.closePath();
             crc2.strokeStyle = "#004d26";
             crc2.stroke();

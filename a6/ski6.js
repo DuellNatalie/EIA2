@@ -7,12 +7,11 @@
     nicht kopiert und auch nicht diktiert. */
 var a6;
 (function (a6) {
-    class SkiInfo {
-        constructor(_x, _y, _speedx, _speedy, _colorKopf, _colorBody) {
-            this.x = _x;
-            this.y = _y;
-            this.speedx = _speedx;
-            this.speedy = _speedy;
+    class Skier extends a6.Move {
+        constructor(_x, _y, _dx, _dy, _colorKopf, _colorBody) {
+            super(_x, _y);
+            this.dx = _dx;
+            this.dy = _dy;
             this.colorKopf = _colorKopf;
             this.colorBody = _colorBody;
         }
@@ -40,11 +39,11 @@ var a6;
                 this.x = Math.random() * 10;
                 this.y = Math.random() * 300;
             }
-            this.x += this.speedx;
-            this.y += this.speedy;
+            this.x += this.dx;
+            this.y += this.dy;
             this.draw();
         }
     }
-    a6.SkiInfo = SkiInfo;
+    a6.Skier = Skier;
 })(a6 || (a6 = {}));
 //# sourceMappingURL=ski6.js.map

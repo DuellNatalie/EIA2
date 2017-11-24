@@ -7,25 +7,24 @@
     nicht kopiert und auch nicht diktiert. */
 var a6;
 (function (a6) {
-    class snowInfo {
-        constructor(_snowx, _snowy) {
-            this.snowx = _snowx;
-            this.snowy = _snowy;
+    class Snowflake extends a6.Move {
+        constructor(_x, _y) {
+            super(_x, _y);
         }
         draw() {
             a6.crc2.beginPath();
-            a6.crc2.arc(this.snowx, this.snowy, 4, 0, 2 * Math.PI);
+            a6.crc2.arc(this.x, this.y, 4, 0, 2 * Math.PI);
             a6.crc2.fillStyle = "#ffffff";
             a6.crc2.fill();
         }
         move() {
-            if (this.snowy > 590) {
-                this.snowy = 0;
+            if (this.y > 590) {
+                this.y = 0;
             }
-            this.snowy += 3;
+            this.y += 3;
             this.draw();
         }
     }
-    a6.snowInfo = snowInfo;
+    a6.Snowflake = Snowflake;
 })(a6 || (a6 = {}));
 //# sourceMappingURL=snow6.js.map
