@@ -7,17 +7,22 @@
     nicht kopiert und auch nicht diktiert. */
 
 namespace a5 {
+    
     export class baumInfo {
+        
         baumx: number;
         baumy: number
 
         constructor(_baumx: number, _baumy: number) {
+            
             this.baumx = _baumx;
             this.baumy = _baumy
+            
         }
 
 
         draw(): void {
+            
             crc2.beginPath();
             crc2.moveTo(this.baumx, this.baumy);
             crc2.lineTo(this.baumx + 40, this.baumy + 140);
@@ -27,9 +32,7 @@ namespace a5 {
             crc2.stroke();
             crc2.fillStyle = "#113b27";
             crc2.fill();
+            
         }
-
-
-
     }
 }
