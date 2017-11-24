@@ -12,6 +12,12 @@ var a6;
             this.x = _x;
             this.y = _y;
         }
+        draw() {
+            //xx//
+        }
+        move() {
+            this.draw();
+        }
     }
     a6.move = move;
 })(a6 || (a6 = {}));

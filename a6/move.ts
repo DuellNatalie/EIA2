@@ -19,8 +19,20 @@ namespace a6 {
             this.y = _y;
 
         }
+       
+       
+       draw(): void {
+           
+           //xx//
+           
+           }
+       
     
-    
+    move(): void {
+        
+        this.draw();
+        
+        }
     
     
     
