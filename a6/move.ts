@@ -9,7 +9,8 @@
 namespace a6 {
     
    export class move { 
-    
+            x: number;
+            y: number;
     
     
     
