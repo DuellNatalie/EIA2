@@ -1,12 +1,12 @@
-/* Aufgabe: 5
+/* Aufgabe: 6
     Name: Natalie Düll
     Matrikel: 256026
-    Datum: 17.11.2017
+    Datum: 24.11.2017
     Hiermit versichere ich, dass ich diesen
     Code selbst geschrieben habe. Er wurde
     nicht kopiert und auch nicht diktiert. */
 
-namespace a5 {
+namespace a6 {
 
     export class snowInfo {
         
