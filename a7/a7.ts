@@ -42,7 +42,6 @@ namespace StudiVZ {
 
     function saveData(_input: string): string {
          var splitted: string[] = _input.split(',');
-        
 
     for (var matrikel in splitted) {
         
