@@ -1,7 +1,7 @@
 /* Aufgabe: 7
     Name: Natalie D�ll
     Matrikel: 256026
-    Datum: 1.12.2017
+    Datum: 01.12.2017
     Hiermit versichere ich, dass ich diesen
     Code selbst geschrieben habe. Er wurde
     nicht kopiert und auch nicht diktiert. */
@@ -14,7 +14,7 @@ var StudiVZ;
         switch (action) {
             case "n":
             case "N":
-                var input = prompt("Eingabe (jeweils mit Komma getrennt) von\nMatrikelnummer, Name, Vorname, Alter, Geschlecht (0 oder 1) und Kommentar");
+                var input = prompt("Eingabe (jeweils mit Komma getrennt) von\nMatrikelnummer, Name, Vorname, Alter, Geschlecht (m oder w) und Kommentar");
                 alert(saveData(input));
                 break;
             case "a":
@@ -28,10 +28,14 @@ var StudiVZ;
         }
     }
     function saveData(_input) {
+        var splitted = _input.split(',');
         return "Hier fehlt noch der richtige Code...";
     }
     function queryData(_matrikel) {
         return "Hier fehlt noch der richtige Code...";
+        //         if( ){ //Daten gespeichert -> zur�ckgeben
+        //            }        
+        //       else {return "Diese Daten sind uns nicht bekannt!"}
     }
 })(StudiVZ || (StudiVZ = {}));
 //# sourceMappingURL=a7.js.map
