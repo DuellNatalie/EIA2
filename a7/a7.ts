@@ -44,7 +44,12 @@ namespace StudiVZ {
          var splitted: string[] = _input.split(',');
         
 
-    
+    for (var matrikel in splitted) {
+        
+        students.matrikel = parseInt(splitted[0])
+        
+        
+        }
 
  
        

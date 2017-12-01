@@ -29,6 +29,8 @@ var StudiVZ;
     }
     function saveData(_input) {
         var splitted = _input.split(',');
+        for (var matrikel in splitted) {
+        }
         return "Hier fehlt noch der richtige Code...";
     }
     function queryData(_matrikel) {
