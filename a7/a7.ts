@@ -26,7 +26,7 @@ namespace StudiVZ {
         switch (action) {
             case "n":
             case "N":
-                var input: string = prompt("Eingabe (jeweils mit Komma getrennt) von\nMatrikelnummer, Name, Vorname, Alter, Geschlecht (m oder w) und Kommentar");
+                var input: string = prompt("Eingabe (jeweils mit Komma getrennt) von\nMatrikelnummer, Name, Vorname, Alter, Geschlecht (0 (m) oder 1 (w)) und Kommentar");
                 alert(saveData(input));
                 break;
             case "a":
@@ -41,33 +41,50 @@ namespace StudiVZ {
     }
 
     function saveData(_input: string): string {
-         var splitted: string[] = _input.split(',');
+        
+        let splitted: string[] = _input.split(',');
+  
+        let studentDat: StudentData = { 
+        
+            matrikel: parseInt(splitted[0]),
+            lastname: splitted[1],
+            firstname: splitted[2],
+            age: parseInt(splitted[3]),
+            gender: parseInt(splitted[4]) == 0,
+            com: splitted[5],
+            }
 
-    for (var matrikel in splitted) {
+         if (Number.isNaN(studentDat.matrikel)) {
+            return "Matrikelnummer falsch";
+            }
         
-        students.matrikel = parseInt(splitted[0])
+        students.push(studentDat);
         
+      
         
-        }
-
- 
-       
-        
-   
-        
-return "Hier fehlt noch der richtige Code...";
-         
-
-        
-        
-    }
+  return "Deine Daten: " + "\nMatrikelnummer: " + studentDat.matrikel + "\nName: " + studentDat.lastname + "\nVorname: " + studentDat.firstname + "\nAlter: " + studentDat.age + "\nGeschlecht: " + studentDat.gender + "\nKommentar: " + studentDat.com;
+        }         
     
-    function queryData(_matrikel: number): string {
-        return "Hier fehlt noch der richtige Code...";
+    
+    function queryData(_matr: number): string {
         
-//         if( ){ //Daten gespeichert -> zurückgeben
-           
-//            }        
-//       else {return "Diese Daten sind uns nicht bekannt!"}
-    }
+        for (let i: number = 0; i < students.length; i++) {
+            
+        if (students[i].matrikel == _matr) {
+        
+      
+        return "Deine Daten: " + "\nMatrikelnummer: " + students[i].matrikel + "\nName: " + students[i].lastname + "\nVorname: " + students[i].firstname + "\nAlter: " + students[i].age + "\nGeschlecht: " + students[i].gender + "\nKommentar: " + students[i].com;
+        
 }
+            
+        
+        else {
+                continue;
+            }
+        }
+        return "Matrikelnummer nicht gespeichert";
+
+}          
+}       
+        
+
