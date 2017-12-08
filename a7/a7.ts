@@ -50,10 +50,10 @@ namespace StudiVZ {
 
         let splitted: string[] = _input.split(',');  //splitted:  variable zum speichern von data in array, _input.split(','): durch , gesplitted
 
-        let studentDat: StudentData = {
+        let studentDat: StudentData = { //
 
             matrikel: parseInt(splitted[0]),
-            lastname: splitted[1],
+            lastname: splitted[1], //Stelle 1 in Array
             firstname: splitted[2],
             age: parseInt(splitted[3]),
             gender: parseInt(splitted[4]) == 0,
