@@ -13,7 +13,7 @@ namespace a8
     
     function input () : void    {
         
-        let n = prompt("10 - 100 Q");
+        let n = prompt("Bitte gib eine Zahl zwischen 10 und 100 ein!");
         
         if (Number.isNaN(parseInt(n)) || parseInt(n) < 10 || parseInt(n) > 100) {
             alert("Versuche es noch einmal!");
@@ -36,7 +36,7 @@ namespace a8
         div.style.width = "25px";
         div.style.height = "25px";
         
-        div.style.backgroundColor = "hsl(" + color + ", 100%, 50%)";
+        div.style.backgroundColor = "hsl(" + color + ", 100%, 35%)";
         
         div.style.left = x + "px";
         div.style.top = y + "px";
@@ -45,22 +45,3 @@ namespace a8
     }
     
 }
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
