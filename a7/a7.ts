@@ -19,10 +19,10 @@ namespace StudiVZ {
         
     }
 
-    var students: StudentData[] = [];
+    var students: StudentData[] = []; //v students von typ StudentData Array
     var stop: boolean = false;
 
-    while (!stop) {
+    while (!stop) { //solange stop false
         var action: string = prompt("Datensatz anlegen (n), abfragen(a) oder Programm beenden (s)\nn, a oder s eingeben");
 
         switch (action) {

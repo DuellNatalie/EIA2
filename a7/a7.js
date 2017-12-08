@@ -7,7 +7,7 @@
     nicht kopiert und auch nicht diktiert. */
 var StudiVZ;
 (function (StudiVZ) {
-    var students = [];
+    var students = []; //v students von typ StudentData Array
     var stop = false;
     while (!stop) {
         var action = prompt("Datensatz anlegen (n), abfragen(a) oder Programm beenden (s)\nn, a oder s eingeben");
