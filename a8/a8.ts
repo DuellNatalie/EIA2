@@ -6,28 +6,30 @@
     Code selbst geschrieben habe. Er wurde
     nicht kopiert und auch nicht diktiert.*/
 
-namespace a8   
- {
+namespace a8   {
 
     window.addEventListener("load", input);
     
     function input () : void    {
         
-        let num = prompt("Bitte gib eine Zahl zwischen 10 und 100 ein!");
+        let num: string = prompt("Bitte gib eine Zahl zwischen 10 und 100 ein!");
         
         if (Number.isNaN(parseInt(num)) || parseInt(num) < 10 || parseInt(num) > 100) {
-            alert("Versuche es noch einmal!");
             
+            alert("Versuche es noch einmal!");  
             input();
+        
         }
         
         else {
+            
             for (let i = 0; i < parseInt(num); i++) {
-                drawSquare(Math.random() * window.innerWidth - 110, Math.random() * window.innerHeight - 150, Math.random() * 360);
+                drawSquare(Math.random() * window.innerWidth - 50, Math.random() * window.innerHeight - 50, Math.random() * 360);
+            
             }
-        }
-        
+        }     
     }
+    
     
     function drawSquare (x : number, y : number, color : number) : void {
         
@@ -35,13 +37,10 @@ namespace a8
         
         div.style.width = "40px";
         div.style.height = "40px";
-        
-        div.style.backgroundColor = "hsl(" + color + ", 100%, 35%)";
-        
+        div.style.backgroundColor = "hsl(" + color + ", 100%, 35%)"; 
         div.style.left = x + "px";
         div.style.top = y + "px";
         
         document.body.appendChild(div);
-    }
-    
+    } 
 }

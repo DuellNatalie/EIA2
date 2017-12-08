@@ -16,7 +16,7 @@ var a8;
         }
         else {
             for (let i = 0; i < parseInt(num); i++) {
-                drawSquare(Math.random() * window.innerWidth - 110, Math.random() * window.innerHeight - 150, Math.random() * 360);
+                drawSquare(Math.random() * window.innerWidth - 50, Math.random() * window.innerHeight - 50, Math.random() * 360);
             }
         }
     }
