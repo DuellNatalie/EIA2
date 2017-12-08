@@ -52,11 +52,11 @@ namespace StudiVZ {
 
         let studentDat: StudentData = { //
 
-            matrikel: parseInt(splitted[0]),
+            matrikel: parseInt(splitted[0]), //Pase Int wandelt substring in zahl
             lastname: splitted[1], //Stelle 1 in Array
             firstname: splitted[2],
             age: parseInt(splitted[3]),
-            gender: parseInt(splitted[4]) == 0,
+            gender: parseInt(splitted[4]) == 0, //boolean, wenn 0 eigegeben wird ist es true (männlich), 
             com: splitted[5],
             
         }
