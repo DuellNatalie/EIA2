@@ -49,9 +49,10 @@ var StudiVZ;
                 return "Deine Daten: " + "\nMatrikelnr: " + students[i].matrikel + "\nName: " + students[i].lastname + "\nVorname: " + students[i].firstname + "\nAlter: " + students[i].age + "\nGeschlecht: " + students[i].gender + "\nKommentar: " + students[i].com;
             }
             else {
-                return "Matrikelnummer nicht gespeichert";
+                continue;
             }
         }
+        return "Matrikelnummer nicht gespeichert";
     }
 })(StudiVZ || (StudiVZ = {}));
 //# sourceMappingURL=a7.js.map
