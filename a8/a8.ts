@@ -33,8 +33,8 @@ namespace a8
         
         let div = document.createElement("div");
         
-        div.style.width = "25px";
-        div.style.height = "25px";
+        div.style.width = "40px";
+        div.style.height = "40px";
         
         div.style.backgroundColor = "hsl(" + color + ", 100%, 35%)";
         

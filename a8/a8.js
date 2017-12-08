@@ -22,8 +22,8 @@ var a8;
     }
     function init(x, y, color) {
         let div = document.createElement("div");
-        div.style.width = "25px";
-        div.style.height = "25px";
+        div.style.width = "40px";
+        div.style.height = "40px";
         div.style.backgroundColor = "hsl(" + color + ", 100%, 35%)";
         div.style.left = x + "px";
         div.style.top = y + "px";
