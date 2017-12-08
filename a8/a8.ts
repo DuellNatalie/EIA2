@@ -23,7 +23,7 @@ namespace a8
         
         else {
             for (let i = 0; i < parseInt(n); i++) {
-                init(Math.random() * window.innerWidth - 130, Math.random() * window.innerHeight - 130, Math.random() * 360);
+                init(Math.random() * window.innerWidth - 110, Math.random() * window.innerHeight - 150, Math.random() * 360);
             }
         }
         
