@@ -28,7 +28,7 @@ var StudiVZ;
         }
     }
     function saveData(_input) {
-        let splitted = _input.split(',');
+        let splitted = _input.split(','); //splitted:  variable zum speichern von data in array, _input.split(','): durch , gesplitted
         let studentDat = {
             matrikel: parseInt(splitted[0]),
             lastname: splitted[1],
@@ -40,7 +40,7 @@ var StudiVZ;
         if (Number.isNaN(studentDat.matrikel)) {
             return "Matrikelnummer falsch";
         }
-        students.push(studentDat);
+        students.push(studentDat); //studentsa Array wird um studentDat erweitert
         return "Deine Daten: " + "\nMatrikelnr: " + studentDat.matrikel + "\nName: " + studentDat.lastname + "\nVorname: " + studentDat.firstname + "\nAlter: " + studentDat.age + "\nGeschlecht: " + studentDat.gender + "\nKommentar: " + studentDat.com;
     }
     function queryData(_matr) {

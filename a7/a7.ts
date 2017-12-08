@@ -46,9 +46,9 @@ namespace StudiVZ {
         }
     }
 
-    function saveData(_input: string): string {
+    function saveData(_input: string): string { //gibt String zurück
 
-        let splitted: string[] = _input.split(',');
+        let splitted: string[] = _input.split(',');  //splitted:  variable zum speichern von data in array, _input.split(','): durch , gesplitted
 
         let studentDat: StudentData = {
 
@@ -67,7 +67,7 @@ namespace StudiVZ {
             
         }
 
-        students.push(studentDat);
+        students.push(studentDat); //studentsa Array wird um studentDat erweitert
 
         return "Deine Daten: " + "\nMatrikelnr: " + studentDat.matrikel + "\nName: " + studentDat.lastname + "\nVorname: " + studentDat.firstname + "\nAlter: " + studentDat.age + "\nGeschlecht: " + studentDat.gender + "\nKommentar: " + studentDat.com;
     }
