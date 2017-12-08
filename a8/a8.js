@@ -9,18 +9,18 @@ var a8;
 (function (a8) {
     window.addEventListener("load", input);
     function input() {
-        let n = prompt("Bitte gib eine Zahl zwischen 10 und 100 ein!");
-        if (Number.isNaN(parseInt(n)) || parseInt(n) < 10 || parseInt(n) > 100) {
+        let num = prompt("Bitte gib eine Zahl zwischen 10 und 100 ein!");
+        if (Number.isNaN(parseInt(num)) || parseInt(num) < 10 || parseInt(num) > 100) {
             alert("Versuche es noch einmal!");
             input();
         }
         else {
-            for (let i = 0; i < parseInt(n); i++) {
-                init(Math.random() * window.innerWidth - 110, Math.random() * window.innerHeight - 150, Math.random() * 360);
+            for (let i = 0; i < parseInt(num); i++) {
+                drawSquare(Math.random() * window.innerWidth - 110, Math.random() * window.innerHeight - 150, Math.random() * 360);
             }
         }
     }
-    function init(x, y, color) {
+    function drawSquare(x, y, color) {
         let div = document.createElement("div");
         div.style.width = "40px";
         div.style.height = "40px";
