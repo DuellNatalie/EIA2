@@ -24,8 +24,8 @@ namespace a8   {
         else {
             
             for (let i = 0; i < parseInt(num); i++) {
-                drawSquare(Math.random() * window.innerWidth - 50, Math.random() * window.innerHeight - 50, Math.random() * 360);
-            
+                drawSquare(Math.random() * window.innerWidth - 45, Math.random() * window.innerHeight - 45, Math.random() * 360);
+                    //The innerWidth property returns the inner width of a window's content area (w3schools)
             }
         }     
     }
@@ -33,7 +33,7 @@ namespace a8   {
     
     function drawSquare (x : number, y : number, color : number) : void {
         
-        let div = document.createElement("div");
+        let div = document.createElement("div"); //creates an Element Node with the specified name
         
         div.style.width = "40px";
         div.style.height = "40px";
@@ -41,6 +41,6 @@ namespace a8   {
         div.style.left = x + "px";
         div.style.top = y + "px";
         
-        document.body.appendChild(div);
+        document.body.appendChild(div); //Append <div> to <body>
     } 
 }

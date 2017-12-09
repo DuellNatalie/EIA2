@@ -16,18 +16,18 @@ var a8;
         }
         else {
             for (let i = 0; i < parseInt(num); i++) {
-                drawSquare(Math.random() * window.innerWidth - 50, Math.random() * window.innerHeight - 50, Math.random() * 360);
+                drawSquare(Math.random() * window.innerWidth - 45, Math.random() * window.innerHeight - 45, Math.random() * 360);
             }
         }
     }
     function drawSquare(x, y, color) {
-        let div = document.createElement("div");
+        let div = document.createElement("div"); //creates an Element Node with the specified name
         div.style.width = "40px";
         div.style.height = "40px";
         div.style.backgroundColor = "hsl(" + color + ", 100%, 35%)";
         div.style.left = x + "px";
         div.style.top = y + "px";
-        document.body.appendChild(div);
+        document.body.appendChild(div); //Append <div> to <body>
     }
 })(a8 || (a8 = {}));
 //# sourceMappingURL=a8.js.map
