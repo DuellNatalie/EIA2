@@ -78,7 +78,7 @@ namespace StudiVZ {
 
         for (let i: number = 0; i < students.length; i++) {
 
-            if (students[i].matrikel == _matr) { //wenn gespeichert
+            if (students[0].matrikel == _matr) { //wenn gespeichert
 
                 return "Deine Daten: " + "\nMatrikelnr: " + students[i].matrikel + "\nName: " + students[i].lastname + "\nVorname: " + students[i].firstname + "\nAlter: " + students[i].age + "\nGeschlecht: " + students[i].gender + "\nKommentar: " + students[i].com;
 
