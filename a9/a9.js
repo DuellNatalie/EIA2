@@ -32,6 +32,7 @@ var a9;
         let inputBox = document.createElement("div");
     }
     function pressKey() {
+        // #99dfff
     }
     function mouseClick() {
     }
