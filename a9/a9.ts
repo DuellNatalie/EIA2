@@ -8,16 +8,31 @@
 
 namespace a9   {
     
-    let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    window.addEventListener("load", init);
+    let Letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    let div = document.createElement("div");
+    
+    function init() {
+        for (let i = 0; i < Letters.length; i++) {
+            div.innerText = Letters[i]
+            div.style.textAlign = "center";
+            
+        
+        
+        
+        
+        
+        }
+        }
     
     
     
+  function pressKey() {
+        }   
     
     
-    
-    
-    
-    
+   function mouseClick() {
+        }  
     
     
     
