@@ -10,9 +10,9 @@ namespace a9   {
     
     window.addEventListener("load", init);
     let Letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  
+    let output: string = "";
     
-    function init() {
+    function init() : void {
         for (let i = 0; i < Letters.length; i++) {
             let div = document.createElement("div");
             div.innerText = Letters[i]
@@ -30,11 +30,15 @@ namespace a9   {
             div.addEventListener("mousedown", pressKey);
             document.body.appendChild(div);
             }
-        }
-    
-    function inputBox() {
-        let inputBox = document.createElement("div");
-        
+
+        let inputBox = document.createElement("div");  
+        inputBox.style.width = "80%";
+        inputBox.style.margin = "5px";
+        inputBox.style.height = "600px";
+        inputBox.style.backgroundColor = "white";
+        inputBox.style.border = "solid #00334d 3px";
+        inputBox.addEventListener("mousedown", drawLetter);
+        document.body.appendChild(inputBox);
         
         }
     
@@ -43,7 +47,13 @@ namespace a9   {
         }   
     
     
-   function mouseClick() {
+   function mouseClick(_event: MouseEvent) : void{
+       if (output == "") {
+       let mouse: HTMLDivElement = <HTMLDivElement>_event.target;
+           mouse.style.backgroundColor = "white";
+           mouse.style.color = "#00334d";
+           output = mouse.id;
+                }       
         }  
     
     
