@@ -62,8 +62,10 @@ namespace a9 {
 
 
     function drawLetter(_event: MouseEvent): void {
-        if (output == "") //wenn output leer -> funktion wird beendet
+        if (output == "")
+        { //wenn output leer -> funktion wird beendet
             return;
+        }
             
     else {
             
@@ -72,7 +74,7 @@ namespace a9 {
         newDiv.style.position = "absolute"; //sonst: Buchstaben erscheinen nach box(nach nächstem Element, standart (static))
         newDiv.style.color = "#00334d";
         newDiv.style.font = "bold 2.3em Courier,serif";
-        newDiv.style.left = _event.pageX + "px";
+        newDiv.style.left = _event.pageX + "px"; //px macht es zum string, dort wird es gezeichnet
         newDiv.style.top = _event.pageY + "px";
         newDiv.addEventListener("mousedown", deleteDiv)
         document.body.appendChild(newDiv);

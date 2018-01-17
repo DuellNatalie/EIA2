@@ -47,15 +47,16 @@ var a9;
         output = div2.id; //legt die id in variable output  
     }
     function drawLetter(_event) {
-        if (output == "")
+        if (output == "") {
             return;
+        }
         else {
             let newDiv = document.createElement("div");
             newDiv.innerText = output;
             newDiv.style.position = "absolute"; //sonst: Buchstaben erscheinen nach box(nach n�chstem Element, standart (static))
             newDiv.style.color = "#00334d";
             newDiv.style.font = "bold 2.3em Courier,serif";
-            newDiv.style.left = _event.pageX + "px";
+            newDiv.style.left = _event.pageX + "px"; //px macht es zum string, dort wird es gezeichnet
             newDiv.style.top = _event.pageY + "px";
             newDiv.addEventListener("mousedown", deleteDiv);
             document.body.appendChild(newDiv);
