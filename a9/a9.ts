@@ -87,21 +87,5 @@ function drawLetter(_event: MouseEvent) : void {
             let letter: HTMLDivElement = <HTMLDivElement>_event.target;
             document.body.removeChild(letter);
         }
-        }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        }   
  }
