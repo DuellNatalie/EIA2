@@ -52,12 +52,12 @@ function inputBox() : void {
     
     
 function mouseClick(_event: MouseEvent) : void {
-    if (output == "") {
+   
         let div2: HTMLDivElement = <HTMLDivElement>_event.target;
         div2.style.color = "#00334d";
         div2.style.backgroundColor = "#99dfff";
         output = div2.id;
-        }   
+        
     }
     
     
@@ -78,15 +78,11 @@ function drawLetter(_event: MouseEvent) : void {
     let reset: HTMLDivElement = <HTMLDivElement>document.getElementById(output);
     reset.style.color = "white";
     reset.style.backgroundColor = "#00334d";
-    output = ""; 
+   
 
     }    
     
     function deleteDiv(_event: MouseEvent) : void{
-        if (_event.altKey == false){
-            return;
-            }
-        
         if (_event.altKey == true) {
             let letter: HTMLDivElement = <HTMLDivElement>_event.target;
             document.body.removeChild(letter);

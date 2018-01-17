@@ -42,16 +42,14 @@ var a9;
         document.body.appendChild(inputBox);
     }
     function mouseClick(_event) {
-       
-            let div2 = _event.target;
-            div2.style.color = "#00334d";
-            div2.style.backgroundColor = "#99dfff";
-            output = div2.id;      
+        let div2 = _event.target;
+        div2.style.color = "#00334d";
+        div2.style.backgroundColor = "#99dfff";
+        output = div2.id;
     }
-    
     function drawLetter(_event) {
         if (output == "")
-        return;
+            return;
         let newDiv = document.createElement("div");
         newDiv.innerText = output;
         newDiv.style.position = "absolute"; //sonst: Buchstaben erscheinen nach box(nach n�chstem Element, standart (static))
@@ -63,13 +61,9 @@ var a9;
         document.body.appendChild(newDiv);
         let reset = document.getElementById(output);
         reset.style.color = "white";
-        reset.style.backgroundColor = "#00334d";    
+        reset.style.backgroundColor = "#00334d";
     }
-    
     function deleteDiv(_event) {
-        if (_event.altKey == false) {
-            return;
-        }
         if (_event.altKey == true) {
             let letter = _event.target;
             document.body.removeChild(letter);
