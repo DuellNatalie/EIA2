@@ -18,7 +18,7 @@ namespace a9 {
     function init(): void {
         for (let i = 0; i < Letters.length; i++) {
             
-            let div = document.createElement("div");
+            let div = document.createElement("div"); 
             div.innerText = Letters[i];
             div.style.width = "40px";
             div.style.height = "40px";
@@ -30,14 +30,14 @@ namespace a9 {
             div.style.color = "white";
             div.style.backgroundColor = "#00334d";
             div.style.display = "inline";
-            div.id = Letters[i].toUpperCase(); //Werden groß geschrieben
-            div.addEventListener("mousedown", mouseClick);
+            div.id = Letters[i].toUpperCase(); //div mit id A  (Stelle0) um darauf zugreifen zu können (weiß welcher container angeklickt wird) -> Werden groß geschrieben
+            div.addEventListener("mousedown", mouseClick);  //-> mit diesem container kann man was machen
             document.body.appendChild(div);
         }
         inputBox();
     }
 
-    function inputBox(): void {
+    function inputBox(): void { //zeichnet kasten
 
         let inputBox: HTMLDivElement = document.createElement("div");
         inputBox.style.width = "80%";
@@ -51,20 +51,22 @@ namespace a9 {
     }
 
 
-    function mouseClick(_event: MouseEvent): void {
+    function mouseClick(_event: MouseEvent): void { //funktion holt sich event
 
-        let div2: HTMLDivElement = <HTMLDivElement>_event.target;
+        let div2: HTMLDivElement = <HTMLDivElement>_event.target; //div2 als neue variable wird erstellt, sie ist gleich das HTML Div Element welches ziel meines mausklicks war
         div2.style.color = "#00334d";
         div2.style.backgroundColor = "#99dfff";
-        output = div2.id;
+        output = div2.id; //legt die id in variable output  
 
     }
 
 
     function drawLetter(_event: MouseEvent): void {
-        if (output == "")
+        if (output == "") //wenn output leer -> funktion wird beendet
             return;
-
+            
+    else {
+            
         let newDiv: HTMLDivElement = document.createElement("div");
         newDiv.innerText = output;
         newDiv.style.position = "absolute"; //sonst: Buchstaben erscheinen nach box(nach nächstem Element, standart (static))
@@ -75,16 +77,17 @@ namespace a9 {
         newDiv.addEventListener("mousedown", deleteDiv)
         document.body.appendChild(newDiv);
 
-        let reset: HTMLDivElement = <HTMLDivElement>document.getElementById(output);
+        let reset: HTMLDivElement = <HTMLDivElement>document.getElementById(output); //buchstabe wird resettet, setzt auf ursür+nglichen wert zurück
         reset.style.color = "white";
         reset.style.backgroundColor = "#00334d";
+        }
 
 
     }
 
     function deleteDiv(_event: MouseEvent): void {
         if (_event.altKey == true) {
-            let letter: HTMLDivElement = <HTMLDivElement>_event.target;
+            let letter: HTMLDivElement = <HTMLDivElement>_event.target; //element, welches ich ausgewählt habe
             document.body.removeChild(letter);
         }
     }

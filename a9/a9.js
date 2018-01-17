@@ -24,8 +24,8 @@ var a9;
             div.style.color = "white";
             div.style.backgroundColor = "#00334d";
             div.style.display = "inline";
-            div.id = Letters[i].toUpperCase(); //Werden gro� geschrieben
-            div.addEventListener("mousedown", mouseClick);
+            div.id = Letters[i].toUpperCase(); //div mit id A  (Stelle0) um darauf zugreifen zu k�nnen (wei� welcher container angeklickt wird) -> Werden gro� geschrieben
+            div.addEventListener("mousedown", mouseClick); //-> mit diesem container kann man was machen
             document.body.appendChild(div);
         }
         inputBox();
@@ -41,30 +41,32 @@ var a9;
         document.body.appendChild(inputBox);
     }
     function mouseClick(_event) {
-        let div2 = _event.target;
+        let div2 = _event.target; //div2 als neue variable wird erstellt, sie ist gleich das HTML Div Element welches ziel meines mausklicks war
         div2.style.color = "#00334d";
         div2.style.backgroundColor = "#99dfff";
-        output = div2.id;
+        output = div2.id; //legt die id in variable output  
     }
     function drawLetter(_event) {
         if (output == "")
             return;
-        let newDiv = document.createElement("div");
-        newDiv.innerText = output;
-        newDiv.style.position = "absolute"; //sonst: Buchstaben erscheinen nach box(nach n�chstem Element, standart (static))
-        newDiv.style.color = "#00334d";
-        newDiv.style.font = "bold 2.3em Courier,serif";
-        newDiv.style.left = _event.pageX + "px";
-        newDiv.style.top = _event.pageY + "px";
-        newDiv.addEventListener("mousedown", deleteDiv);
-        document.body.appendChild(newDiv);
-        let reset = document.getElementById(output);
-        reset.style.color = "white";
-        reset.style.backgroundColor = "#00334d";
+        else {
+            let newDiv = document.createElement("div");
+            newDiv.innerText = output;
+            newDiv.style.position = "absolute"; //sonst: Buchstaben erscheinen nach box(nach n�chstem Element, standart (static))
+            newDiv.style.color = "#00334d";
+            newDiv.style.font = "bold 2.3em Courier,serif";
+            newDiv.style.left = _event.pageX + "px";
+            newDiv.style.top = _event.pageY + "px";
+            newDiv.addEventListener("mousedown", deleteDiv);
+            document.body.appendChild(newDiv);
+            let reset = document.getElementById(output); //buchstabe wird resettet, setzt auf urs�r+nglichen wert zur�ck
+            reset.style.color = "white";
+            reset.style.backgroundColor = "#00334d";
+        }
     }
     function deleteDiv(_event) {
         if (_event.altKey == true) {
-            let letter = _event.target;
+            let letter = _event.target; //element, welches ich ausgew�hlt habe
             document.body.removeChild(letter);
         }
     }
