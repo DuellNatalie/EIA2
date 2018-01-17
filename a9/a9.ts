@@ -34,8 +34,12 @@ namespace a9   {
             div.addEventListener("mousedown", mouseClick);
             document.body.appendChild(div);
             }
-//Box
-        let inputBox: HTMLDivElement = document.createElement("div");  
+    inputBox();
+        }
+    
+function inputBox() : void {
+    
+    let inputBox: HTMLDivElement = document.createElement("div");  
         inputBox.style.width = "80%";
         inputBox.style.margin = "5px";
         inputBox.style.height = "600px";
@@ -43,8 +47,9 @@ namespace a9   {
         inputBox.style.border = "solid #00334d 3px";
         inputBox.addEventListener("mousedown", drawLetter);
         document.body.appendChild(inputBox);
-        
-        }
+    
+    
+    }
     
     
 function mouseClick(_event: MouseEvent) : void {

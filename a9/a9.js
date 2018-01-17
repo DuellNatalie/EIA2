@@ -30,7 +30,9 @@ var a9;
             div.addEventListener("mousedown", mouseClick);
             document.body.appendChild(div);
         }
-        //Box
+        inputBox();
+    }
+    function inputBox() {
         let inputBox = document.createElement("div");
         inputBox.style.width = "80%";
         inputBox.style.margin = "5px";
