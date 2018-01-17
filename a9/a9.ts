@@ -9,7 +9,7 @@
 namespace a9   {
     
     window.addEventListener("load", init);
-    document.addEventListener("keydown", mouseClick);
+    
     
     let Letters : string [] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     let output: string = "";
@@ -18,7 +18,7 @@ namespace a9   {
     function init() :void {
         for (let i = 0; i < Letters.length; i++) {
        //Buchstaben
-            let div = document.createElement("div");
+            let div = document.createElement("div"); 
             div.innerText = Letters[i];
             div.style.width = "40px";
             div.style.height = "40px";
@@ -30,7 +30,7 @@ namespace a9   {
             div.style.color = "white";
             div.style.backgroundColor = "#00334d";
             div.style.display = "inline";  
-            div.id = Letters[i].toUpperCase();
+            div.id = Letters[i].toUpperCase(); //Werden groß geschrieben
             div.addEventListener("mousedown", mouseClick);
             document.body.appendChild(div);
             }
@@ -47,7 +47,6 @@ function inputBox() : void {
         inputBox.style.border = "solid #00334d 3px";
         inputBox.addEventListener("mousedown", drawLetter);
         document.body.appendChild(inputBox);
-    
     
     }
     

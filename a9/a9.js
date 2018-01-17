@@ -8,7 +8,6 @@
 var a9;
 (function (a9) {
     window.addEventListener("load", init);
-    document.addEventListener("keydown", mouseClick);
     let Letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     let output = "";
     function init() {
@@ -26,7 +25,7 @@ var a9;
             div.style.color = "white";
             div.style.backgroundColor = "#00334d";
             div.style.display = "inline";
-            div.id = Letters[i].toUpperCase();
+            div.id = Letters[i].toUpperCase(); //Werden gro� geschrieben
             div.addEventListener("mousedown", mouseClick);
             document.body.appendChild(div);
         }
@@ -65,8 +64,9 @@ var a9;
         let reset = document.getElementById(output);
         reset.style.color = "white";
         reset.style.backgroundColor = "#00334d";
-        output = "";
+        
     }
+    
     function deleteDiv(_event) {
         if (_event.altKey == false) {
             return;
