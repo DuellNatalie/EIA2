@@ -9,29 +9,33 @@
 namespace a9   {
     
     window.addEventListener("load", init);
-    let Letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    let output: string = "";
+    document.addEventListener("keydown", mouseClick);
     
-    function init() : void {
+    let Letters : string [] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    let output: string = "";
+ 
+    
+    function init() :void {
         for (let i = 0; i < Letters.length; i++) {
+       //Buchstaben
             let div = document.createElement("div");
-            div.innerText = Letters[i]
+            div.innerText = Letters[i];
             div.style.width = "40px";
             div.style.height = "40px";
             div.style.textAlign = "center";
-            div.style.font = "bold 20px Courier,serif";
+            div.style.font = "bold 2.3em Courier,serif";
             div.style.marginLeft = "5px";
             div.style.marginTop = "5px";
             div.style.padding = "6px";
             div.style.color = "white";
             div.style.backgroundColor = "#00334d";
-            div.style.fontSize = "2.3em";
             div.style.display = "inline";  
-            div.addEventListener("mousedown", pressKey);
+            div.id = Letters[i].toUpperCase();
+            div.addEventListener("mousedown", mouseClick);
             document.body.appendChild(div);
             }
-
-        let inputBox = document.createElement("div");  
+//Box
+        let inputBox: HTMLDivElement = document.createElement("div");  
         inputBox.style.width = "80%";
         inputBox.style.margin = "5px";
         inputBox.style.height = "600px";
@@ -42,37 +46,62 @@ namespace a9   {
         
         }
     
-  function pressKey() {
-      // #99dfff
+    
+function mouseClick(_event: MouseEvent) : void {
+    if (output == "") {
+        let div2: HTMLDivElement = <HTMLDivElement>_event.target;
+        div2.style.color = "#00334d";
+        div2.style.backgroundColor = "#99dfff";
+        output = div2.id;
         }   
-    
-    
-   function mouseClick(_event: MouseEvent) : void{
-       if (output == "") {
-       let mouse: HTMLDivElement = <HTMLDivElement>_event.target;
-           mouse.style.backgroundColor = "white";
-           mouse.style.color = "#00334d";
-           output = mouse.id;
-                }       
-        }  
-    
-    
-     function drawLetter() {
-        } 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     }
+    
+    
+function drawLetter(_event: MouseEvent) : void {
+    if (output == "")
+    return;
+    
+    let newDiv: HTMLDivElement = document.createElement("div");
+    newDiv.innerText = output;
+    newDiv.style.position = "absolute"; //sonst: Buchstaben erscheinen nach box(nach nächstem Element, standart (static))
+    newDiv.style.color = "#00334d";
+    newDiv.style.font = "bold 2.3em Courier,serif";
+    newDiv.style.left = _event.pageX + "px";
+    newDiv.style.top = _event.pageY + "px";
+    newDiv.addEventListener("mousedown", deleteDiv)
+    document.body.appendChild(newDiv);
+
+    let reset: HTMLDivElement = <HTMLDivElement>document.getElementById(output);
+    reset.style.color = "white";
+    reset.style.backgroundColor = "#00334d";
+    output = ""; 
+
+    }    
+    
+    function deleteDiv(_event: MouseEvent) : void{
+        if (_event.altKey == false){
+            return;
+            }
+        
+        if (_event.altKey == true) {
+            let letter: HTMLDivElement = <HTMLDivElement>_event.target;
+            document.body.removeChild(letter);
+        }
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ }
