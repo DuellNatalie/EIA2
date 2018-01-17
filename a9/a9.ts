@@ -17,7 +17,7 @@ namespace a9 {
 
     function init(): void {
         for (let i = 0; i < Letters.length; i++) {
-            //Buchstaben
+            
             let div = document.createElement("div");
             div.innerText = Letters[i];
             div.style.width = "40px";

@@ -12,7 +12,6 @@ var a9;
     let output = "";
     function init() {
         for (let i = 0; i < Letters.length; i++) {
-            //Buchstaben
             let div = document.createElement("div");
             div.innerText = Letters[i];
             div.style.width = "40px";
