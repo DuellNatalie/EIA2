@@ -30,7 +30,7 @@ namespace a9 {
             div.style.color = "white";
             div.style.backgroundColor = "#00334d";
             div.style.display = "inline"; //(weiß welcher container angeklickt wird) -> Werden groß geschrieben v
-            div.id = Letters[i] //div mit id A  (Stelle0) um darauf zugreifen zu können 
+            div.id = Letters[i].toUpperCase(); //div mit id A  (Stelle0) um darauf zugreifen zu können 
             div.addEventListener("mousedown", mouseClick);  //-> mit diesem container kann man was machen
             document.body.appendChild(div);
         }
