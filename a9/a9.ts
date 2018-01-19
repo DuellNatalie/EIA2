@@ -1,5 +1,5 @@
 /*  Aufgabe 9
-    Name: Natalie Düll
+    Name: Natalie DÃ¼ll
     Matrikel: 256026
     Datum: 15.12.2017
     Hiermit versichere ich, dass ich diesen
@@ -29,8 +29,8 @@ namespace a9 {
             div.style.padding = "6px";
             div.style.color = "white";
             div.style.backgroundColor = "#00334d";
-            div.style.display = "inline";
-            div.id = Letters[i].toUpperCase(); //div mit id A  (Stelle0) um darauf zugreifen zu können (weiß welcher container angeklickt wird) -> Werden groß geschrieben
+            div.style.display = "inline"; //(weiÃŸ welcher container angeklickt wird) -> Werden groÃŸ geschrieben v
+            div.id = Letters[i] //div mit id A  (Stelle0) um darauf zugreifen zu kÃ¶nnen 
             div.addEventListener("mousedown", mouseClick);  //-> mit diesem container kann man was machen
             document.body.appendChild(div);
         }
@@ -71,7 +71,7 @@ namespace a9 {
             
         let newDiv: HTMLDivElement = document.createElement("div");
         newDiv.innerText = output;
-        newDiv.style.position = "absolute"; //sonst: Buchstaben erscheinen nach box(nach nächstem Element, standart (static))
+        newDiv.style.position = "absolute"; //sonst: Buchstaben erscheinen nach box(nach nÃ¤chstem Element, standart (static))
         newDiv.style.color = "#00334d";
         newDiv.style.font = "bold 2.3em Courier,serif";
         newDiv.style.left = _event.pageX + "px"; //px macht es zum string, dort wird es gezeichnet
@@ -79,7 +79,7 @@ namespace a9 {
         newDiv.addEventListener("mousedown", deleteDiv)
         document.body.appendChild(newDiv);
 
-        let reset: HTMLDivElement = <HTMLDivElement>document.getElementById(output); //buchstabe wird resettet, setzt auf ursür+nglichen wert zurück
+        let reset: HTMLDivElement = <HTMLDivElement>document.getElementById(output); //buchstabe wird resettet, setzt auf ursÃ¼r+nglichen wert zurÃ¼ck
         reset.style.color = "white";
         reset.style.backgroundColor = "#00334d";
         }
@@ -89,7 +89,7 @@ namespace a9 {
 
     function deleteDiv(_event: MouseEvent): void {
         if (_event.altKey == true) {
-            let letter: HTMLDivElement = <HTMLDivElement>_event.target; //element, welches ich ausgewählt habe
+            let letter: HTMLDivElement = <HTMLDivElement>_event.target; //element, welches ich ausgewÃ¤hlt habe
             document.body.removeChild(letter);
         }
     }
