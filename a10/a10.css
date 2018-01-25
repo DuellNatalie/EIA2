@@ -6,4 +6,12 @@
 	Code selbst geschrieben habe. Er wurde
 	nicht kopiert und auch nicht diktiert.*/
 	
-	
+h1 {
+	font-size: 2em;
+	color: #006666;
+}
+
+h2 {
+	font-size: 1.5em;
+	color: #003366;
+}
