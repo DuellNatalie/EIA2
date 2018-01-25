@@ -8,5 +8,7 @@
 var a10;
 (function (a10) {
     window.addEventListener("load", init);
+    function init() {
+    }
 })(a10 || (a10 = {}));
 //# sourceMappingURL=a10.js.map

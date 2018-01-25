@@ -9,10 +9,13 @@
 namespace a10 {
     window.addEventListener("load", init);
     
-    
-    
 
     
+function init(): void {
+        
+ 
+        }
 
+    
     
     }
