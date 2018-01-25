@@ -5,4 +5,10 @@
     Hiermit versichere ich, dass ich diesen
     Code selbst geschrieben habe. Er wurde
     nicht kopiert und auch nicht diktiert.*/
+var a10;
+(function (a10) {
+    window.addEventListener("load", init);
+    function init() {
+    }
+})(a10 || (a10 = {}));
 //# sourceMappingURL=a10.js.map

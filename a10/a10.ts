@@ -7,6 +7,32 @@
     nicht kopiert und auch nicht diktiert.*/
 
 namespace a10 {
+    window.addEventListener("load", init);
+    
+    
+    
+    
+    
+    
+    function init(): void {
+        
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
