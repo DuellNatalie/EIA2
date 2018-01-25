@@ -23,8 +23,8 @@ var a9;
             div.style.padding = "6px";
             div.style.color = "white";
             div.style.backgroundColor = "#00334d";
-            div.style.display = "inline"; //(weiß welcher container angeklickt wird)v
-            div.id = Letters[i]; //div mit id A  (Stelle0) um darauf zugreifen zu können 
+            div.style.display = "inline"; //(weiss welcher container angeklickt wird)v //horizontal
+            div.id = Letters[i]; //div mit id A  (Stelle0) um darauf zugreifen zu koennen 
             div.addEventListener("mousedown", mouseClick); //-> mit diesem container kann man was machen
             document.body.appendChild(div);
         }
@@ -60,14 +60,14 @@ var a9;
             newDiv.style.top = _event.pageY + "px";
             newDiv.addEventListener("mousedown", deleteDiv);
             document.body.appendChild(newDiv);
-            let reset = document.getElementById(output); //buchstabe wird resettet, setzt auf ursür+nglichen wert zurück
-            reset.style.color = "white";
+            let reset = document.getElementById(output); //buchstabe wird resettet, setzt auf urspruenglichen wert zurueck
+            reset.style.color = "white"; // neues element = altes div2 element
             reset.style.backgroundColor = "#00334d";
         }
     }
     function deleteDiv(_event) {
         if (_event.altKey == true) {
-            let letter = _event.target; //element, welches ich ausgewählt habe
+            let letter = _event.target; //wie element, welches ich ausgewaehlt habe, wird dann gel�scht
             document.body.removeChild(letter);
         }
     }
