@@ -40,7 +40,7 @@ var StudiVZ;
         if (Number.isNaN(studentDat.matrikel)) {
             return "Matrikelnummer falsch";
         }
-        students.push(studentDat); //studentsa Array wird um studentDat erweitert
+        students.push(studentDat); //students Array wird um studentDat erweitert
         return "Deine Daten: " + "\nMatrikelnr: " + studentDat.matrikel + "\nName: " + studentDat.lastname + "\nVorname: " + studentDat.firstname + "\nAlter: " + studentDat.age + "\nGeschlecht: " + studentDat.gender + "\nKommentar: " + studentDat.com;
     }
     function queryData(_matr) {

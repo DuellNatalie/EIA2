@@ -20,12 +20,12 @@ namespace StudiVZ {
     }
 
     var students: StudentData[] = []; //v students von typ StudentData Array
-    var stop: boolean = false;
+    var stop: boolean = false; 
 
-    while (!stop) { //solange stop false
+    while (!stop) { //solange booleab stop auf false ist
         var action: string = prompt("Datensatz anlegen (n), abfragen(a) oder Programm beenden (s)\nn, a oder s eingeben");
 
-        switch (action) {
+        switch (action) { 
 
             case "n":
             case "N":
@@ -50,7 +50,7 @@ namespace StudiVZ {
 
         let splitted: string[] = _input.split(',');  //splitted:  variable zum speichern von data in array, _input.split(','): durch , gesplitted
 
-        let studentDat: StudentData = { //
+        let studentDat: StudentData = { //interface variable
 
             matrikel: parseInt(splitted[0]), //Pase Int wandelt substring in zahl
             lastname: splitted[1], //Stelle 1 in Array
@@ -67,7 +67,7 @@ namespace StudiVZ {
 
         }
 
-        students.push(studentDat); //studentsa Array wird um studentDat erweitert
+        students.push(studentDat); //students Array wird um studentDat erweitert
 
         return "Deine Daten: " + "\nMatrikelnr: " + studentDat.matrikel + "\nName: " + studentDat.lastname + "\nVorname: " + studentDat.firstname + "\nAlter: " + studentDat.age + "\nGeschlecht: " + studentDat.gender + "\nKommentar: " + studentDat.com;
     }
