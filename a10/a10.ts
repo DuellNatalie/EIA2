@@ -6,3 +6,8 @@
     Code selbst geschrieben habe. Er wurde
     nicht kopiert und auch nicht diktiert.*/
 
+namespace a10 {
+    
+    
+    
+    }

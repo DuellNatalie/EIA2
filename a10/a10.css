@@ -15,3 +15,42 @@ h2 {
 	font-size: 1.5em;
 	color: #003366;
 }
+
+body {
+	float: left;
+	color: black;
+	font-size: 1em;
+	width: 100%;
+	margin-left: 5%;
+}
+
+input {
+	margin: 0.8em;
+}
+
+button {
+	background-color: #7DCEA0;
+	color: white;
+    padding: 0.5em;
+    text-align: center;
+    display: inline-block;
+    margin: 0.5em;    
+}
+
+#data input {
+	display: block;
+	height: 10%;
+	width: 15%;
+}
+
+#cart {
+	position: fixed;
+	right: 0.5em;
+	top: 0.5em;
+	padding: 1em;	
+}
+
+.shoppingcart {
+	font-size: 2em;
+}
+ 
