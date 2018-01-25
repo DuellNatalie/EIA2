@@ -7,5 +7,5 @@
 	nicht kopiert und auch nicht diktiert.*/
 
 div {
-	position: absolute;
+	position: absolute; /* Sonst: Seite nach uten scrollbar */
 }
