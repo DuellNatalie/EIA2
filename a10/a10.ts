@@ -1,5 +1,5 @@
 /*  Aufgabe 10
-    Name: Natalie Düll
+    Name: Natalie DÃ¼ll
     Matrikel: 256026
     Datum: 11.01.2018
     Hiermit versichere ich, dass ich diesen
@@ -11,12 +11,7 @@ namespace a10 {
     
     
     
-    
-    
-    
-    function init(): void {
-        
-        }
+
     
 
     
