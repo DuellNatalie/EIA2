@@ -1,46 +1,14 @@
 /* 	Aufgabe 10
 	Name: Natalie Düll
 	Matrikel: 256026
-	Datum: 11.01.2018
-	Hiermit versichere ich, dass ich diesen
-	Code selbst geschrieben habe. Er wurde
-	nicht kopiert und auch nicht diktiert.*/
+	Datum: 11.01.2018.*/
 	
-h1 {
-	font-size: 2em;
-	color: #006666;
+legend {
+	font-size: 1.2em;
 }
 
-h2 {
-	font-size: 1.5em;
-	color: #003366;
+fieldset {
+	color: #359e16;
+	width: 50%;
+	margin-top: 0.2em;
 }
-
-body {
-	float: left;
-	color: black;
-	font-size: 1em;
-	width: 100%;
-	margin-left: 5%;
-}
-
-
-
-button {
-	background-color: black;
-	color: white;
-    padding: 0.3em;
-    text-align: center;
-    display: inline-block;
-    margin: 0.3em;    
-}
-
-
-#cart {
-	position: fixed;
-	right: 0.5em;
-	top: 0.5em;
-	padding: 1em;	
-}
-
- 
