@@ -1,5 +1,5 @@
 /*  Aufgabe 9
-    Name: Natalie D�ll
+    Name: Natalie Düll
     Matrikel: 256026
     Datum: 15.12.2017
     Hiermit versichere ich, dass ich diesen
@@ -23,8 +23,8 @@ var a9;
             div.style.padding = "6px";
             div.style.color = "white";
             div.style.backgroundColor = "#00334d";
-            div.style.display = "inline";
-            div.id = Letters[i].toUpperCase(); //div mit id A  (Stelle0) um darauf zugreifen zu k�nnen (wei� welcher container angeklickt wird) -> Werden gro� geschrieben
+            div.style.display = "inline"; //(weiß welcher container angeklickt wird)v
+            div.id = Letters[i]; //div mit id A  (Stelle0) um darauf zugreifen zu können 
             div.addEventListener("mousedown", mouseClick); //-> mit diesem container kann man was machen
             document.body.appendChild(div);
         }
@@ -53,21 +53,21 @@ var a9;
         else {
             let newDiv = document.createElement("div");
             newDiv.innerText = output;
-            newDiv.style.position = "absolute"; //sonst: Buchstaben erscheinen nach box(nach n�chstem Element, standart (static))
+            newDiv.style.position = "absolute"; //sonst: Buchstaben erscheinen nach box(nach nächstem Element, standart (static))
             newDiv.style.color = "#00334d";
             newDiv.style.font = "bold 2.3em Courier,serif";
             newDiv.style.left = _event.pageX + "px"; //px macht es zum string, dort wird es gezeichnet
             newDiv.style.top = _event.pageY + "px";
             newDiv.addEventListener("mousedown", deleteDiv);
             document.body.appendChild(newDiv);
-            let reset = document.getElementById(output); //buchstabe wird resettet, setzt auf urs�r+nglichen wert zur�ck
+            let reset = document.getElementById(output); //buchstabe wird resettet, setzt auf ursür+nglichen wert zurück
             reset.style.color = "white";
             reset.style.backgroundColor = "#00334d";
         }
     }
     function deleteDiv(_event) {
         if (_event.altKey == true) {
-            let letter = _event.target; //element, welches ich ausgew�hlt habe
+            let letter = _event.target; //element, welches ich ausgewählt habe
             document.body.removeChild(letter);
         }
     }
