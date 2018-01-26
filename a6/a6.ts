@@ -16,7 +16,7 @@ namespace a6 {
     let tree: Trees[] = [];
 
 
-    function init(): void { //
+    function init(): void { 
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
 
@@ -69,7 +69,7 @@ namespace a6 {
         for (let i: number = 0; i < 3; i++) {
 
             let c: Clouds = new Clouds(Math.random() * 800, 60 + Math.random() * 70);
-            shapes.push(c);
+            shapes.push(c); 
 
         }
 
@@ -86,7 +86,7 @@ namespace a6 {
         //Bäume
         for (let i: number = 0; i < 5; i++) {
 
-            let s: Trees = new Trees(60 + Math.random() * 300, 200 + Math.random() * 220)
+            let s: Trees = new Trees(60 + Math.random() * 300, 200 + Math.random() * 220) //element erstellen, in array füllen
             tree[i] = s;
 
         }
@@ -114,8 +114,8 @@ namespace a6 {
 
 
         for (let i: number = 0; i < shapes.length; i++) {
-            let s: Move = shapes[i];
-            s.move();
+            let s: Move = shapes[i]; //s = das objekt an der stelle die ich abfrage
+            s.move(); 
 
         }
 

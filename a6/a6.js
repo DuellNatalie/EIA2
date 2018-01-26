@@ -65,7 +65,7 @@ var a6;
         }
         //B�ume
         for (let i = 0; i < 5; i++) {
-            let s = new a6.Trees(60 + Math.random() * 300, 200 + Math.random() * 220);
+            let s = new a6.Trees(60 + Math.random() * 300, 200 + Math.random() * 220); //element erstellen, in array f�llen
             tree[i] = s;
         }
         //Fahrer
@@ -80,7 +80,7 @@ var a6;
     function animate() {
         a6.crc2.putImageData(imagedata, 0, 0);
         for (let i = 0; i < shapes.length; i++) {
-            let s = shapes[i];
+            let s = shapes[i]; //s = das objekt an der stelle die ich abfrage
             s.move();
         }
         //B�ume
