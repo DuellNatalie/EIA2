@@ -11,7 +11,7 @@ var a6;
     let imagedata;
     let shapes = [];
     let tree = [];
-    function init(_event) {
+    function init() {
         let canvas = document.getElementsByTagName("canvas")[0];
         a6.crc2 = canvas.getContext("2d");
         //Himmel

@@ -16,7 +16,7 @@ namespace a6 {
     let tree: Trees[] = [];
 
 
-    function init(_event: Event): void {
+    function init(): void { //
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
 
