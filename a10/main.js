@@ -81,11 +81,10 @@ var L10_DOM;
             // was im kaestchen/neben auswahl steht
             radio.setAttribute("type", "radio"); //typ radio
             radio.setAttribute("name", "baeume"); //name: baeume
-            radio.setAttribute("value", baeume[i].preis.toString()); //wert
+            radio.setAttribute("value", baeume[i].preis.toString());
             radio.setAttribute("id", baeume[i].name);
             radio.addEventListener("change", HandleChange);
             label.innerText = baeume[i].name;
-            console.log(radio);
             fieldset.appendChild(radio);
             fieldset.appendChild(label);
         }
@@ -101,7 +100,6 @@ var L10_DOM;
             radio.setAttribute("id", halterung[i].name);
             radio.addEventListener("change", HandleChange);
             label.innerText = halterung[i].name;
-            console.log(radio);
             fieldset2.appendChild(radio);
             fieldset2.appendChild(label);
         }
@@ -112,9 +110,10 @@ var L10_DOM;
             var label = document.createElement("LABEL");
             var stepper = document.createElement("INPUT");
             stepper.setAttribute("name", schmuck[i].name);
+            // hier schmuck[i] weil man mehr als 1 auswaehlen kann
             stepper.setAttribute("type", "number");
-            stepper.setAttribute("min", "0");
-            stepper.setAttribute("value", "0");
+            stepper.setAttribute("min", "0"); //minwert
+            stepper.setAttribute("value", "0"); //startwert
             stepper.setAttribute("id", schmuck[i].name);
             stepper.addEventListener("change", HandleChange);
             label.innerText = schmuck[i].name;
@@ -149,7 +148,6 @@ var L10_DOM;
             radio.setAttribute("id", lieferung[i].name);
             radio.addEventListener("change", HandleChange);
             label.innerText = lieferung[i].name;
-            console.log(radio);
             fieldset5.appendChild(radio);
             fieldset5.appendChild(label);
         }
