@@ -1,5 +1,5 @@
 /*  Aufgabe 9
-    Name: Natalie Düll
+    Name: Natalie Duell
     Matrikel: 256026
     Datum: 15.12.2017
     Hiermit versichere ich, dass ich diesen
@@ -83,8 +83,6 @@ namespace a9 {
         reset.style.color = "white";                                // neues element = altes div2 element
         reset.style.backgroundColor = "#00334d";
         }
-
-
     }
 
     function deleteDiv(_event: MouseEvent): void {//funktion holt sich event

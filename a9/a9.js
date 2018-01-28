@@ -1,5 +1,5 @@
 /*  Aufgabe 9
-    Name: Natalie Düll
+    Name: Natalie Duell
     Matrikel: 256026
     Datum: 15.12.2017
     Hiermit versichere ich, dass ich diesen
