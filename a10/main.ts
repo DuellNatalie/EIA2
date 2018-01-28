@@ -89,7 +89,7 @@ namespace L10_DOM {
             var label: HTMLElement = document.createElement("LABEL");
             // was im kaestchen/neben auswahl steht
             radio.setAttribute("type", "radio"); //typ radio
-          
+            radio.setAttribute("name", "baeume"); //name: baeume
             radio.setAttribute("value", baeume[i].preis.toString()); //wert
             radio.setAttribute("id", baeume[i].name);
             radio.addEventListener("change", HandleChange);
