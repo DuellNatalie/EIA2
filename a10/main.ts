@@ -241,9 +241,9 @@ namespace L10_DOM {
         
         
         
-        let neu: HTMLElement = document.createElement("div");
-        neu.innerText = "Warenkorb\n"; //Text, Absatz
-        document.body.appendChild(neu);
+        let warenkorb: HTMLElement = document.createElement("div");
+        warenkorb.innerText = "Warenkorb\n"; //Text, Absatz
+        document.body.appendChild(warenkorb);
 
         function HandleChange(_event: Event): void {
             // was angeklickt? welche eigenschaften, id

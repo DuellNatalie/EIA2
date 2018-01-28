@@ -197,9 +197,9 @@ var L10_DOM;
         daten.appendChild(mail);
         //ChangeHandler---------------------------------------------------------------------
         //  WK reagiert auf change-Event, was habe ich angewahetlt, wv kostet es
-        let neu = document.createElement("div");
-        neu.innerText = "Warenkorb\n"; //Text, Absatz
-        document.body.appendChild(neu);
+        let warenkorb = document.createElement("div");
+        warenkorb.innerText = "Warenkorb\n"; //Text, Absatz
+        document.body.appendChild(warenkorb);
         function HandleChange(_event) {
             // was angeklickt? welche eigenschaften, id
             //wv schmuck? * preis
