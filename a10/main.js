@@ -106,23 +106,15 @@ var L10_DOM;
         var fieldset3 = document.createElement("FIELDSET");
         document.body.appendChild(fieldset3);
         for (let i = 0; i < schmuck.length; i++) {
-            // var box: HTMLElement = document.createElement("INPUT");
             var label = document.createElement("LABEL");
             var stepper = document.createElement("INPUT");
-            //  box.setAttribute("type", "checkbox");
-            //  box.setAttribute("name", schmuck[i].name);
-            // box.setAttribute("value", schmuck[i].name);
-            //  box.setAttribute("id", schmuck[i].name);
             stepper.setAttribute("name", schmuck[i].name);
             stepper.setAttribute("type", "number");
             stepper.setAttribute("min", "0");
             stepper.setAttribute("value", "0");
             stepper.setAttribute("id", schmuck[i].name);
-            //  box.addEventListener("change", HandleChange);
             stepper.addEventListener("change", HandleChange);
             label.innerText = schmuck[i].name;
-            //  console.log(box);
-            //fieldset3.appendChild(box);
             fieldset3.appendChild(label);
             fieldset3.appendChild(stepper);
         }
@@ -130,23 +122,15 @@ var L10_DOM;
         var fieldset4 = document.createElement("FIELDSET");
         document.body.appendChild(fieldset4);
         for (let i = 0; i < kerze.length; i++) {
-            // var box2: HTMLElement = document.createElement("INPUT");
             var label = document.createElement("LABEL");
             var stepper2 = document.createElement("INPUT");
-            //  box2.setAttribute("type", "checkbox");
-            //  box2.setAttribute("name", kerze[i].name);
-            //  box2.setAttribute("value", kerze[i].name);
-            //  box2.setAttribute("id", kerze[i].name);
             stepper2.setAttribute("name", kerze[i].name);
             stepper2.setAttribute("type", "number");
             stepper2.setAttribute("min", "0");
             stepper2.setAttribute("value", "0");
             stepper2.setAttribute("id", kerze[i].name);
-            // box2.addEventListener("change", HandleChange);
             stepper2.addEventListener("change", HandleChange);
             label.innerText = kerze[i].name;
-            //console.log(box2);
-            //  fieldset4.appendChild(box2);
             fieldset4.appendChild(label);
             fieldset4.appendChild(stepper2);
         }
@@ -216,7 +200,6 @@ var L10_DOM;
         document.body.appendChild(neu);
         function HandleChange(_event) {
             let target = _event.target;
-            //  console.log("Changed " + target.name + " to " + target.value);
             let divList = document.getElementsByClassName("warenkorb");
             for (let i = 0; i < divList.length; i++) {
                 if (target.id + "bla" == divList[i].id) {
@@ -233,8 +216,6 @@ var L10_DOM;
             div.className = "warenkorb";
             div.innerText += target.id + " " + target.value + "Euro" + "\n";
             neu.appendChild(div);
-            //            let summe: HTMLInputElement;
-            //         summe = document.getElementById("Schmuck1").value;
         }
         let button = document.createElement("button");
         button.name = "Button";

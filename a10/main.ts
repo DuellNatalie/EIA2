@@ -1,7 +1,7 @@
 namespace L10_DOM {
-    
+
     window.addEventListener("load", init);
-    
+
     function init(): void {
         var name: HTMLInputElement;
         var strasse: HTMLInputElement;
@@ -73,7 +73,7 @@ namespace L10_DOM {
             name: "Kerze3",
             preis: 20
         };
-        
+
         let baeume: Produkte[] = [baum1, baum2, baum3];
         let halterung: Produkte[] = [halterung1, halterung2, halterung3];
         let lieferung: Produkte[] = [lieferung1, lieferung2];
@@ -97,7 +97,7 @@ namespace L10_DOM {
             fieldset.appendChild(radio);
             fieldset.appendChild(label);
         }
-        
+
         //Halterung---------------------------------------------------------
         var fieldset2: HTMLElement = document.createElement("FIELDSET");
         document.body.appendChild(fieldset2);
@@ -115,61 +115,46 @@ namespace L10_DOM {
             fieldset2.appendChild(radio);
             fieldset2.appendChild(label);
         }
-        
+
         //Schmuck----------------------------------------------------------
         var fieldset3: HTMLElement = document.createElement("FIELDSET");
         document.body.appendChild(fieldset3);
         for (let i: number = 0; i < schmuck.length; i++) {
-            // var box: HTMLElement = document.createElement("INPUT");
+
             var label: HTMLElement = document.createElement("LABEL");
             var stepper: HTMLElement = document.createElement("INPUT");
-            //  box.setAttribute("type", "checkbox");
-            //  box.setAttribute("name", schmuck[i].name);
-            // box.setAttribute("value", schmuck[i].name);
-            //  box.setAttribute("id", schmuck[i].name);
+
             stepper.setAttribute("name", schmuck[i].name);
             stepper.setAttribute("type", "number");
             stepper.setAttribute("min", "0");
             stepper.setAttribute("value", "0");
             stepper.setAttribute("id", schmuck[i].name);
 
-            //  box.addEventListener("change", HandleChange);
             stepper.addEventListener("change", HandleChange);
             label.innerText = schmuck[i].name;
-            //  console.log(box);
 
-
-            //fieldset3.appendChild(box);
             fieldset3.appendChild(label);
             fieldset3.appendChild(stepper);
         }
-        
+
         //Kerze----------------------------------------------------------------------------
         var fieldset4: HTMLElement = document.createElement("FIELDSET");
         document.body.appendChild(fieldset4);
         for (let i: number = 0; i < kerze.length; i++) {
-            // var box2: HTMLElement = document.createElement("INPUT");
             var label: HTMLElement = document.createElement("LABEL");
             var stepper2: HTMLElement = document.createElement("INPUT");
-            //  box2.setAttribute("type", "checkbox");
-            //  box2.setAttribute("name", kerze[i].name);
-            //  box2.setAttribute("value", kerze[i].name);
-            //  box2.setAttribute("id", kerze[i].name);
             stepper2.setAttribute("name", kerze[i].name);
             stepper2.setAttribute("type", "number");
             stepper2.setAttribute("min", "0");
             stepper2.setAttribute("value", "0");
             stepper2.setAttribute("id", kerze[i].name);
-            // box2.addEventListener("change", HandleChange);
             stepper2.addEventListener("change", HandleChange);
             label.innerText = kerze[i].name;
-            //console.log(box2);
 
-            //  fieldset4.appendChild(box2);
             fieldset4.appendChild(label);
             fieldset4.appendChild(stepper2);
         }
-        
+
         //Lieferung----------------------------------------------------------------------
         var fieldset5: HTMLElement = document.createElement("FIELDSET");
         document.body.appendChild(fieldset5);
@@ -187,7 +172,7 @@ namespace L10_DOM {
             fieldset5.appendChild(radio);
             fieldset5.appendChild(label);
         }
-        
+
         //Adresse-----------------------------------------------------------------------
         var fieldset6: HTMLElement = document.createElement("FIELDSET");
         document.body.appendChild(fieldset6);
@@ -232,18 +217,12 @@ namespace L10_DOM {
         ort.required = true;
         daten.appendChild(ort);
 
-
-
         mail = document.createElement("input");
         mail.type = "email";
         mail.name = "DatenMail";
         mail.placeholder = "E-Mail";
         mail.required = true;
         daten.appendChild(mail);
-
-
-
-
 
         //ChangeHandler---------------------------------------------------------------------
 
@@ -254,11 +233,6 @@ namespace L10_DOM {
 
         function HandleChange(_event: Event): void {
             let target: HTMLInputElement = <HTMLInputElement>_event.target;
-            //  console.log("Changed " + target.name + " to " + target.value);
-
-
-
-
             let divList: NodeListOf<HTMLDivElement> = <NodeListOf<HTMLDivElement>>document.getElementsByClassName("warenkorb");
 
             for (let i: number = 0; i < divList.length; i++) {
@@ -268,29 +242,18 @@ namespace L10_DOM {
 
                 }
             }
+
             if (target.id + "bla" == "Baum1bla") {
                 document.getElementById("Baum1bla").remove;
                 document.getElementById("Baum2bla").remove;
                 document.getElementById("Baum3bla").remove;
-            
-}
 
-
-
-
-
+            }
             let div: HTMLElement = document.createElement("div");
             div.id = target.id + "bla";
             div.className = "warenkorb";
             div.innerText += target.id + " " + target.value + "Euro" + "\n";
             neu.appendChild(div);
-
-            //            let summe: HTMLInputElement;
-            //         summe = document.getElementById("Schmuck1").value;
-
-
-
-
         }
 
 
