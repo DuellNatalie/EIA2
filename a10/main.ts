@@ -122,7 +122,7 @@ namespace L10_DOM {
         document.body.appendChild(fieldset3);
         
         for (let i: number = 0; i < schmuck.length; i++) {
-
+            // kein preis weil mehr auswahl als 1
             var label: HTMLElement = document.createElement("LABEL");
             var stepper: HTMLElement = document.createElement("INPUT");
 
@@ -209,7 +209,7 @@ namespace L10_DOM {
         hausnummer.type = "number";
         hausnummer.name = "DatenHausnummer";
         hausnummer.placeholder = "Hausnummer";
-        hausnummer.pattern = "[0-9]{3}";
+        hausnummer.pattern = "[0-9]{3}"; //max 3 stellen
         hausnummer.required = true;
         daten.appendChild(hausnummer);
 
@@ -217,7 +217,7 @@ namespace L10_DOM {
         plz.type = "text";
         plz.name = "DatenPLZ";
         plz.placeholder = "Postleitzahl";
-        plz.pattern = "[0-9]{5}";
+        plz.pattern = "[0-9]{5}"; //max 5 stellen
         plz.required = true;
         daten.appendChild(plz);
 
@@ -231,15 +231,14 @@ namespace L10_DOM {
         mail = document.createElement("input");
         mail.type = "email";
         mail.name = "DatenMail";
-        mail.placeholder = "E-Mail";
+        mail.placeholder = "E-Mail"; //hat at und .de?
         mail.required = true;
         daten.appendChild(mail);
 
         //ChangeHandler---------------------------------------------------------------------
 
         let neu: HTMLElement = document.createElement("div");
-        neu.innerText = "Warenkorb\n";
-        neu.id = "Warenkorbdiv";
+        neu.innerText = "Warenkorb\n"; //Text, Absatz
         document.body.appendChild(neu);
 
         function HandleChange(_event: Event): void {

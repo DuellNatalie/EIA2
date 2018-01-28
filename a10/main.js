@@ -107,6 +107,7 @@ var L10_DOM;
         var fieldset3 = document.createElement("FIELDSET");
         document.body.appendChild(fieldset3);
         for (let i = 0; i < schmuck.length; i++) {
+            // kein preis weil mehr auswahl als 1
             var label = document.createElement("LABEL");
             var stepper = document.createElement("INPUT");
             stepper.setAttribute("name", schmuck[i].name);
@@ -172,14 +173,14 @@ var L10_DOM;
         hausnummer.type = "number";
         hausnummer.name = "DatenHausnummer";
         hausnummer.placeholder = "Hausnummer";
-        hausnummer.pattern = "[0-9]{3}";
+        hausnummer.pattern = "[0-9]{3}"; //max 3 stellen
         hausnummer.required = true;
         daten.appendChild(hausnummer);
         plz = document.createElement("input");
         plz.type = "text";
         plz.name = "DatenPLZ";
         plz.placeholder = "Postleitzahl";
-        plz.pattern = "[0-9]{5}";
+        plz.pattern = "[0-9]{5}"; //max 5 stellen
         plz.required = true;
         daten.appendChild(plz);
         ort = document.createElement("input");
@@ -191,13 +192,12 @@ var L10_DOM;
         mail = document.createElement("input");
         mail.type = "email";
         mail.name = "DatenMail";
-        mail.placeholder = "E-Mail";
+        mail.placeholder = "E-Mail"; //hat at und .de?
         mail.required = true;
         daten.appendChild(mail);
         //ChangeHandler---------------------------------------------------------------------
         let neu = document.createElement("div");
-        neu.innerText = "Warenkorb\n";
-        neu.id = "Warenkorbdiv";
+        neu.innerText = "Warenkorb\n"; //Text, Absatz
         document.body.appendChild(neu);
         function HandleChange(_event) {
             let target = _event.target;
