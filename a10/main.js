@@ -8,7 +8,6 @@ var L10_DOM;
         var ort;
         var plz;
         var mail;
-        var zusatz;
         let baum1 = {
             name: "Baum1",
             preis: 10
@@ -72,13 +71,16 @@ var L10_DOM;
         let kerze = [kerze1, kerze2, kerze3];
         //B�ume-------------------------------------------------------------
         var fieldset = document.createElement("FIELDSET");
+        //The <fieldset> tag is used to group related elements in a form.
+        // The <fieldset> tag draws a box around the related elements.
         document.body.appendChild(fieldset);
         for (let i = 0; i < baeume.length; i++) {
             var radio = document.createElement("INPUT");
+            //daten eingeben -> kreisauswahl, nur eine auswahl
             var label = document.createElement("LABEL");
-            radio.setAttribute("type", "radio");
-            radio.setAttribute("name", "baeume");
-            radio.setAttribute("value", baeume[i].preis.toString());
+            // was im kaestchen/neben auswahl steht
+            radio.setAttribute("type", "radio"); //typ radio
+            radio.setAttribute("value", baeume[i].preis.toString()); //wert
             radio.setAttribute("id", baeume[i].name);
             radio.addEventListener("change", HandleChange);
             label.innerText = baeume[i].name;

@@ -9,12 +9,10 @@ namespace L10_DOM {
         var ort: HTMLInputElement;
         var plz: HTMLInputElement;
         var mail: HTMLInputElement;
-        var zusatz: HTMLTextAreaElement;
 
         interface Produkte {
-            name: string;
+            name: string;  
             preis: number;
-
         }
 
         let baum1: Produkte = {
@@ -82,13 +80,17 @@ namespace L10_DOM {
 
         //Bäume-------------------------------------------------------------
         var fieldset: HTMLElement = document.createElement("FIELDSET");
+        //The <fieldset> tag is used to group related elements in a form.
+        // The <fieldset> tag draws a box around the related elements.
         document.body.appendChild(fieldset);
         for (let i: number = 0; i < baeume.length; i++) {
             var radio: HTMLElement = document.createElement("INPUT");
+            //daten eingeben -> kreisauswahl, nur eine auswahl
             var label: HTMLElement = document.createElement("LABEL");
-            radio.setAttribute("type", "radio");
-            radio.setAttribute("name", "baeume");
-            radio.setAttribute("value", baeume[i].preis.toString());
+            // was im kaestchen/neben auswahl steht
+            radio.setAttribute("type", "radio"); //typ radio
+          
+            radio.setAttribute("value", baeume[i].preis.toString()); //wert
             radio.setAttribute("id", baeume[i].name);
             radio.addEventListener("change", HandleChange);
             label.innerText = baeume[i].name;
