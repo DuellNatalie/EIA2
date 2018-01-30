@@ -226,6 +226,7 @@ var Aufgabe10;
         if (persName.checkValidity() == false || persNachname.checkValidity() == false || persMail.checkValidity() == false || persPlz.checkValidity() == false || persAdresse.checkValidity() == false) {
             prufen.innerText = "Deine Eingabe war leider fehlerhaft! �berpr�fe sie noch einmal.";
             prufen.style.color = "red";
+            prufen.style.fontFamily = "Arima Madurai";
             document.body.appendChild(prufen);
         }
         else {
