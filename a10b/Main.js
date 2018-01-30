@@ -125,9 +125,15 @@ var Aufgabe10;
         document.getElementById("persdaten").appendChild(persPlz);
         //Button
         let button = document.createElement("button");
+        button.className = "h";
         button.innerText = "Abschicken";
         button.addEventListener("click", PrufeDaten);
         button.style.marginTop = "10px";
+        button.style.fontFamily = "Arima Madurai";
+        button.style.fontSize = "16px";
+        button.style.borderRadius = "5px";
+        button.style.padding = "4px 20px";
+        button.style.border = "none";
         document.getElementById("prufenbutton").appendChild(button);
     }
     // KUGEL
