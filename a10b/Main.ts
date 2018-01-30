@@ -21,7 +21,7 @@ namespace Aufgabe10{
     let wKorb: HTMLDivElement = document.createElement("div");
     let h2: HTMLHeadingElement = document.createElement("h2");
     
-    let gesamtpreis: number = 0;
+    let gesamtpreis: number = 0; //Mit 0 iniziiert
     
     function init(){
         

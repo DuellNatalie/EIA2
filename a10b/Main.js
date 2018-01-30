@@ -16,7 +16,7 @@ var Aufgabe10;
     //Warenkorb
     let wKorb = document.createElement("div");
     let h2 = document.createElement("h2");
-    let gesamtpreis = 0;
+    let gesamtpreis = 0; //Mit 0 iniziiert
     function init() {
         baumtyp.addEventListener("change", input);
         document.getElementById("baumtyp").appendChild(baumtyp);
