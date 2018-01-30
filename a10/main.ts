@@ -239,15 +239,71 @@ namespace L10_DOM {
 
       //  WK reagiert auf change-Event, was habe ich angewahetlt, wv kostet es
         
-        
-        
         let warenkorb: HTMLElement = document.createElement("div");
         warenkorb.innerText = "Warenkorb\n"; //Text, Absatz
         document.body.appendChild(warenkorb);
 
         function HandleChange(_event: Event): void {
-            // was angeklickt? welche eigenschaften, id
-            //wv schmuck? * preis
+        let target: HTMLInputElement = <HTMLInputElement>_event.target;
+
+        let divList: NodeListOf<HTMLDivElement> = <NodeListOf<HTMLDivElement>>document.getElementsByClassName("warenkorb");
+
+            
+            
+            
+            for (let i: number = 0; i < divList.length; i++) {
+                if (target.id + "bla" == divList[i].id) {
+
+                    divList[i].remove();
+
                 }
-           
-}}
+            }
+            if (target.id + "bla" == "Baum1bla") {
+                document.getElementById("Baum1bla").remove;
+                document.getElementById("Baum2bla").remove;
+                document.getElementById("Baum3bla").remove;
+            
+}
+
+            let div: HTMLElement = document.createElement("div");
+            div.id = target.id + "bla";
+            div.className = "warenkorb";
+            div.innerText += target.id + " " + target.value + "Euro" + "\n";
+            warenkorb.appendChild(div);
+
+
+
+        }
+
+
+        let button: HTMLButtonElement = document.createElement("button");
+        button.name = "Button";
+        button.type = "button";
+        button.innerText = "Pruefen";
+        button.addEventListener("mousedown", handleMouseDown);
+        document.body.appendChild(button);
+
+        function handleMouseDown(_event: MouseEvent): void {
+            let feedback: HTMLDivElement = document.createElement("div");
+            if (name.checkValidity() == false || strasse.checkValidity() == false || hausnummer.checkValidity() == false || ort.checkValidity() == false || plz.checkValidity() == false || mail.checkValidity() == false) {
+                feedback.innerText = "Adresse falsch";
+                document.body.appendChild(feedback);
+
+            }
+            else {
+                feedback.innerText = "Passt";
+                document.body.appendChild(feedback);
+            }
+        }
+
+
+
+
+
+
+
+
+
+    }
+
+}

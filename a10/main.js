@@ -201,8 +201,40 @@ var L10_DOM;
         warenkorb.innerText = "Warenkorb\n"; //Text, Absatz
         document.body.appendChild(warenkorb);
         function HandleChange(_event) {
-            // was angeklickt? welche eigenschaften, id
-            //wv schmuck? * preis
+            let target = _event.target;
+            let divList = document.getElementsByClassName("warenkorb");
+            for (let i = 0; i < divList.length; i++) {
+                if (target.id + "bla" == divList[i].id) {
+                    divList[i].remove();
+                }
+            }
+            if (target.id + "bla" == "Baum1bla") {
+                document.getElementById("Baum1bla").remove;
+                document.getElementById("Baum2bla").remove;
+                document.getElementById("Baum3bla").remove;
+            }
+            let div = document.createElement("div");
+            div.id = target.id + "bla";
+            div.className = "warenkorb";
+            div.innerText += target.id + " " + target.value + "Euro" + "\n";
+            warenkorb.appendChild(div);
+        }
+        let button = document.createElement("button");
+        button.name = "Button";
+        button.type = "button";
+        button.innerText = "Pruefen";
+        button.addEventListener("mousedown", handleMouseDown);
+        document.body.appendChild(button);
+        function handleMouseDown(_event) {
+            let feedback = document.createElement("div");
+            if (name.checkValidity() == false || strasse.checkValidity() == false || hausnummer.checkValidity() == false || ort.checkValidity() == false || plz.checkValidity() == false || mail.checkValidity() == false) {
+                feedback.innerText = "Adresse falsch";
+                document.body.appendChild(feedback);
+            }
+            else {
+                feedback.innerText = "Passt";
+                document.body.appendChild(feedback);
+            }
         }
     }
 })(L10_DOM || (L10_DOM = {}));
