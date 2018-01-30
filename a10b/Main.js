@@ -244,7 +244,7 @@ var Aufgabe10;
         }
         else {
             prufen.innerText = "Deine Bestellung wurde erfolgreich verifiziert!";
-            prufen.style.color = "lightgreen";
+            prufen.style.color = "#4CAF50";
             document.body.appendChild(prufen);
         }
     }
