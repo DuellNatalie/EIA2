@@ -39,7 +39,7 @@ var Aufgabe10;
             kugeltyp.type = "checkbox";
             kugeltyp.id = Aufgabe10.kugelDaten[i].kategorie;
             kugeltyp.addEventListener("change", function () {
-                kugelInput(kugeltyp, "1");
+                kugelInput(kugeltyp, "1"); //initiation im WK
             });
             document.getElementById("kugeln").appendChild(kugeltyp);
             //Labels hinzuf�gen
@@ -49,10 +49,10 @@ var Aufgabe10;
             //Anzahl Selektor
             let kugelanz = document.createElement("input");
             kugelanz.type = "number";
-            kugelanz.step = "1";
+            kugelanz.step = "1"; //in 1er Schritten 
             kugelanz.min = "0";
-            kugelanz.value = "1";
-            kugelanz.style.marginRight = "1.5em";
+            kugelanz.value = "1"; //Startwert
+            kugelanz.style.marginRight = "1.5em"; //Abstand zwischen feld und naechster box
             kugelanz.addEventListener("change", function () {
                 kugeltyp.checked = true;
                 kugelInput(kugeltyp, kugelanz.value);
