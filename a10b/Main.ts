@@ -234,7 +234,7 @@ namespace Aufgabe10{
         h2.innerText = "Warenkorb";
         h2.style.color = "black";
         h2.style.position = "absolute";
-        h2.style.right = "390px";
+        h2.style.right = "290px";
         h2.style.top = "0px";
         h2.style.zIndex = "99";
         document.getElementById("korb").appendChild(h2);
@@ -243,8 +243,8 @@ namespace Aufgabe10{
         wKorb.style.position = "absolute";
         wKorb.style.right = "10px";
         wKorb.style.top = "10px";
-        wKorb.style.width = "500px";
-        wKorb.style.height = "500px";
+        wKorb.style.width = "400px";
+        wKorb.style.height = "450px";
         wKorb.style.backgroundColor = "#e0b16c";
         wKorb.style.paddingTop = "40px";
         wKorb.style.paddingLeft = "10px";
