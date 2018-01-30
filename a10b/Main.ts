@@ -25,11 +25,11 @@ namespace Aufgabe10{
     
     
     function init(){
-        
+  
+        //Baeume
         baumtyp.addEventListener("change", input);
         document.getElementById("baum").appendChild(baumtyp);
-         
-        
+          
         for (let i: number = 0; i < baumArten.length; i++) {
             let option: HTMLOptionElement = document.createElement("option");
             option.innerText = baumArten[i].name;
@@ -37,9 +37,10 @@ namespace Aufgabe10{
             baumtyp.appendChild(option);
         }
         
+        
+        //Halterungen
         halterung.addEventListener("change", input);
         document.getElementById("halterung").appendChild(halterung);
-    
         
         for (let i: number = 0; i < halterungen.length; i++) {
             let option: HTMLOptionElement = document.createElement("option");
@@ -48,14 +49,15 @@ namespace Aufgabe10{
             halterung.appendChild(option);
         }
         
-        
+      
+        //Kugeln
          for (let i: number = 0; i < kugelDaten.length; i++) {
             let kugeltyp: HTMLInputElement = document.createElement("input");
-            kugeltyp.type = "checkbox";
+           kugeltyp.type = "checkbox";
             kugeltyp.id = kugelDaten[i].kategorie;
-            kugeltyp.addEventListener("change", function(): void {
-                kugelInput(kugeltyp, "1"); //initiation im WK
-            });
+            kugeltyp.addEventListener("change", function(): void { //weil: in eventlistener keine parameter ubergeben werden koennen
+                kugelInput(kugeltyp, "1"); //initiation im WK       //Darum: anonyme function
+            }); //ruf funkt kugelInput auf, mit diesen parametern
                            
             document.getElementById("kugeln").appendChild(kugeltyp);
 
@@ -66,27 +68,27 @@ namespace Aufgabe10{
 
             //Anzahl Selektor
             let kugelanz: HTMLInputElement = document.createElement("input");
-            kugelanz.type = "number";
+            kugelanz.type = "number"; //stepper
             kugelanz.step = "1"; //in 1er Schritten 
             kugelanz.min = "0"; 
             kugelanz.value = "1"; //Startwert
             kugelanz.style.marginRight = "1.5em"; //Abstand zwischen feld und naechster box
             kugelanz.addEventListener("change", function(): void { 
-                kugeltyp.checked = true;
+            kugeltyp.checked = true; //wenn change passiert -> setzt checked auf true
                 kugelInput(kugeltyp, kugelanz.value);
             });
             document.getElementById("kugeln").appendChild(kugelanz);
         }
         
         
-        
+        //Kerzen
         for (let i: number = 0; i < kerzenDaten.length; i++) {
             let kerzentyp: HTMLInputElement = document.createElement("input");
             kerzentyp.type = "checkbox";
             kerzentyp.id = kerzenDaten[i].kategorie;
-            kerzentyp.addEventListener("change", function(): void {
-                kerzenInput(kerzentyp, "1");
-            });
+            kerzentyp.addEventListener("change", function(): void { //weil: in eventlistener keine parameter ubergeben werden koennen
+                kerzenInput(kerzentyp, "1");//initiation im WK       //Darum: anonyme function
+            }); //ruf funkt kerzenInput auf, mit diesen parametern
                            
             document.getElementById("kerzen").appendChild(kerzentyp);
 
@@ -97,13 +99,13 @@ namespace Aufgabe10{
 
             //Anzahl Selektor
             let kerzenanz: HTMLInputElement = document.createElement("input");
-            kerzenanz.type = "number";
-            kerzenanz.step = "1";
+            kerzenanz.type = "number";//stepper
+            kerzenanz.step = "1";//in 1er Schritten
             kerzenanz.min = "0";
-            kerzenanz.value = "1";
-            kerzenanz.style.marginRight = "1.5em";
+            kerzenanz.value = "1";//Startwert
+            kerzenanz.style.marginRight = "1.5em";//Abstand zwischen feld und naechster box
             kerzenanz.addEventListener("change", function(): void { 
-                kerzentyp.checked = true;
+                kerzentyp.checked = true;//wenn change passiert -> setzt checked auf true
                 kerzenInput(kerzentyp, kerzenanz.value);
             });
             document.getElementById("kerzen").appendChild(kerzenanz);
@@ -136,7 +138,7 @@ namespace Aufgabe10{
         document.getElementById("persdaten").appendChild(persNachname);
 
 
-        persMail.type = "email";
+        persMail.type = "email"; //string@string.string
         persMail.placeholder = "Email";
         persMail.required = true;
         persMail.style.marginRight = "1em";
@@ -158,17 +160,18 @@ namespace Aufgabe10{
         
         //Button
         let button: HTMLButtonElement = document.createElement("button");
-        button.innerText = "Bestellung Prüfen";
+        button.innerText = "Abschicken";
         button.addEventListener("click", PrufeDaten);
         button.style.marginTop = "10px";
         document.getElementById("prufenbutton").appendChild(button);
         
         }
     
-    
+
+    // KUGEL
     function kugelInput(chkElement: HTMLInputElement, anzahl: string): void {
         for (let i: number = 0; i < kugelDaten.length; i++) {
-            if (kugelDaten[i].kategorie == chkElement.id) {
+            if (kugelDaten[i].kategorie == chkElement.id) { //wenn kategorie == id von check.element -> welches item genau?
 
                 Warenkorb(chkElement.id, kugelDaten[i].name, kugelDaten[i].preis, parseInt(anzahl), chkElement.checked);
 
@@ -176,22 +179,22 @@ namespace Aufgabe10{
         }
     }
     
-    
+  //KERZEN  
     function kerzenInput(chkElement: HTMLInputElement, anzahl: string): void {
         for (let i: number = 0; i < kerzenDaten.length; i++) {
-            if (kerzenDaten[i].kategorie == chkElement.id) {
+            if (kerzenDaten[i].kategorie == chkElement.id) { //wenn kategorie == id von check.element -> welches item genau?
 
                 Warenkorb(chkElement.id, kerzenDaten[i].name, kerzenDaten[i].preis, parseInt(anzahl), chkElement.checked);
-
+                                                                                                                //boolean: true
             }
         }
     }
     
-    
+  //INPUT  
     function input(){
-        var baumName: string = baumtyp.value;
+        var baumName: string = baumtyp.value; //wert von selektelement
         
-        if (baumName != "") {
+        if (baumName != "") { //wenn etw ausgewaehlt das nicht die leere opt. ist
             inDenWarenkorb(baumArten, baumName, true);
             
         }
@@ -204,14 +207,14 @@ namespace Aufgabe10{
         if (halterungName != "") {
             inDenWarenkorb(halterungen, halterungName, true);
         } else {
-            inDenWarenkorb(halterungen, halterungName, false);
+            inDenWarenkorb(halterungen, halterungName, false); //wird aus WK rausgenommen
         }
 
 
 
         var lieferant: string = lieferopttyp.value;
         if (lieferant != "") {
-            inDenWarenkorb(lieferOptionen, lieferant, true);
+            inDenWarenkorb(lieferOptionen, lieferant, true); //ist immer true
         }
         }
    
@@ -219,7 +222,7 @@ namespace Aufgabe10{
     function inDenWarenkorb(daten: Daten[], elementname: string, selected: boolean): void { 
         
         for (let i: number = 0; i < daten.length; i++) {
-            if (daten[i].name == elementname) {
+            if (daten[i].name == elementname) { //wenn baumArten.name == baumName //welches ist das richtige objekt
                 Warenkorb(daten[i].kategorie, elementname, daten[i].preis, 1, selected);
 
                 
@@ -273,15 +276,16 @@ namespace Aufgabe10{
         
         var preisObjekte: number = _anzahl * _preis;
       
-        if(_selected){
+        if(_selected){ //selected ist true 
             var p: HTMLParagraphElement = document.createElement("p");
             p.id = _kategorie;
             p.innerText = _anzahl + "x " +_name 
-            if(_kategorie.substring(0, _kategorie.length-1) == "kerzen")
-            { p.innerText += " Kerzen";}
+            if(_kategorie.substring(0, _kategorie.length-1) == "kerzen") //
+            { p.innerText += "e Kerze(n)";}
             if(_kategorie.substring(0, _kategorie.length-1) == "kugel")
-            { p.innerText += " Kugeln";}
-            p.innerText += ":  " + preisObjekte + "€";
+            { p.innerText += "e Kugel(n)";}
+            
+            p.innerText += ":  " + preisObjekte + "Euro";
             
             wKorb.appendChild(p);
             }
@@ -289,10 +293,10 @@ namespace Aufgabe10{
         
         
         
-        gesamtpreis += preisObjekte;
+        gesamtpreis = gesamtpreis + preisObjekte;
         var pGesamt: HTMLParagraphElement = document.createElement("p");
         pGesamt.id = "gesamtpreis";
-        pGesamt.innerText = "Gesamtpreis: " + gesamtpreis + "€";
+        pGesamt.innerText = "Gesamtpreis: " + gesamtpreis + "Euro";
         pGesamt.style.position = "absolute";
         pGesamt.style.bottom = "0";
         pGesamt.style.paddingTop = "10px";
@@ -307,14 +311,14 @@ namespace Aufgabe10{
 
         prufen.innerText = "";
         if (persName.checkValidity() == false || persNachname.checkValidity() == false || persMail.checkValidity() == false || persPlz.checkValidity() == false || persAdresse.checkValidity() == false) {
-            prufen.innerText = "Deine Eingabe war leider fehlerhaft! Überprüfe sie noch einmal.";
-            prufen.style.color = "red";
+            prufen.innerText = "Deine Eingabe war leider fehlerhaft!";
+            prufen.style.color = "darkred";
             prufen.style.fontFamily = "Arima Madurai";
             document.body.appendChild(prufen);
         }
         else {
             prufen.innerText = "Deine Bestellung wurde erfolgreich verifiziert!";
-            prufen.style.color = "green";
+            prufen.style.color = "lightgreen";
             document.body.appendChild(prufen);
         }
     }

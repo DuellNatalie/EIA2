@@ -18,6 +18,7 @@ var Aufgabe10;
     let h2 = document.createElement("h2");
     let gesamtpreis = 0; //Mit 0 iniziiert
     function init() {
+        //Baeume
         baumtyp.addEventListener("change", input);
         document.getElementById("baum").appendChild(baumtyp);
         for (let i = 0; i < Aufgabe10.baumArten.length; i++) {
@@ -26,6 +27,7 @@ var Aufgabe10;
             baumtyp.id = Aufgabe10.baumArten[i].kategorie;
             baumtyp.appendChild(option);
         }
+        //Halterungen
         halterung.addEventListener("change", input);
         document.getElementById("halterung").appendChild(halterung);
         for (let i = 0; i < Aufgabe10.halterungen.length; i++) {
@@ -34,13 +36,14 @@ var Aufgabe10;
             halterung.id = Aufgabe10.halterungen[i].kategorie;
             halterung.appendChild(option);
         }
+        //Kugeln
         for (let i = 0; i < Aufgabe10.kugelDaten.length; i++) {
             let kugeltyp = document.createElement("input");
             kugeltyp.type = "checkbox";
             kugeltyp.id = Aufgabe10.kugelDaten[i].kategorie;
             kugeltyp.addEventListener("change", function () {
-                kugelInput(kugeltyp, "1"); //initiation im WK
-            });
+                kugelInput(kugeltyp, "1"); //initiation im WK       //Darum: anonyme function
+            }); //ruf funkt kugelInput auf, mit diesen parametern
             document.getElementById("kugeln").appendChild(kugeltyp);
             //Labels hinzuf�gen
             let kugellabel = document.createElement("label");
@@ -48,24 +51,25 @@ var Aufgabe10;
             document.getElementById("kugeln").appendChild(kugellabel);
             //Anzahl Selektor
             let kugelanz = document.createElement("input");
-            kugelanz.type = "number";
+            kugelanz.type = "number"; //stepper
             kugelanz.step = "1"; //in 1er Schritten 
             kugelanz.min = "0";
             kugelanz.value = "1"; //Startwert
             kugelanz.style.marginRight = "1.5em"; //Abstand zwischen feld und naechster box
             kugelanz.addEventListener("change", function () {
-                kugeltyp.checked = true;
+                kugeltyp.checked = true; //wenn change passiert -> setzt checked auf true
                 kugelInput(kugeltyp, kugelanz.value);
             });
             document.getElementById("kugeln").appendChild(kugelanz);
         }
+        //Kerzen
         for (let i = 0; i < Aufgabe10.kerzenDaten.length; i++) {
             let kerzentyp = document.createElement("input");
             kerzentyp.type = "checkbox";
             kerzentyp.id = Aufgabe10.kerzenDaten[i].kategorie;
             kerzentyp.addEventListener("change", function () {
-                kerzenInput(kerzentyp, "1");
-            });
+                kerzenInput(kerzentyp, "1"); //initiation im WK       //Darum: anonyme function
+            }); //ruf funkt kerzenInput auf, mit diesen parametern
             document.getElementById("kerzen").appendChild(kerzentyp);
             //Labels hinzuf�gen
             let kerzenlabel = document.createElement("label");
@@ -73,13 +77,13 @@ var Aufgabe10;
             document.getElementById("kerzen").appendChild(kerzenlabel);
             //Anzahl Selektor
             let kerzenanz = document.createElement("input");
-            kerzenanz.type = "number";
-            kerzenanz.step = "1";
+            kerzenanz.type = "number"; //stepper
+            kerzenanz.step = "1"; //in 1er Schritten
             kerzenanz.min = "0";
-            kerzenanz.value = "1";
-            kerzenanz.style.marginRight = "1.5em";
+            kerzenanz.value = "1"; //Startwert
+            kerzenanz.style.marginRight = "1.5em"; //Abstand zwischen feld und naechster box
             kerzenanz.addEventListener("change", function () {
-                kerzentyp.checked = true;
+                kerzentyp.checked = true; //wenn change passiert -> setzt checked auf true
                 kerzenInput(kerzentyp, kerzenanz.value);
             });
             document.getElementById("kerzen").appendChild(kerzenanz);
@@ -104,7 +108,7 @@ var Aufgabe10;
         persNachname.required = true;
         persNachname.style.marginRight = "1em";
         document.getElementById("persdaten").appendChild(persNachname);
-        persMail.type = "email";
+        persMail.type = "email"; //string@string.string
         persMail.placeholder = "Email";
         persMail.required = true;
         persMail.style.marginRight = "1em";
@@ -121,11 +125,12 @@ var Aufgabe10;
         document.getElementById("persdaten").appendChild(persPlz);
         //Button
         let button = document.createElement("button");
-        button.innerText = "Bestellung Pr�fen";
+        button.innerText = "Abschicken";
         button.addEventListener("click", PrufeDaten);
         button.style.marginTop = "10px";
         document.getElementById("prufenbutton").appendChild(button);
     }
+    // KUGEL
     function kugelInput(chkElement, anzahl) {
         for (let i = 0; i < Aufgabe10.kugelDaten.length; i++) {
             if (Aufgabe10.kugelDaten[i].kategorie == chkElement.id) {
@@ -133,6 +138,7 @@ var Aufgabe10;
             }
         }
     }
+    //KERZEN  
     function kerzenInput(chkElement, anzahl) {
         for (let i = 0; i < Aufgabe10.kerzenDaten.length; i++) {
             if (Aufgabe10.kerzenDaten[i].kategorie == chkElement.id) {
@@ -140,8 +146,9 @@ var Aufgabe10;
             }
         }
     }
+    //INPUT  
     function input() {
-        var baumName = baumtyp.value;
+        var baumName = baumtyp.value; //wert von selektelement
         if (baumName != "") {
             inDenWarenkorb(Aufgabe10.baumArten, baumName, true);
         }
@@ -153,11 +160,11 @@ var Aufgabe10;
             inDenWarenkorb(Aufgabe10.halterungen, halterungName, true);
         }
         else {
-            inDenWarenkorb(Aufgabe10.halterungen, halterungName, false);
+            inDenWarenkorb(Aufgabe10.halterungen, halterungName, false); //wird aus WK rausgenommen
         }
         var lieferant = lieferopttyp.value;
         if (lieferant != "") {
-            inDenWarenkorb(Aufgabe10.lieferOptionen, lieferant, true);
+            inDenWarenkorb(Aufgabe10.lieferOptionen, lieferant, true); //ist immer true
         }
     }
     function inDenWarenkorb(daten, elementname, selected) {
@@ -203,18 +210,18 @@ var Aufgabe10;
             p.id = _kategorie;
             p.innerText = _anzahl + "x " + _name;
             if (_kategorie.substring(0, _kategorie.length - 1) == "kerzen") {
-                p.innerText += " Kerzen";
+                p.innerText += "e Kerze(n)";
             }
             if (_kategorie.substring(0, _kategorie.length - 1) == "kugel") {
-                p.innerText += " Kugeln";
+                p.innerText += "e Kugel(n)";
             }
-            p.innerText += ":  " + preisObjekte + "�";
+            p.innerText += ":  " + preisObjekte + "Euro";
             wKorb.appendChild(p);
         }
-        gesamtpreis += preisObjekte;
+        gesamtpreis = gesamtpreis + preisObjekte;
         var pGesamt = document.createElement("p");
         pGesamt.id = "gesamtpreis";
-        pGesamt.innerText = "Gesamtpreis: " + gesamtpreis + "�";
+        pGesamt.innerText = "Gesamtpreis: " + gesamtpreis + "Euro";
         pGesamt.style.position = "absolute";
         pGesamt.style.bottom = "0";
         pGesamt.style.paddingTop = "10px";
@@ -224,14 +231,14 @@ var Aufgabe10;
     function PrufeDaten() {
         prufen.innerText = "";
         if (persName.checkValidity() == false || persNachname.checkValidity() == false || persMail.checkValidity() == false || persPlz.checkValidity() == false || persAdresse.checkValidity() == false) {
-            prufen.innerText = "Deine Eingabe war leider fehlerhaft! �berpr�fe sie noch einmal.";
-            prufen.style.color = "red";
+            prufen.innerText = "Deine Eingabe war leider fehlerhaft!";
+            prufen.style.color = "darkred";
             prufen.style.fontFamily = "Arima Madurai";
             document.body.appendChild(prufen);
         }
         else {
             prufen.innerText = "Deine Bestellung wurde erfolgreich verifiziert!";
-            prufen.style.color = "green";
+            prufen.style.color = "lightgreen";
             document.body.appendChild(prufen);
         }
     }
