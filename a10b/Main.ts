@@ -2,17 +2,19 @@ namespace Aufgabe10{
     
     window.addEventListener("load", init);
 
-    
+    //Auswahlboxen erstellen
     let baumtyp: HTMLSelectElement = document.createElement("select");
     let halterung: HTMLSelectElement = document.createElement("select");
     let lieferopttyp: HTMLSelectElement = document.createElement("select");
     
+    //Eingabefelder erstellen
     let persName: HTMLInputElement = document.createElement("input");
     let persNachname: HTMLInputElement = document.createElement("input");
     let persMail: HTMLInputElement = document.createElement("input");
     let persAdresse: HTMLInputElement = document.createElement("input");
     let persPlz: HTMLInputElement = document.createElement("input");
     
+    //Pruef-Button
     let prufen: HTMLDivElement = document.createElement("div");
     
     //Warenkorb
@@ -230,7 +232,7 @@ namespace Aufgabe10{
      
         
         h2.innerText = "Warenkorb";
-        h2.style.color = "red";
+        h2.style.color = "black";
         h2.style.position = "absolute";
         h2.style.right = "390px";
         h2.style.top = "0px";
@@ -243,7 +245,7 @@ namespace Aufgabe10{
         wKorb.style.top = "10px";
         wKorb.style.width = "500px";
         wKorb.style.height = "500px";
-        wKorb.style.backgroundColor = "#359e16";
+        wKorb.style.backgroundColor = "#e0b16c";
         wKorb.style.paddingTop = "40px";
         wKorb.style.paddingLeft = "10px";
         document.getElementById("korb").appendChild(wKorb);
