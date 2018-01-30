@@ -9,7 +9,7 @@ namespace Aufgabe10{
         export let baumArten: Daten[] = [
             {
             kategorie: "baum",
-            name: "", 
+            name: "", //in SelectElement angezeigter Name
             preis: 0},
             {
             kategorie: "baum",

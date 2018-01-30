@@ -19,7 +19,7 @@ var Aufgabe10;
     let gesamtpreis = 0; //Mit 0 iniziiert
     function init() {
         baumtyp.addEventListener("change", input);
-        document.getElementById("baumtyp").appendChild(baumtyp);
+        document.getElementById("baum").appendChild(baumtyp);
         for (let i = 0; i < Aufgabe10.baumArten.length; i++) {
             let option = document.createElement("option");
             option.innerText = Aufgabe10.baumArten[i].name;

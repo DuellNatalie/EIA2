@@ -23,12 +23,11 @@ namespace Aufgabe10{
     
     let gesamtpreis: number = 0; //Mit 0 iniziiert
     
+    
     function init(){
         
-        
-        
         baumtyp.addEventListener("change", input);
-        document.getElementById("baumtyp").appendChild(baumtyp);
+        document.getElementById("baum").appendChild(baumtyp);
          
         
         for (let i: number = 0; i < baumArten.length; i++) {
