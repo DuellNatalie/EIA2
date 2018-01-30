@@ -6,5 +6,11 @@ fieldset {
 	color: #ff8000;
 	width: 50%;
 	margin-top: 0.2em;
+	font-family: 'Arima Madurai', cursive;
 }
 
+
+p { color: lightblue;
+font-family: 'Arima Madurai', cursive;}
+
+h2, h1  {font-family: 'Arima Madurai', cursive;}
