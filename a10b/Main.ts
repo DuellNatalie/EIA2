@@ -55,7 +55,7 @@ namespace Aufgabe10{
         //Kugeln
          for (let i: number = 0; i < kugelDaten.length; i++) {
             let kugeltyp: HTMLInputElement = document.createElement("input");
-           kugeltyp.type = "checkbox";
+            kugeltyp.type = "checkbox";
             kugeltyp.id = kugelDaten[i].kategorie;
             kugeltyp.addEventListener("change", function(): void { //weil: in eventlistener keine parameter ubergeben werden koennen
                 kugelInput(kugeltyp, "1"); //initiation im WK       //Darum: anonyme function
@@ -200,7 +200,7 @@ namespace Aufgabe10{
     
   //INPUT  
     function input(){
-        var baumName: string = baumtyp.value; //baumtyp.value == ausgewählter Wert im DropDown
+        var baumName: string = baumtyp.value; //baumtyp.value = ausgewählter Wert im DropDown
         
         if (baumName != "") { //wenn etw ausgewaehlt das nicht die leere opt. ist
             inDenWarenkorb(baumArten, baumName, true);//true --> element ist ausgewählt
@@ -270,7 +270,7 @@ namespace Aufgabe10{
                 gesamtpreis = gesamtpreis - parseInt(innerPreis); //Gesamtpreis bereinigen
             }           
             //Gesamtpreis p entfernen um später aktualisiert zurück einzufügen
-            if (wKorb.getElementsByTagName("p")[i].id == "gesamtpreis") {
+            if (wKorb.getElementsByTagName("p")[i].id == "gesamtpreis") { 
                 wKorb.getElementsByTagName("p")[i].remove();
             }
         }

@@ -156,7 +156,7 @@ var Aufgabe10;
     }
     //INPUT  
     function input() {
-        var baumName = baumtyp.value; //baumtyp.value == ausgewählter Wert im DropDown
+        var baumName = baumtyp.value; //baumtyp.value = ausgewählter Wert im DropDown
         if (baumName != "") {
             inDenWarenkorb(Aufgabe10.baumArten, baumName, true); //true --> element ist ausgewählt
         }
