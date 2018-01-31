@@ -289,7 +289,7 @@ namespace Aufgabe10{
         //Gesamtpreis wieder hinzufügen
         var pGesamt: HTMLParagraphElement = document.createElement("p");
         pGesamt.id = "gesamtpreis";
-        pGesamt.innerText = "Gesamtpreis: " + gesamtpreis + "Euro";
+        pGesamt.innerText = "Gesamtpreis: " + gesamtpreis + " Euro";
         pGesamt.style.position = "absolute";
         pGesamt.style.bottom = "0";
         pGesamt.style.paddingTop = "10px";
