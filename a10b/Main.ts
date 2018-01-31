@@ -20,20 +20,22 @@ namespace Aufgabe10{
     //Warenkorb
     let wKorb: HTMLDivElement = document.createElement("div");
     let h2: HTMLHeadingElement = document.createElement("h2");
+   //All die erstellten Elemente werden später im 
+    //Code mit Eigenschaften ausgestattet und ans DOM gehängt
     
     let gesamtpreis: number = 0; //Mit 0 iniziiert
     
     
     function init(){
   
-        //Baeume
+        //Baeume definieren u anhängen
         baumtyp.addEventListener("change", input);
         document.getElementById("baum").appendChild(baumtyp);
           
         for (let i: number = 0; i < baumArten.length; i++) {
             let option: HTMLOptionElement = document.createElement("option");
             option.innerText = baumArten[i].name;
-            baumtyp.id = baumArten[i].kategorie;
+            baumtyp.id = baumArten[i].kategorie;//später im WK gebraucht-> prüfen ob Objekt schon vorhanden ist
             baumtyp.appendChild(option);
         }
         
@@ -61,7 +63,7 @@ namespace Aufgabe10{
                            
             document.getElementById("kugeln").appendChild(kugeltyp);
 
-            //Labels hinzuf�gen
+            //Labels hinzufügen
             let kugellabel: HTMLLabelElement = document.createElement("label");
             kugellabel.innerText = kugelDaten[i].name;
             document.getElementById("kugeln").appendChild(kugellabel);
@@ -92,7 +94,7 @@ namespace Aufgabe10{
                            
             document.getElementById("kerzen").appendChild(kerzentyp);
 
-            //Labels hinzuf�gen
+            //Labels hinzufügen
             let kerzenlabel: HTMLLabelElement = document.createElement("label");
             kerzenlabel.innerText = kerzenDaten[i].name;
             document.getElementById("kerzen").appendChild(kerzenlabel);
@@ -198,14 +200,14 @@ namespace Aufgabe10{
     
   //INPUT  
     function input(){
-        var baumName: string = baumtyp.value; //wert von selektelement
+        var baumName: string = baumtyp.value; //baumtyp.value == ausgewählter Wert im DropDown
         
         if (baumName != "") { //wenn etw ausgewaehlt das nicht die leere opt. ist
-            inDenWarenkorb(baumArten, baumName, true);
+            inDenWarenkorb(baumArten, baumName, true);//true --> element ist ausgewählt
             
         }
         else {
-            inDenWarenkorb(baumArten, baumName, false);
+            inDenWarenkorb(baumArten, baumName, false);//false --> Element wurde abgewählt
         }
 
 
@@ -224,7 +226,7 @@ namespace Aufgabe10{
         }
         }
    
-    
+    //Wird von DropDown genutzt; Sucht nach dem Preis
     function inDenWarenkorb(daten: Daten[], elementname: string, selected: boolean): void { 
         
         for (let i: number = 0; i < daten.length; i++) {
@@ -238,7 +240,6 @@ namespace Aufgabe10{
     
     function Warenkorb(_kategorie: string, _name: string, _preis: number, _anzahl: number, _selected: boolean) : void{
      
-        
         h2.innerText = "Warenkorb";
         h2.style.color = "black";
         h2.style.position = "absolute";
@@ -258,48 +259,34 @@ namespace Aufgabe10{
         wKorb.style.paddingLeft = "10px";
         document.getElementById("korb").appendChild(wKorb);
         
-        
-        
-        
-        
-        //Schleife schaut ob p schon vorhanden ist 
-        for (let i: number = 0; i < wKorb.getElementsByTagName("p").length; i++) { 
-            if (wKorb.getElementsByTagName("p")[i].id == _kategorie) {
-                var innerPreis: string = wKorb.getElementsByTagName("p")[i].innerText.split(": ")[1]; 
-                wKorb.getElementsByTagName("p")[i].remove(); 
-                gesamtpreis = gesamtpreis - parseInt(innerPreis.substring(0, innerPreis.length-1));
-                
-                
-            }
-            
-            //Gesamtpreis p entfernen um sp�ter aktualisiert zur�ck einzuf�gen
+     var preisObjekte: number; //Preis von anzahl mal Element berechnen
+        preisObjekte = _anzahl * _preis;
+
+        //Wird erst bei zweitem Durchgang ausgefuehrt, zu Beginn keine Elemente in Korb vorhanden
+        for (let i: number = 0; i < wKorb.getElementsByTagName("p").length; i++) { //Warenkorb auf vorhandene p pr�fen
+            if (wKorb.getElementsByTagName("p")[i].id == _kategorie) { //Vergleicht Elemente im Warenkorb mit ausgewähltem Element
+                var innerPreis: string = wKorb.getElementsByTagName("p")[i].innerText.split(": ")[1]; //Preis extrahieren
+                wKorb.getElementsByTagName("p")[i].remove(); //Wenn vorhanden Element löschen
+                gesamtpreis = gesamtpreis - parseInt(innerPreis); //Gesamtpreis bereinigen
+            }           
+            //Gesamtpreis p entfernen um später aktualisiert zurück einzufügen
             if (wKorb.getElementsByTagName("p")[i].id == "gesamtpreis") {
                 wKorb.getElementsByTagName("p")[i].remove();
             }
         }
-      
         
-        
-        var preisObjekte: number = _anzahl * _preis;
-      
-        if(_selected){ //selected ist true 
+       
+        if (_selected) { //selected = true
             var p: HTMLParagraphElement = document.createElement("p");
             p.id = _kategorie;
-            p.innerText = _anzahl + "x " +_name 
-            if(_kategorie.substring(0, _kategorie.length-1) == "kerzen") //
-            { p.innerText += "e Kerze(n)";}
-            if(_kategorie.substring(0, _kategorie.length-1) == "kugel")
-            { p.innerText += "e Kugel(n)";}
-            
-            p.innerText += ":  " + preisObjekte + "Euro";
-            
+            p.innerText = _anzahl + "x " +_name;
+            gesamtpreis = gesamtpreis + preisObjekte; //Gesamtpreis erhöhen
+            p.innerText += ":  " + preisObjekte + "€";
             wKorb.appendChild(p);
-            }
-       
+            
+        }
         
-        
-        
-        gesamtpreis = gesamtpreis + preisObjekte;
+        //Gesamtpreis wieder hinzufügen
         var pGesamt: HTMLParagraphElement = document.createElement("p");
         pGesamt.id = "gesamtpreis";
         pGesamt.innerText = "Gesamtpreis: " + gesamtpreis + "Euro";
@@ -308,9 +295,6 @@ namespace Aufgabe10{
         pGesamt.style.paddingTop = "10px";
         pGesamt.style.borderTop = "1px solid black";
         wKorb.appendChild(pGesamt);
-        
-        
-        
         }
     
     function PrufeDaten(): void {

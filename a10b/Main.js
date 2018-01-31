@@ -16,15 +16,17 @@ var Aufgabe10;
     //Warenkorb
     let wKorb = document.createElement("div");
     let h2 = document.createElement("h2");
+    //All die erstellten Elemente werden später im 
+    //Code mit Eigenschaften ausgestattet und ans DOM gehängt
     let gesamtpreis = 0; //Mit 0 iniziiert
     function init() {
-        //Baeume
+        //Baeume definieren u anhängen
         baumtyp.addEventListener("change", input);
         document.getElementById("baum").appendChild(baumtyp);
         for (let i = 0; i < Aufgabe10.baumArten.length; i++) {
             let option = document.createElement("option");
             option.innerText = Aufgabe10.baumArten[i].name;
-            baumtyp.id = Aufgabe10.baumArten[i].kategorie;
+            baumtyp.id = Aufgabe10.baumArten[i].kategorie; //später im WK gebraucht-> prüfen ob Objekt schon vorhanden ist
             baumtyp.appendChild(option);
         }
         //Halterungen
@@ -45,7 +47,7 @@ var Aufgabe10;
                 kugelInput(kugeltyp, "1"); //initiation im WK       //Darum: anonyme function
             }); //ruf funkt kugelInput auf, mit diesen parametern
             document.getElementById("kugeln").appendChild(kugeltyp);
-            //Labels hinzuf�gen
+            //Labels hinzufügen
             let kugellabel = document.createElement("label");
             kugellabel.innerText = Aufgabe10.kugelDaten[i].name;
             document.getElementById("kugeln").appendChild(kugellabel);
@@ -71,7 +73,7 @@ var Aufgabe10;
                 kerzenInput(kerzentyp, "1"); //initiation im WK       //Darum: anonyme function
             }); //ruf funkt kerzenInput auf, mit diesen parametern
             document.getElementById("kerzen").appendChild(kerzentyp);
-            //Labels hinzuf�gen
+            //Labels hinzufügen
             let kerzenlabel = document.createElement("label");
             kerzenlabel.innerText = Aufgabe10.kerzenDaten[i].name;
             document.getElementById("kerzen").appendChild(kerzenlabel);
@@ -154,12 +156,12 @@ var Aufgabe10;
     }
     //INPUT  
     function input() {
-        var baumName = baumtyp.value; //wert von selektelement
+        var baumName = baumtyp.value; //baumtyp.value == ausgewählter Wert im DropDown
         if (baumName != "") {
-            inDenWarenkorb(Aufgabe10.baumArten, baumName, true);
+            inDenWarenkorb(Aufgabe10.baumArten, baumName, true); //true --> element ist ausgewählt
         }
         else {
-            inDenWarenkorb(Aufgabe10.baumArten, baumName, false);
+            inDenWarenkorb(Aufgabe10.baumArten, baumName, false); //false --> Element wurde abgewählt
         }
         var halterungName = halterung.value;
         if (halterungName != "") {
@@ -173,6 +175,7 @@ var Aufgabe10;
             inDenWarenkorb(Aufgabe10.lieferOptionen, lieferant, true); //ist immer true
         }
     }
+    //Wird von DropDown genutzt; Sucht nach dem Preis
     function inDenWarenkorb(daten, elementname, selected) {
         for (let i = 0; i < daten.length; i++) {
             if (daten[i].name == elementname) {
@@ -198,33 +201,29 @@ var Aufgabe10;
         wKorb.style.paddingTop = "40px";
         wKorb.style.paddingLeft = "10px";
         document.getElementById("korb").appendChild(wKorb);
-        //Schleife schaut ob p schon vorhanden ist 
+        var preisObjekte; //Preis von anzahl mal Element berechnen
+        preisObjekte = _anzahl * _preis;
+        //Wird erst bei zweitem Durchgang ausgefuehrt, zu Beginn keine Elemente in Korb vorhanden
         for (let i = 0; i < wKorb.getElementsByTagName("p").length; i++) {
             if (wKorb.getElementsByTagName("p")[i].id == _kategorie) {
-                var innerPreis = wKorb.getElementsByTagName("p")[i].innerText.split(": ")[1];
-                wKorb.getElementsByTagName("p")[i].remove();
-                gesamtpreis = gesamtpreis - parseInt(innerPreis.substring(0, innerPreis.length - 1));
+                var innerPreis = wKorb.getElementsByTagName("p")[i].innerText.split(": ")[1]; //Preis extrahieren
+                wKorb.getElementsByTagName("p")[i].remove(); //Wenn vorhanden Element löschen
+                gesamtpreis = gesamtpreis - parseInt(innerPreis); //Gesamtpreis bereinigen
             }
-            //Gesamtpreis p entfernen um sp�ter aktualisiert zur�ck einzuf�gen
+            //Gesamtpreis p entfernen um später aktualisiert zurück einzufügen
             if (wKorb.getElementsByTagName("p")[i].id == "gesamtpreis") {
                 wKorb.getElementsByTagName("p")[i].remove();
             }
         }
-        var preisObjekte = _anzahl * _preis;
         if (_selected) {
             var p = document.createElement("p");
             p.id = _kategorie;
             p.innerText = _anzahl + "x " + _name;
-            if (_kategorie.substring(0, _kategorie.length - 1) == "kerzen") {
-                p.innerText += "e Kerze(n)";
-            }
-            if (_kategorie.substring(0, _kategorie.length - 1) == "kugel") {
-                p.innerText += "e Kugel(n)";
-            }
-            p.innerText += ":  " + preisObjekte + "Euro";
+            gesamtpreis = gesamtpreis + preisObjekte; //Gesamtpreis erhöhen
+            p.innerText += ":  " + preisObjekte + "€";
             wKorb.appendChild(p);
         }
-        gesamtpreis = gesamtpreis + preisObjekte;
+        //Gesamtpreis wieder hinzufügen
         var pGesamt = document.createElement("p");
         pGesamt.id = "gesamtpreis";
         pGesamt.innerText = "Gesamtpreis: " + gesamtpreis + "Euro";
