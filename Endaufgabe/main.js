@@ -40,8 +40,8 @@ var A;
             A.crc2.fill();
         }
         //Wolken  
-        for (let i = 0; i < 3; i++) {
-            let c = new A.Clouds(Math.random() * 800, 50 + Math.random() * 270);
+        for (let i = 0; i < 5; i++) {
+            let c = new A.Clouds(Math.random() * 1270, 50 + Math.random() * 270);
             shapes.push(c);
         }
         //Baum

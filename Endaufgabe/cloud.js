@@ -21,7 +21,7 @@ var A;
             if (this.x > 1260) {
                 this.x = -20;
             }
-            this.x += 1;
+            this.x += 0.5;
             this.draw();
         }
     }

@@ -36,7 +36,7 @@ namespace A {
                 
             }
             
-            this.x += 1;
+            this.x += 0.5;
             this.draw();
        
         }
