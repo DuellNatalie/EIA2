@@ -37,7 +37,6 @@ namespace A {
             let x: number = 10 + Math.random() * 1250;
             let y: number = 10 + Math.random() * 410;
             drawStars(x, y);}
-    
         function drawStars(_x: number, _y: number): void {
         crc2.beginPath();
         crc2.arc(_x, _y, 1.5, 0, 2 * Math.PI);
@@ -50,15 +49,70 @@ namespace A {
         crc2.fillStyle = "silver";
         crc2.fill();}
         
-            //Wolken  
+        //Wolken  
         for (let i: number = 0; i < 3; i++) {
             let c: Clouds = new Clouds(Math.random() * 800, 50 + Math.random() * 270);
             shapes.push(c); 
 
         }
+        
+        
+       //Baum
+        crc2.beginPath();
+        crc2.moveTo(220, 660);
+        crc2.lineTo(350, 650);
+        crc2.lineTo(320, 300);
+        crc2.lineTo(270, 305);
+        crc2.closePath();
+        crc2.strokeStyle = "darkbrown";
+        crc2.stroke();
+        crc2.fillStyle = "brown";
+        crc2.fill(); 
+        //Gruenzeug
+        crc2.beginPath();
+        crc2.arc(250, 300, 90, 0, 2 * Math.PI);
+        crc2.fillStyle = "darkgreen";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(190, 250, 90, 0, 2 * Math.PI);
+        crc2.fillStyle = "darkgreen";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(250, 170, 90, 0, 2 * Math.PI);
+        crc2.fillStyle = "darkgreen";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(300, 150, 90, 0, 2 * Math.PI);
+        crc2.fillStyle = "darkgreen";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(370, 230, 90, 0, 2 * Math.PI);
+        crc2.fillStyle = "darkgreen";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(320, 300, 90, 0, 2 * Math.PI);
+        crc2.fillStyle = "darkgreen";
+        crc2.fill();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
-        animate();
-    }
+        animate();}
     
         //ANIMATAION/////////////////////////////////////////////////
     function animate(): void {
@@ -66,7 +120,7 @@ namespace A {
 
 
         for (let i: number = 0; i < shapes.length; i++) {
-            let s: Move = shapes[i]; //s = das objekt an der stelle die ich abfrage
+            let s: Move = shapes[i];
             s.move(); 
         }
 window.setTimeout(animate, 25);

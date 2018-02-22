@@ -44,6 +44,42 @@ var A;
             let c = new A.Clouds(Math.random() * 800, 50 + Math.random() * 270);
             shapes.push(c);
         }
+        //Baum
+        A.crc2.beginPath();
+        A.crc2.moveTo(220, 660);
+        A.crc2.lineTo(350, 650);
+        A.crc2.lineTo(320, 300);
+        A.crc2.lineTo(270, 305);
+        A.crc2.closePath();
+        A.crc2.strokeStyle = "darkbrown";
+        A.crc2.stroke();
+        A.crc2.fillStyle = "brown";
+        A.crc2.fill();
+        //Gruenzeug
+        A.crc2.beginPath();
+        A.crc2.arc(250, 300, 90, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "darkgreen";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.arc(190, 250, 90, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "darkgreen";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.arc(250, 170, 90, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "darkgreen";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.arc(300, 150, 90, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "darkgreen";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.arc(370, 230, 90, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "darkgreen";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.arc(320, 300, 90, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "darkgreen";
+        A.crc2.fill();
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }
@@ -51,7 +87,7 @@ var A;
     function animate() {
         A.crc2.putImageData(BG, 0, 0);
         for (let i = 0; i < shapes.length; i++) {
-            let s = shapes[i]; //s = das objekt an der stelle die ich abfrage
+            let s = shapes[i];
             s.move();
         }
         window.setTimeout(animate, 25);
