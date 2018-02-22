@@ -32,9 +32,9 @@ body {margin: 10px;}
 	position: absolute;
 	height: 3vw;
 	width: 3vw;
-	top: 40.5vw;
-	left: 14.5vw;
-		opacity: 0.5;
+	top: 85%;
+	left: 13.5%;
+	opacity: 0.5;
 	background-color: yellow;
 
 	
@@ -42,10 +42,10 @@ body {margin: 10px;}
 
 #isaac {
 	position: absolute;
-	height: 9vw;
-	width: 3vw;
-	top: 33vw;
-	left: 18vw;
+	height: 9.5vw;
+	width: 4vw;
+	top: 66%;
+	left: 16.7%;
 	opacity: 0.5;
 	background-color: 	#39e600;
 	
@@ -56,10 +56,29 @@ body {margin: 10px;}
 	position: absolute;
 	height: 2.8vw;
 	width: 4.2vw;
-	top: 40vw;
-	left: 25vw;
+	top: 84%;
+	left: 24.5%;
 		opacity: 0.5;
 	background-color: #00e6e6;
 
 }
 
+#house {
+	position: absolute;
+	height: 4.7vw;
+	width: 4.5vw;
+	top: 57%;
+	left: 57%;
+	opacity: 0.5;
+	background-color: 	#e67300;
+}
+
+#moon{
+	position: absolute;
+	height: 6.8vw;
+	width: 6.8vw;
+	top: 5%;
+	left: 57.5%;
+	opacity: 0.5;
+	background-color: 		#e600e6;
+}
