@@ -248,10 +248,6 @@ namespace A {
         crc2.strokeStyle = "red";
         crc2.stroke();
 
-
-
-
-
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }
