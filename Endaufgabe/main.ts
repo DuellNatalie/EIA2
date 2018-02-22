@@ -64,35 +64,53 @@ namespace A {
         crc2.lineTo(320, 300);
         crc2.lineTo(270, 305);
         crc2.closePath();
-        crc2.strokeStyle = "darkbrown";
+        crc2.strokeStyle = " #1a0d00";
         crc2.stroke();
-        crc2.fillStyle = "brown";
+        crc2.fillStyle = " #1a0d00";
         crc2.fill(); 
         //Gruenzeug
         crc2.beginPath();
         crc2.arc(250, 300, 90, 0, 2 * Math.PI);
-        crc2.fillStyle = "darkgreen";
+        crc2.fillStyle = "#1a3300";
         crc2.fill();
         crc2.beginPath();
         crc2.arc(190, 250, 90, 0, 2 * Math.PI);
-        crc2.fillStyle = "darkgreen";
+        crc2.fillStyle = "#284d00";
         crc2.fill();
         crc2.beginPath();
-        crc2.arc(250, 170, 90, 0, 2 * Math.PI);
-        crc2.fillStyle = "darkgreen";
+        crc2.arc(230, 180, 90, 0, 2 * Math.PI);
+        crc2.fillStyle = "#356600";
         crc2.fill();
         crc2.beginPath();
         crc2.arc(300, 150, 90, 0, 2 * Math.PI);
-        crc2.fillStyle = "darkgreen";
+        crc2.fillStyle = "#1a3300";
         crc2.fill();
         crc2.beginPath();
         crc2.arc(370, 230, 90, 0, 2 * Math.PI);
-        crc2.fillStyle = "darkgreen";
+        crc2.fillStyle = "#284d00";
         crc2.fill();
         crc2.beginPath();
         crc2.arc(320, 300, 90, 0, 2 * Math.PI);
-        crc2.fillStyle = "darkgreen";
+        crc2.fillStyle = "#356600";
         crc2.fill();
+        //Apfel
+        crc2.beginPath();
+        crc2.arc(350, 355, 15, 0, 2 * Math.PI);
+        crc2.fillStyle = "darkred";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(360, 355, 15, 0, 2 * Math.PI);
+        crc2.fillStyle = "darkred";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.moveTo(355, 340);
+        crc2.lineTo(360, 335);
+        crc2.lineTo(370, 330);
+        crc2.closePath();
+        crc2.strokeStyle = " #1a0d00";
+        crc2.stroke();
+        crc2.fillStyle = " #1a0d00";
+        crc2.fill(); 
         
         
         
