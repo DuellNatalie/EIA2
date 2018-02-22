@@ -98,6 +98,61 @@ var A;
         A.crc2.stroke();
         A.crc2.fillStyle = " #1a0d00";
         A.crc2.fill();
+        //Isaaac
+        //Kopf
+        A.crc2.beginPath();
+        A.crc2.arc(340, 520, 25, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "#ffbf80";
+        A.crc2.fill();
+        //Haare
+        A.crc2.beginPath();
+        A.crc2.arc(320, 505, 12, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "black";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.arc(330, 498, 12, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "black";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.arc(340, 495, 12, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "black";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.arc(350, 498, 12, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "black";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.arc(315, 515, 12, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "black";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.arc(330, 505, 12, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "black";
+        A.crc2.fill();
+        //Augen und Mund
+        A.crc2.beginPath();
+        A.crc2.moveTo(355, 518);
+        A.crc2.lineTo(355, 525);
+        A.crc2.strokeStyle = "black";
+        A.crc2.stroke();
+        A.crc2.moveTo(345, 532);
+        A.crc2.lineTo(355, 537);
+        A.crc2.strokeStyle = "black";
+        A.crc2.stroke();
+        //K�rper 
+        //         crc2.beginPath();
+        //            crc2.arc(370, 648, 35, 1 * Math.PI, 2 * Math.PI);
+        //            crc2.strokeStyle = "black";
+        //            crc2.closePath();
+        //            crc2.fillStyle = "grey";
+        //    crc2.fill();  //          1/2 Kreis
+        A.crc2.beginPath();
+        A.crc2.moveTo(320, 543);
+        A.crc2.lineTo(330, 650);
+        A.crc2.lineTo(370, 635);
+        A.crc2.lineTo(350, 548);
+        A.crc2.fillStyle = "hsl(" + Math.random() * 360 + ", 80%, 21%)";
+        A.crc2.fill();
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }

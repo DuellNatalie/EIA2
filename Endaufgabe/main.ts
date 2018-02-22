@@ -4,7 +4,7 @@ namespace A {
     export let crc2: CanvasRenderingContext2D;
     let BG: ImageData;
     // export let confettis: confetti[] = [];
-    let shapes: Move[] = []; 
+    let shapes: Move[] = [];
     let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
     crc2 = canvas.getContext("2d");
 
@@ -20,7 +20,7 @@ namespace A {
 
 
     function draw(): void {
-        
+
         // Himmel
         var gradient = crc2.createLinearGradient(0, 0, 0, 720);
         gradient.addColorStop(0, "#000d1a");
@@ -36,28 +36,29 @@ namespace A {
         for (let i: number = 0; i < 70; i++) {
             let x: number = 10 + Math.random() * 1250;
             let y: number = 10 + Math.random() * 410;
-            drawStars(x, y);}
+            drawStars(x, y);
+        }
         function drawStars(_x: number, _y: number): void {
-        crc2.beginPath();
-        crc2.arc(_x, _y, 1.5, 0, 2 * Math.PI);
-        crc2.fillStyle = "silver";
-        crc2.fill();
-        
-        //Mond
-        crc2.beginPath();
-        crc2.arc(1105, 100, 60, 0, 2 * Math.PI);
-        crc2.fillStyle = "silver";
-        crc2.fill();}
-        
+            crc2.beginPath();
+            crc2.arc(_x, _y, 1.5, 0, 2 * Math.PI);
+            crc2.fillStyle = "silver";
+            crc2.fill();
+
+            //Mond
+            crc2.beginPath();
+            crc2.arc(1105, 100, 60, 0, 2 * Math.PI);
+            crc2.fillStyle = "silver";
+            crc2.fill();
+        }
+
         //Wolken  
         for (let i: number = 0; i < 3; i++) {
             let c: Clouds = new Clouds(Math.random() * 800, 50 + Math.random() * 270);
-            shapes.push(c); 
-
+            shapes.push(c);
         }
-        
-        
-       //Baum
+
+
+        //Baum
         crc2.beginPath();
         crc2.moveTo(220, 660);
         crc2.lineTo(350, 650);
@@ -67,7 +68,7 @@ namespace A {
         crc2.strokeStyle = " #1a0d00";
         crc2.stroke();
         crc2.fillStyle = " #1a0d00";
-        crc2.fill(); 
+        crc2.fill();
         //Gruenzeug
         crc2.beginPath();
         crc2.arc(250, 300, 90, 0, 2 * Math.PI);
@@ -110,38 +111,91 @@ namespace A {
         crc2.strokeStyle = " #1a0d00";
         crc2.stroke();
         crc2.fillStyle = " #1a0d00";
-        crc2.fill(); 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        crc2.fill();
+
+        //Isaaac
+        //Kopf
+        crc2.beginPath();
+        crc2.arc(340, 520, 25, 0, 2 * Math.PI);
+        crc2.fillStyle = "#ffbf80";
+        crc2.fill();
+        //Haare
+        crc2.beginPath();
+        crc2.arc(320, 505, 12, 0, 2 * Math.PI);
+        crc2.fillStyle = "black";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(330, 498, 12, 0, 2 * Math.PI);
+        crc2.fillStyle = "black";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(340, 495, 12, 0, 2 * Math.PI);
+        crc2.fillStyle = "black";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(350, 498, 12, 0, 2 * Math.PI);
+        crc2.fillStyle = "black";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(315, 515, 12, 0, 2 * Math.PI);
+        crc2.fillStyle = "black";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(330, 505, 12, 0, 2 * Math.PI);
+        crc2.fillStyle = "black";
+        crc2.fill();
+        //Augen und Mund
+        crc2.beginPath();
+        crc2.moveTo(355, 518);
+        crc2.lineTo(355, 525);
+        crc2.strokeStyle = "black";
+        crc2.stroke();
+
+        crc2.moveTo(345, 532);
+        crc2.lineTo(355, 537);
+        crc2.strokeStyle = "black";
+        crc2.stroke();
+
+        //Körper 
+        //         crc2.beginPath();
+        //            crc2.arc(370, 648, 35, 1 * Math.PI, 2 * Math.PI);
+        //            crc2.strokeStyle = "black";
+        //            crc2.closePath();
+        //            crc2.fillStyle = "grey";
+        //    crc2.fill();  //          1/2 Kreis
+   
+     
+        crc2.beginPath();
+        crc2.moveTo(320, 543);
+        crc2.lineTo(330, 650);
+        crc2.lineTo(370, 635);
+        crc2.lineTo(350, 548);
+        crc2.fillStyle = "hsl(" + Math.random() * 360 + ", 80%, 21%)";
+        crc2.fill();
+
+
+
+
+
+
+
+
+
+
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
-        animate();}
-    
-        //ANIMATAION/////////////////////////////////////////////////
+        animate();
+    }
+
+    //ANIMATAION/////////////////////////////////////////////////
     function animate(): void {
         crc2.putImageData(BG, 0, 0);
 
 
         for (let i: number = 0; i < shapes.length; i++) {
             let s: Move = shapes[i];
-            s.move(); 
+            s.move();
         }
-window.setTimeout(animate, 25);
+        window.setTimeout(animate, 25);
 
     }
 

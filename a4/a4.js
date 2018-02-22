@@ -96,7 +96,7 @@ var a4;
         crc2.closePath();
         crc2.strokeStyle = "#004d26";
         crc2.stroke();
-        crc2.fillStyle = "#113b27";
+        crc2.fillStyle = "hsl(" + Math.random() * 360 + ", 100%, 90%)";
         crc2.fill();
     }
     function drawSnow(_x, _y) {
