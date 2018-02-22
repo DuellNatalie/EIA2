@@ -41,7 +41,7 @@ var A;
         }
         //Wolken  
         for (let i = 0; i < 3; i++) {
-            let c = new A.Clouds(Math.random() * 800, 60 + Math.random() * 70);
+            let c = new A.Clouds(Math.random() * 800, 50 + Math.random() * 270);
             shapes.push(c);
         }
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);

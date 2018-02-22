@@ -14,14 +14,15 @@ namespace A {
         draw(): void{
             
             crc2.beginPath();
-            crc2.arc(this.x, this.y, 23, 0, 2 * Math.PI);
-            crc2.fillStyle = "#ffffff";
+            crc2.arc(this.x, this.y, 28, 0, 2 * Math.PI);
+            crc2.globalAlpha = 0.95;
+            crc2.fillStyle = "#a6a6a6";
             crc2.fill();
             crc2.beginPath();
-            crc2.arc(this.x + 23, this.y - 13, 25, 0, 2 * Math.PI);
+            crc2.arc(this.x + 23, this.y - 13, 28, 0, 2 * Math.PI);
             crc2.fill();
             crc2.beginPath();
-            crc2.arc(this.x + 36, this.y + 4, 22, 0, 2 * Math.PI);
+            crc2.arc(this.x + 36, this.y + 4, 28, 0, 2 * Math.PI);
             crc2.fill();
             
         }
@@ -29,7 +30,7 @@ namespace A {
 
         move(): void {
             
-            if (this.x > 820) {
+            if (this.x > 1260) {
                 
                 this.x = -20;
                 

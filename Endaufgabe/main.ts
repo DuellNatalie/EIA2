@@ -52,7 +52,7 @@ namespace A {
         
             //Wolken  
         for (let i: number = 0; i < 3; i++) {
-            let c: Clouds = new Clouds(Math.random() * 800, 60 + Math.random() * 70);
+            let c: Clouds = new Clouds(Math.random() * 800, 50 + Math.random() * 270);
             shapes.push(c); 
 
         }
