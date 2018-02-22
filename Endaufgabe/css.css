@@ -10,6 +10,49 @@ margin-bottom: -5px;}
 
 body {margin: 10px;}
 
+#apple {
+	position: absolute;
+	height: 3vw;
+	width: 3vw;
+	top: 24vw;
+	left: 19vw;
+	opacity: 0.5;
+	background-color: red;
+	
+}
+
+#pear {
+	position: absolute;
+	height: 3vw;
+	width: 3vw;
+	top: 40.5vw;
+	left: 14.5vw;
+		opacity: 0.5;
+	background-color: yellow;
+
+	
+}
+
+#isaac {
+	position: absolute;
+	height: 9vw;
+	width: 3vw;
+	top: 33vw;
+	left: 18vw;
+	opacity: 0.5;
+	background-color: 	#39e600;
+	
+}
 
 
+#bottle {
+	position: absolute;
+	height: 2.8vw;
+	width: 4.2vw;
+	top: 40vw;
+	left: 25vw;
+		opacity: 0.5;
+	background-color: #00e6e6;
+
+}
 
