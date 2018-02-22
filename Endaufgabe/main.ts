@@ -108,7 +108,7 @@ namespace A {
         crc2.lineTo(360, 335);
         crc2.lineTo(370, 330);
         crc2.closePath();
-        crc2.strokeStyle = " #1a0d00";
+        crc2.strokeStyle = "#1a0d00";
         crc2.stroke();
         crc2.fillStyle = " #1a0d00";
         crc2.fill();
@@ -163,8 +163,6 @@ namespace A {
         //            crc2.closePath();
         //            crc2.fillStyle = "grey";
         //    crc2.fill();  //          1/2 Kreis
-   
-     
         crc2.beginPath();
         crc2.moveTo(320, 543);
         crc2.lineTo(330, 650);
@@ -172,11 +170,83 @@ namespace A {
         crc2.lineTo(350, 548);
         crc2.fillStyle = "hsl(" + Math.random() * 360 + ", 80%, 21%)";
         crc2.fill();
+        
+        //Birne
+        crc2.beginPath();
+        crc2.arc(280, 645, 10, 0, 2 * Math.PI);
+        crc2.fillStyle = "#95b82e";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(280, 655, 13, 0, 2 * Math.PI);
+        crc2.fillStyle = "#95b82e";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.moveTo(280, 634);
+        crc2.lineTo(285, 629);
+        crc2.lineTo(290, 624);
+        crc2.closePath();
+        crc2.strokeStyle = "white";
+        crc2.stroke();
+        crc2.fillStyle = " #1a0d00";
+        crc2.fill();
 
+//Haus
+ crc2.beginPath();
+        crc2.moveTo(1050, 450);
+        crc2.lineTo(1100, 450);
+        crc2.lineTo(1100, 500);
+        crc2.lineTo(1050, 500);
+        crc2.lineTo(1050,550);
+        crc2.fillStyle = "hsl(" + Math.random() * 360 + ", 40%, 75%)";
+        crc2.fill();
+        //Fenster
+         crc2.beginPath();
+        crc2.moveTo(1060, 460);
+        crc2.lineTo(1070, 460);
+        crc2.lineTo(1070, 480);
+        crc2.lineTo(1060, 480);
+        crc2.lineTo(1060,460);
+        crc2.fillStyle = "black";
+        crc2.fill();
+        //Türe
+         crc2.beginPath();
+        crc2.moveTo(1080, 480);
+        crc2.lineTo(1092, 480);
+        crc2.lineTo(1092, 500);
+        crc2.lineTo(1080, 500);
+        crc2.lineTo(1080, 480);
+        crc2.fillStyle = "#1a0d00";
+        crc2.fill();
+        //Dach
+        crc2.beginPath();
+        crc2.moveTo(1045, 450);
+        crc2.lineTo(1105, 450);
+        crc2.lineTo(1075, 420);
+        crc2.lineTo(1045, 450);
+        crc2.fillStyle = "darkred";
+        crc2.fill();  
 
-
-
-
+//Weinflasche
+        crc2.beginPath();
+        crc2.moveTo(450, 630);
+        crc2.lineTo(500, 630);
+        crc2.lineTo(500, 636);
+        crc2.lineTo(518, 637);
+        crc2.lineTo(518, 643);
+        crc2.lineTo(500, 644);
+        crc2.lineTo(500, 650);
+        crc2.lineTo(450, 650);
+        crc2.lineTo(450, 630);
+        crc2.globalAlpha = 0.5;
+        crc2.fillStyle = "white";
+        crc2.fill();  
+        //Wein
+        crc2.beginPath();
+        crc2.moveTo(450, 648);
+        crc2.lineTo(500, 648);
+        crc2.lineWidth = 5;
+        crc2.strokeStyle = "red";
+        crc2.stroke();
 
 
 
