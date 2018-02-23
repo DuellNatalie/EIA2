@@ -1,1 +1,43 @@
+var A;
+(function (A) {
+    class glitter {
+        constructor(_x, _y, _color) {
+            this.x = _x;
+            this.y = _y;
+            this.color = _color;
+        }
+        update() {
+            this.drawGlitter();
+            this.move();
+        }
+        move() {
+            this.y += Math.random() * (30);
+            this.x += (Math.random() * (22) - -22) + (Math.random() * (-22) - 22);
+            if (this.y > 900) {
+                this.xy = Math.random() * (5);
+                if (this.xy < 1) {
+                    this.y = 10;
+                    let s = new glitter(this.x, this.y, this.color);
+                    A.glitterx.push(s);
+                }
+                else {
+                    A.glitterx.splice(0, Math.random() * (2));
+                    this.y = 10;
+                }
+            }
+        }
+        drawGlitter() {
+            A.crc2.beginPath();
+            A.crc2.lineTo(this.x + 10, this.y);
+            A.crc2.lineTo(this.x + 10, this.y + 10);
+            A.crc2.lineTo(this.x, this.y + 10);
+            A.crc2.lineTo(this.x, this.y);
+            A.crc2.closePath();
+            A.crc2.fillStyle = this.color;
+            A.crc2.fill();
+            A.crc2.stroke();
+        }
+    }
+    A.glitter = glitter;
+})(A || (A = {}));
 //# sourceMappingURL=random.js.map
