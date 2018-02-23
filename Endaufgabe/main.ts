@@ -5,9 +5,10 @@ namespace A {
     let BG: ImageData;
     // export let confettis: confetti[] = [];
     let shapes: Move[] = [];
-    let ToothOut: number = 0;
-    let TeethHit: number = 0;
-    
+    let AppleKlick: number = 0;
+    let PearKlick: number = 0;
+    let KlickIsaac: number = 0;
+
     let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
     crc2 = canvas.getContext("2d");
 
@@ -18,13 +19,13 @@ namespace A {
         crc2 = canvas.getContext("2d");
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
         draw();
-        
-       document.getElementById("apple").addEventListener("click", touchApple)
+
+        document.getElementById("apple").addEventListener("click", touchApple)
         document.getElementById("apple").addEventListener("touchstart", touchApple)
+        document.getElementById("pear").addEventListener("click", touchPear)
+        document.getElementById("pear").addEventListener("touchstart", touchPear)
         
-          document.getElementById("pear").addEventListener("click", touchPear)
-        document.getElementById("pear").addEventListener("touchstart", touchPear) 
-         document.getElementById("isaac").addEventListener("click", touchIsaac)
+        document.getElementById("isaac").addEventListener("click", touchIsaac)
         document.getElementById("isaac").addEventListener("touchstart", touchIsaac)
         document.getElementById("bottle").addEventListener("click", touchBottle)
         document.getElementById("bottle").addEventListener("touchstart", touchBottle)
@@ -34,58 +35,79 @@ namespace A {
         document.getElementById("moon").addEventListener("touchstart", touchMoon)
 
     }
-    
-    
-    
-    function touchApple(): void{ ToothOut++;
-        if (ToothOut == 1)
-        { clicked(); }
-        else { }
-    }
 
-    function teeth(): void {
-        if (ToothOut != 1) {
-            TeethHit++;
-            if (TeethHit == 10) {
-                crc2.putImageData(BG, 0, 0);
-              //  drawTeethOutHit();
-                BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
-             //   generateConfetti();
-                animate();
-                ToothOut++;
-                alert("BIST DU WAHNSINNIG? Das war eine grandiose Idee! Einfach den Zahn abzuschlagen. Woaw. Der kleine Timmy hat jetzt zwar ganz dolle schmerzen, aber er wird es überleben!");
-            }
-        }}
-    
-    function touchPear(): void{}
-    
-   function touchIsaac(): void{} 
-    
-   function touchBottle(): void{} 
-    
-   function touchHouse(): void{} 
-    
-   function touchMoon(): void{} 
-    
-      function clicked() {
-        crc2.putImageData(BG, 0, 0);
-   drawAppleDown();
-        BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
-       // generateConfetti();
 
-        alert("Isaac ist wach! Vielleicht gibt es aber noch andere Möglichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!")
-      //  animate();
+
+    function touchApple(): void {
+        AppleKlick++;
+        if (AppleKlick == 1) {
+            clicked();
+            }}
+
+
+    function touchPear(): void { 
+    PearKlick++;
+        if (PearKlick == 1) {
+            alert("Eine Birne? Ich glaube nicht. \n Probier es nochmal!")
+         }}
         
+
+    function touchIsaac(): void { 
+    
+  if (KlickIsaac == 0) {
+            alert("Isaac mag es gar nicht angefasst zu werden... \n Lass es oder versuche ihn zu reizen...");
+            KlickIsaac++;
+        }
+        else {
+            KlickIsaac++;
+            if (KlickIsaac == 8) {
+                crc2.putImageData(BG, 0, 0);
+                
+                BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
+               // generateConfetti();
+                animate();
+                
+                alert("Du hast es geschafft! Allerdings ist Isaac jetzt sauer und da wäre noch die Sache mit der Schwerkraft... \n Versuch es doch mal anders! ");
+            }
+        }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    function touchBottle(): void { }
+
+    function touchHouse(): void { }
+
+    function touchMoon(): void { }
+
+    function clicked() {
+        crc2.putImageData(BG, 0, 0);
+        drawAppleDown();
+        BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
+        // generateConfetti();
+        alert("Isaac ist wach! Vielleicht gibt es aber noch andere Möglichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!")
+        //  animate();  
+    }
+
+
+
+
+
+
+
+
+
 
 
     function draw(): void {
@@ -239,7 +261,7 @@ namespace A {
         crc2.lineTo(350, 548);
         crc2.fillStyle = "hsl(" + Math.random() * 360 + ", 80%, 21%)";
         crc2.fill();
-        
+
         //Birne
         crc2.beginPath();
         crc2.arc(280, 645, 10, 0, 2 * Math.PI);
@@ -259,26 +281,26 @@ namespace A {
         crc2.fillStyle = " #1a0d00";
         crc2.fill();
 
-//Haus
- crc2.beginPath();
+        //Haus
+        crc2.beginPath();
         crc2.moveTo(1050, 450);
         crc2.lineTo(1100, 450);
         crc2.lineTo(1100, 500);
         crc2.lineTo(1050, 500);
-        crc2.lineTo(1050,550);
+        crc2.lineTo(1050, 550);
         crc2.fillStyle = "hsl(" + Math.random() * 360 + ", 40%, 75%)";
         crc2.fill();
         //Fenster
-         crc2.beginPath();
+        crc2.beginPath();
         crc2.moveTo(1060, 460);
         crc2.lineTo(1070, 460);
         crc2.lineTo(1070, 480);
         crc2.lineTo(1060, 480);
-        crc2.lineTo(1060,460);
+        crc2.lineTo(1060, 460);
         crc2.fillStyle = "black";
         crc2.fill();
         //Türe
-         crc2.beginPath();
+        crc2.beginPath();
         crc2.moveTo(1080, 480);
         crc2.lineTo(1092, 480);
         crc2.lineTo(1092, 500);
@@ -293,9 +315,9 @@ namespace A {
         crc2.lineTo(1075, 420);
         crc2.lineTo(1045, 450);
         crc2.fillStyle = "darkred";
-        crc2.fill();  
+        crc2.fill();
 
-//Weinflasche
+        //Weinflasche
         crc2.beginPath();
         crc2.moveTo(450, 630);
         crc2.lineTo(500, 630);
@@ -308,7 +330,7 @@ namespace A {
         crc2.lineTo(450, 630);
         crc2.globalAlpha = 0.5;
         crc2.fillStyle = "white";
-        crc2.fill();  
+        crc2.fill();
         //Wein
         crc2.beginPath();
         crc2.moveTo(450, 648);
@@ -320,13 +342,13 @@ namespace A {
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }
-    
-        function drawAppleDown(): void{
-               crc2.beginPath();
+
+    function drawAppleDown(): void {
+        crc2.beginPath();
         crc2.arc(320, 300, 90, 0, 2 * Math.PI);
         crc2.fillStyle = "#356600";
         crc2.fill();
-            crc2.arc(320, 300, 90, 0, 2 * Math.PI);
+        crc2.arc(320, 300, 90, 0, 2 * Math.PI);
         crc2.fillStyle = "#356600";
         crc2.fill();
         //Apfel
@@ -346,7 +368,8 @@ namespace A {
         crc2.strokeStyle = "#1a0d00";
         crc2.stroke();
         crc2.fillStyle = " #1a0d00";
-        crc2.fill();}
+        crc2.fill();
+    }
 
     //ANIMATAION/////////////////////////////////////////////////
     function animate(): void {

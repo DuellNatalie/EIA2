@@ -34,7 +34,7 @@ body {margin: 10px;}
 	width: 3vw;
 	top: 85%;
 	left: 13.5%;
-	opacity: 0.5;
+	opacity: 0;
 	background-color: yellow;
 
 	
@@ -46,7 +46,7 @@ body {margin: 10px;}
 	width: 4vw;
 	top: 66%;
 	left: 16.7%;
-	opacity: 0.5;
+	opacity: 0;
 	background-color: 	#39e600;
 	
 }

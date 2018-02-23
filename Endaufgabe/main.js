@@ -4,8 +4,9 @@ var A;
     let BG;
     // export let confettis: confetti[] = [];
     let shapes = [];
-    let ToothOut = 0;
-    let TeethHit = 0;
+    let AppleKlick = 0;
+    let PearKlick = 0;
+    let KlickIsaac = 0;
     let canvas = document.getElementsByTagName("canvas")[0];
     A.crc2 = canvas.getContext("2d");
     function init(_event) {
@@ -27,28 +28,33 @@ var A;
         document.getElementById("moon").addEventListener("touchstart", touchMoon);
     }
     function touchApple() {
-        ToothOut++;
-        if (ToothOut == 1) {
+        AppleKlick++;
+        if (AppleKlick == 1) {
             clicked();
         }
-        else { }
     }
-    function teeth() {
-        if (ToothOut != 1) {
-            TeethHit++;
-            if (TeethHit == 10) {
+    function touchPear() {
+        PearKlick++;
+        if (PearKlick == 1) {
+            alert("Eine Birne? Ich glaube nicht. \n Probier es nochmal!");
+        }
+    }
+    function touchIsaac() {
+        if (KlickIsaac == 0) {
+            alert("Isaac mag es gar nicht angefasst zu werden... \n Lass es oder versuche ihn zu reizen...");
+            KlickIsaac++;
+        }
+        else {
+            KlickIsaac++;
+            if (KlickIsaac == 8) {
                 A.crc2.putImageData(BG, 0, 0);
-                //  drawTeethOutHit();
                 BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
-                //   generateConfetti();
+                // generateConfetti();
                 animate();
-                ToothOut++;
-                alert("BIST DU WAHNSINNIG? Das war eine grandiose Idee! Einfach den Zahn abzuschlagen. Woaw. Der kleine Timmy hat jetzt zwar ganz dolle schmerzen, aber er wird es �berleben!");
+                alert("Du hast es geschafft! Allerdings ist Isaac jetzt sauer und da w�re noch die Sache mit der Schwerkraft... \n Versuch es doch mal anders! ");
             }
         }
     }
-    function touchPear() { }
-    function touchIsaac() { }
     function touchBottle() { }
     function touchHouse() { }
     function touchMoon() { }
@@ -58,7 +64,7 @@ var A;
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
         // generateConfetti();
         alert("Isaac ist wach! Vielleicht gibt es aber noch andere M�glichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!");
-        //  animate();
+        //  animate();  
     }
     function draw() {
         // Himmel
