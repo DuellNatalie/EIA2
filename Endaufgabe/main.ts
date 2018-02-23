@@ -10,6 +10,8 @@ namespace A {
     let KlickIsaac: number = 0;
 let BottleKlick: number = 0;
 let HouseKlick: number = 0;    
+let MoonKlick: number = 0;    
+        
     
     let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
     crc2 = canvas.getContext("2d");
@@ -89,17 +91,17 @@ let HouseKlick: number = 0;
         else {
             HouseKlick++;
             if (HouseKlick == 5) {
-                crc2.putImageData(BG, 0, 0);
-                
+                crc2.putImageData(BG, 0, 0);          
                 BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
-           
-               // animate();
                 clicked2();
-                
                 alert("Super, du hast die falschen geweckt. Isaac wird das auch nicht helfen. \n Versuch es nochmal! ");
             }} }
 
-    function touchMoon(): void { }
+    function touchMoon(): void {    
+    MoonKlick++;
+        if (MoonKlick == 1) {
+            alert("Was soll das werden? Du sollst Isaac wecken! \n Probier es nochmal!")
+         }}
 
     function clicked() {
         crc2.putImageData(BG, 0, 0);
@@ -114,8 +116,6 @@ let HouseKlick: number = 0;
         crc2.putImageData(BG, 0, 0);
         drawHouseDown();
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
-        // generateConfetti();
-        alert("Isaac ist wach! Vielleicht gibt es aber noch andere Möglichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!")
         //  animate();  
     }
 

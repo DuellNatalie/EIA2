@@ -9,6 +9,7 @@ var A;
     let KlickIsaac = 0;
     let BottleKlick = 0;
     let HouseKlick = 0;
+    let MoonKlick = 0;
     let canvas = document.getElementsByTagName("canvas")[0];
     A.crc2 = canvas.getContext("2d");
     function init(_event) {
@@ -73,13 +74,17 @@ var A;
             if (HouseKlick == 5) {
                 A.crc2.putImageData(BG, 0, 0);
                 BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
-                // animate();
                 clicked2();
                 alert("Super, du hast die falschen geweckt. Isaac wird das auch nicht helfen. \n Versuch es nochmal! ");
             }
         }
     }
-    function touchMoon() { }
+    function touchMoon() {
+        MoonKlick++;
+        if (MoonKlick == 1) {
+            alert("Was soll das werden? Du sollst Isaac wecken! \n Probier es nochmal!");
+        }
+    }
     function clicked() {
         A.crc2.putImageData(BG, 0, 0);
         drawAppleDown();
@@ -92,8 +97,6 @@ var A;
         A.crc2.putImageData(BG, 0, 0);
         drawHouseDown();
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
-        // generateConfetti();
-        alert("Isaac ist wach! Vielleicht gibt es aber noch andere M�glichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!");
         //  animate();  
     }
     function draw() {
