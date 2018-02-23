@@ -8,11 +8,11 @@ namespace A {
     let AppleKlick: number = 0;
     let PearKlick: number = 0;
     let KlickIsaac: number = 0;
-let BottleKlick: number = 0;
-let HouseKlick: number = 0;    
-let MoonKlick: number = 0;    
-        
-    
+    let BottleKlick: number = 0;
+    let HouseKlick: number = 0;
+    let MoonKlick: number = 0;
+
+
     let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
     crc2 = canvas.getContext("2d");
 
@@ -23,7 +23,6 @@ let MoonKlick: number = 0;
         crc2 = canvas.getContext("2d");
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
         draw();
-
         document.getElementById("apple").addEventListener("click", touchApple)
         document.getElementById("apple").addEventListener("touchstart", touchApple)
         document.getElementById("pear").addEventListener("click", touchPear)
@@ -32,7 +31,6 @@ let MoonKlick: number = 0;
         document.getElementById("isaac").addEventListener("touchstart", touchIsaac)
         document.getElementById("bottle").addEventListener("click", touchBottle)
         document.getElementById("bottle").addEventListener("touchstart", touchBottle)
-        
         document.getElementById("house").addEventListener("click", touchHouse)
         document.getElementById("house").addEventListener("touchstart", touchHouse)
         document.getElementById("moon").addEventListener("click", touchMoon)
@@ -46,19 +44,21 @@ let MoonKlick: number = 0;
         AppleKlick++;
         if (AppleKlick == 1) {
             clicked();
-            }}
+        }
+    }
 
 
-    function touchPear(): void { 
-    PearKlick++;
+    function touchPear(): void {
+        PearKlick++;
         if (PearKlick == 1) {
             alert("Eine Birne? Ich glaube nicht. \n Probier es nochmal!")
-         }}
-        
+        }
+    }
 
-    function touchIsaac(): void { 
-    
-  if (KlickIsaac == 0) {
+
+    function touchIsaac(): void {
+
+        if (KlickIsaac == 0) {
             alert("Isaac mag es gar nicht angefasst zu werden... \n Lass es oder versuche ihn zu reizen...");
             KlickIsaac++;
         }
@@ -66,42 +66,49 @@ let MoonKlick: number = 0;
             KlickIsaac++;
             if (KlickIsaac == 8) {
                 crc2.putImageData(BG, 0, 0);
-                
+
                 BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
-               // generateConfetti();
+                // generateConfetti();
                 animate();
-                
+
                 alert("Du hast es geschafft! Allerdings ist Isaac jetzt sauer und da wäre noch die Sache mit der Schwerkraft... \n Versuch es doch mal anders! ");
-            }}}
+            }
+        }
+    }
 
     function touchBottle(): void {
-        
-    BottleKlick++;
+
+        BottleKlick++;
         if (BottleKlick == 1) {
             alert("Nein! Das bringt Isaac nur Probleme. \n Probier es nochmal!")
-         }}
-    
-    
-    
+        }
+    }
 
-    function touchHouse(): void {if (HouseKlick == 0) {
+
+
+
+    function touchHouse(): void {
+        if (HouseKlick == 0) {
             alert("Die bewohner schlafen schon... \n Du willst sie doch nicht wecken, oder?");
             HouseKlick++;
         }
         else {
             HouseKlick++;
             if (HouseKlick == 5) {
-                crc2.putImageData(BG, 0, 0);          
+                crc2.putImageData(BG, 0, 0);
                 BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
                 clicked2();
                 alert("Super, du hast die falschen geweckt. Isaac wird das auch nicht helfen. \n Versuch es nochmal! ");
-            }} }
+            }
+        }
+    }
 
-    function touchMoon(): void {    
-    MoonKlick++;
+    function touchMoon(): void {
+        MoonKlick++;
         if (MoonKlick == 1) {
             alert("Was soll das werden? Du sollst Isaac wecken! \n Probier es nochmal!")
-         }}
+        }
+    }
 
     function clicked() {
         crc2.putImageData(BG, 0, 0);
@@ -112,11 +119,10 @@ let MoonKlick: number = 0;
         //  animate();  
     }
 
-  function clicked2() {
+    function clicked2() {
         crc2.putImageData(BG, 0, 0);
         drawHouseDown();
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
-        //  animate();  
     }
 
 
@@ -388,8 +394,8 @@ let MoonKlick: number = 0;
         crc2.fill();
     }
 
-    
-       function drawHouseDown(): void {
+
+    function drawHouseDown(): void {
         crc2.beginPath();
         crc2.moveTo(1060, 460);
         crc2.lineTo(1070, 460);
