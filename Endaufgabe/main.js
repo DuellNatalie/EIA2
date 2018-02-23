@@ -63,11 +63,34 @@ var A;
             alert("Nein! Das bringt Isaac nur Probleme. \n Probier es nochmal!");
         }
     }
-    function touchHouse() { }
+    function touchHouse() {
+        if (HouseKlick == 0) {
+            alert("Die bewohner schlafen schon... \n Du willst sie doch nicht wecken, oder?");
+            HouseKlick++;
+        }
+        else {
+            HouseKlick++;
+            if (HouseKlick == 5) {
+                A.crc2.putImageData(BG, 0, 0);
+                BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
+                // animate();
+                clicked2();
+                alert("Super, du hast die falschen geweckt. Isaac wird das auch nicht helfen. \n Versuch es nochmal! ");
+            }
+        }
+    }
     function touchMoon() { }
     function clicked() {
         A.crc2.putImageData(BG, 0, 0);
         drawAppleDown();
+        BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
+        // generateConfetti();
+        alert("Isaac ist wach! Vielleicht gibt es aber noch andere M�glichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!");
+        //  animate();  
+    }
+    function clicked2() {
+        A.crc2.putImageData(BG, 0, 0);
+        drawHouseDown();
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
         // generateConfetti();
         alert("Isaac ist wach! Vielleicht gibt es aber noch andere M�glichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!");
@@ -316,6 +339,16 @@ var A;
         A.crc2.strokeStyle = "#1a0d00";
         A.crc2.stroke();
         A.crc2.fillStyle = " #1a0d00";
+        A.crc2.fill();
+    }
+    function drawHouseDown() {
+        A.crc2.beginPath();
+        A.crc2.moveTo(1060, 460);
+        A.crc2.lineTo(1070, 460);
+        A.crc2.lineTo(1070, 480);
+        A.crc2.lineTo(1060, 480);
+        A.crc2.lineTo(1060, 460);
+        A.crc2.fillStyle = "yellow";
         A.crc2.fill();
     }
     //ANIMATAION/////////////////////////////////////////////////

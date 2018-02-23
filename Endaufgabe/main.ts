@@ -82,7 +82,22 @@ let HouseKlick: number = 0;
     
     
 
-    function touchHouse(): void { }
+    function touchHouse(): void {if (HouseKlick == 0) {
+            alert("Die bewohner schlafen schon... \n Du willst sie doch nicht wecken, oder?");
+            HouseKlick++;
+        }
+        else {
+            HouseKlick++;
+            if (HouseKlick == 5) {
+                crc2.putImageData(BG, 0, 0);
+                
+                BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
+           
+               // animate();
+                clicked2();
+                
+                alert("Super, du hast die falschen geweckt. Isaac wird das auch nicht helfen. \n Versuch es nochmal! ");
+            }} }
 
     function touchMoon(): void { }
 
@@ -95,7 +110,14 @@ let HouseKlick: number = 0;
         //  animate();  
     }
 
-
+  function clicked2() {
+        crc2.putImageData(BG, 0, 0);
+        drawHouseDown();
+        BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
+        // generateConfetti();
+        alert("Isaac ist wach! Vielleicht gibt es aber noch andere Möglichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!")
+        //  animate();  
+    }
 
 
 
@@ -366,6 +388,17 @@ let HouseKlick: number = 0;
         crc2.fill();
     }
 
+    
+       function drawHouseDown(): void {
+        crc2.beginPath();
+        crc2.moveTo(1060, 460);
+        crc2.lineTo(1070, 460);
+        crc2.lineTo(1070, 480);
+        crc2.lineTo(1060, 480);
+        crc2.lineTo(1060, 460);
+        crc2.fillStyle = "yellow";
+        crc2.fill();
+    }
     //ANIMATAION/////////////////////////////////////////////////
     function animate(): void {
         crc2.putImageData(BG, 0, 0);
