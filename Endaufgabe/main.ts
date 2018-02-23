@@ -4,7 +4,10 @@ namespace A {
     export let crc2: CanvasRenderingContext2D;
     let BG: ImageData;
     // export let confettis: confetti[] = [];
-    let shapes: Move[] = [];
+    let shapes: Move[] = [];
+    let ToothOut: number = 0;
+    let TeethHit: number = 0;
+    
     let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
     crc2 = canvas.getContext("2d");
 
@@ -15,8 +18,74 @@ namespace A {
         crc2 = canvas.getContext("2d");
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
         draw();
+        
+       document.getElementById("apple").addEventListener("click", touchApple)
+        document.getElementById("apple").addEventListener("touchstart", touchApple)
+        
+          document.getElementById("pear").addEventListener("click", touchPear)
+        document.getElementById("pear").addEventListener("touchstart", touchPear) 
+         document.getElementById("isaac").addEventListener("click", touchIsaac)
+        document.getElementById("isaac").addEventListener("touchstart", touchIsaac)
+        document.getElementById("bottle").addEventListener("click", touchBottle)
+        document.getElementById("bottle").addEventListener("touchstart", touchBottle)
+        document.getElementById("house").addEventListener("click", touchHouse)
+        document.getElementById("house").addEventListener("touchstart", touchHouse)
+        document.getElementById("moon").addEventListener("click", touchMoon)
+        document.getElementById("moon").addEventListener("touchstart", touchMoon)
 
     }
+    
+    
+    
+    function touchApple(): void{ ToothOut++;
+        if (ToothOut == 1)
+        { clicked(); }
+        else { }
+    }
+
+    function teeth(): void {
+        if (ToothOut != 1) {
+            TeethHit++;
+            if (TeethHit == 10) {
+                crc2.putImageData(BG, 0, 0);
+              //  drawTeethOutHit();
+                BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
+             //   generateConfetti();
+                animate();
+                ToothOut++;
+                alert("BIST DU WAHNSINNIG? Das war eine grandiose Idee! Einfach den Zahn abzuschlagen. Woaw. Der kleine Timmy hat jetzt zwar ganz dolle schmerzen, aber er wird es überleben!");
+            }
+        }}
+    
+    function touchPear(): void{}
+    
+   function touchIsaac(): void{} 
+    
+   function touchBottle(): void{} 
+    
+   function touchHouse(): void{} 
+    
+   function touchMoon(): void{} 
+    
+      function clicked() {
+        crc2.putImageData(BG, 0, 0);
+   drawAppleDown();
+        BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
+       // generateConfetti();
+
+        alert("Isaac ist wach! Vielleicht gibt es aber noch andere Möglichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!")
+      //  animate();
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     function draw(): void {
@@ -251,6 +320,33 @@ namespace A {
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
     }
+    
+        function drawAppleDown(): void{
+               crc2.beginPath();
+        crc2.arc(320, 300, 90, 0, 2 * Math.PI);
+        crc2.fillStyle = "#356600";
+        crc2.fill();
+            crc2.arc(320, 300, 90, 0, 2 * Math.PI);
+        crc2.fillStyle = "#356600";
+        crc2.fill();
+        //Apfel
+        crc2.beginPath();
+        crc2.arc(350, 495, 15, 0, 2 * Math.PI);
+        crc2.fillStyle = "darkred";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.arc(360, 495, 15, 0, 2 * Math.PI);
+        crc2.fillStyle = "darkred";
+        crc2.fill();
+        crc2.beginPath();
+        crc2.moveTo(355, 480);
+        crc2.lineTo(360, 475);
+        crc2.lineTo(370, 470);
+        crc2.closePath();
+        crc2.strokeStyle = "#1a0d00";
+        crc2.stroke();
+        crc2.fillStyle = " #1a0d00";
+        crc2.fill();}
 
     //ANIMATAION/////////////////////////////////////////////////
     function animate(): void {

@@ -4,6 +4,8 @@ var A;
     let BG;
     // export let confettis: confetti[] = [];
     let shapes = [];
+    let ToothOut = 0;
+    let TeethHit = 0;
     let canvas = document.getElementsByTagName("canvas")[0];
     A.crc2 = canvas.getContext("2d");
     function init(_event) {
@@ -11,6 +13,52 @@ var A;
         A.crc2 = canvas.getContext("2d");
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
         draw();
+        document.getElementById("apple").addEventListener("click", touchApple);
+        document.getElementById("apple").addEventListener("touchstart", touchApple);
+        document.getElementById("pear").addEventListener("click", touchPear);
+        document.getElementById("pear").addEventListener("touchstart", touchPear);
+        document.getElementById("isaac").addEventListener("click", touchIsaac);
+        document.getElementById("isaac").addEventListener("touchstart", touchIsaac);
+        document.getElementById("bottle").addEventListener("click", touchBottle);
+        document.getElementById("bottle").addEventListener("touchstart", touchBottle);
+        document.getElementById("house").addEventListener("click", touchHouse);
+        document.getElementById("house").addEventListener("touchstart", touchHouse);
+        document.getElementById("moon").addEventListener("click", touchMoon);
+        document.getElementById("moon").addEventListener("touchstart", touchMoon);
+    }
+    function touchApple() {
+        ToothOut++;
+        if (ToothOut == 1) {
+            clicked();
+        }
+        else { }
+    }
+    function teeth() {
+        if (ToothOut != 1) {
+            TeethHit++;
+            if (TeethHit == 10) {
+                A.crc2.putImageData(BG, 0, 0);
+                //  drawTeethOutHit();
+                BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
+                //   generateConfetti();
+                animate();
+                ToothOut++;
+                alert("BIST DU WAHNSINNIG? Das war eine grandiose Idee! Einfach den Zahn abzuschlagen. Woaw. Der kleine Timmy hat jetzt zwar ganz dolle schmerzen, aber er wird es �berleben!");
+            }
+        }
+    }
+    function touchPear() { }
+    function touchIsaac() { }
+    function touchBottle() { }
+    function touchHouse() { }
+    function touchMoon() { }
+    function clicked() {
+        A.crc2.putImageData(BG, 0, 0);
+        drawAppleDown();
+        BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
+        // generateConfetti();
+        alert("Isaac ist wach! Vielleicht gibt es aber noch andere M�glichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!");
+        //  animate();
     }
     function draw() {
         // Himmel
@@ -229,6 +277,33 @@ var A;
         A.crc2.stroke();
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
         animate();
+    }
+    function drawAppleDown() {
+        A.crc2.beginPath();
+        A.crc2.arc(320, 300, 90, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "#356600";
+        A.crc2.fill();
+        A.crc2.arc(320, 300, 90, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "#356600";
+        A.crc2.fill();
+        //Apfel
+        A.crc2.beginPath();
+        A.crc2.arc(350, 495, 15, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "darkred";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.arc(360, 495, 15, 0, 2 * Math.PI);
+        A.crc2.fillStyle = "darkred";
+        A.crc2.fill();
+        A.crc2.beginPath();
+        A.crc2.moveTo(355, 480);
+        A.crc2.lineTo(360, 475);
+        A.crc2.lineTo(370, 470);
+        A.crc2.closePath();
+        A.crc2.strokeStyle = "#1a0d00";
+        A.crc2.stroke();
+        A.crc2.fillStyle = " #1a0d00";
+        A.crc2.fill();
     }
     //ANIMATAION/////////////////////////////////////////////////
     function animate() {
