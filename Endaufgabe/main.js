@@ -7,6 +7,7 @@ var A;
     let AppleKlick = 0;
     let PearKlick = 0;
     let KlickIsaac = 0;
+    let BottleKlick = 0;
     let canvas = document.getElementsByTagName("canvas")[0];
     A.crc2 = canvas.getContext("2d");
     function init(_event) {
@@ -55,7 +56,12 @@ var A;
             }
         }
     }
-    function touchBottle() { }
+    function touchBottle() {
+        BottleKlick++;
+        if (BottleKlick == 1) {
+            alert("Nein! Das bringt Isaac nur Probleme. \n Probier es nochmal!");
+        }
+    }
     function touchHouse() { }
     function touchMoon() { }
     function clicked() {

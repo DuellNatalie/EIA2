@@ -8,7 +8,8 @@ namespace A {
     let AppleKlick: number = 0;
     let PearKlick: number = 0;
     let KlickIsaac: number = 0;
-
+let BottleKlick: number = 0;
+    
     let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
     crc2 = canvas.getContext("2d");
 
@@ -24,9 +25,9 @@ namespace A {
         document.getElementById("apple").addEventListener("touchstart", touchApple)
         document.getElementById("pear").addEventListener("click", touchPear)
         document.getElementById("pear").addEventListener("touchstart", touchPear)
-        
         document.getElementById("isaac").addEventListener("click", touchIsaac)
         document.getElementById("isaac").addEventListener("touchstart", touchIsaac)
+        
         document.getElementById("bottle").addEventListener("click", touchBottle)
         document.getElementById("bottle").addEventListener("touchstart", touchBottle)
         document.getElementById("house").addEventListener("click", touchHouse)
@@ -68,10 +69,14 @@ namespace A {
                 animate();
                 
                 alert("Du hast es geschafft! Allerdings ist Isaac jetzt sauer und da wäre noch die Sache mit der Schwerkraft... \n Versuch es doch mal anders! ");
-            }
-        }
-    
-    
+            }}}
+
+    function touchBottle(): void {
+        
+    BottleKlick++;
+        if (BottleKlick == 1) {
+            alert("Nein! Das bringt Isaac nur Probleme. \n Probier es nochmal!")
+         }
     
     
     
@@ -84,8 +89,6 @@ namespace A {
     
     
     }
-
-    function touchBottle(): void { }
 
     function touchHouse(): void { }
 
