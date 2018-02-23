@@ -19,8 +19,8 @@ namespace A {
         }
 
         move() {
-            this.y += Math.random() * (30);
-            this.x += (Math.random() * (22) - -22) + (Math.random() * (-22) - 22);
+            this.y += Math.random() * (40);
+            this.x += (Math.random() * (15) - -15) + (Math.random() * (-15) - 15);
             if (this.y > 720) {
                 this.xy = Math.random() * (5);
                 if (this.xy < 1) {

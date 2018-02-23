@@ -2,11 +2,12 @@ namespace A {
 
     window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
-    let BG: ImageData;
     export let glitterx: glitter[] = [];
+    
+    let BG: ImageData;
     let glitterN: number = Math.floor(Math.random() * (800 - 200) + 200);
     let shapes: Move[] = [];
-    let AppleKlick: number = 0;
+    let AppleKlick: number = 0;
     let PearKlick: number = 0;
     let KlickIsaac: number = 0;
     let BottleKlick: number = 0;
@@ -44,7 +45,7 @@ namespace A {
     function touchApple(): void {
         AppleKlick++;
         if (AppleKlick == 1) {
-            clicked();
+            click();
         }
     }
 
@@ -65,7 +66,7 @@ namespace A {
         }
         else {
             KlickIsaac++;
-            if (KlickIsaac == 8) {
+            if (KlickIsaac == 6) {
                 crc2.putImageData(BG, 0, 0);
 
                 BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -98,7 +99,7 @@ namespace A {
             if (HouseKlick == 5) {
                 crc2.putImageData(BG, 0, 0);
                 BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
-                clicked2();
+                click2();
                 alert("Super, du hast die falschen geweckt. Isaac wird das auch nicht helfen. \n Versuch es nochmal! ");
             }
         }
@@ -111,16 +112,16 @@ namespace A {
         }
     }
 
-    function clicked() {
+    function click() {
         crc2.putImageData(BG, 0, 0);
         drawAppleDown();
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
         letItGlitter();
         alert("Isaac ist wach! Vielleicht gibt es aber noch andere Möglichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!")
-        animate();  
+        animate();
     }
 
-    function clicked2() {
+    function click2() {
         crc2.putImageData(BG, 0, 0);
         drawHouseDown();
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -128,11 +129,11 @@ namespace A {
 
 
 
-   function letItGlitter() {
+    function letItGlitter() {
         for (let i: number = 0; i < glitterN; i++) {
             let color: string = "hsl(" + Math.random() * 360 + ", 50%, 50%)";
-            let x: number = Math.floor(Math.random() * (1551));
-            let y: number = Math.floor(Math.random() * (-700));
+            let x: number = Math.floor(Math.random() * (1270));
+            let y: number = Math.floor(Math.random() * (-720));
             let s: glitter = new glitter(x, y, color);
             glitterx.push(s)
         }
@@ -413,9 +414,10 @@ namespace A {
         crc2.putImageData(BG, 0, 0);
 
         for (let i: number = 0; i < glitterx.length; i++) { // Zufällige Bewegung der Konfetti
-            let s:glitter = glitterx[i];
-            s.update();}
-            
+            let s: glitter = glitterx[i];
+            s.update();
+        }
+
 
         for (let i: number = 0; i < shapes.length; i++) {
             let s: Move = shapes[i];

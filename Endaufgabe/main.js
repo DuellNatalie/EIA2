@@ -1,8 +1,8 @@
 var A;
 (function (A) {
     window.addEventListener("load", init);
-    let BG;
     A.glitterx = [];
+    let BG;
     let glitterN = Math.floor(Math.random() * (800 - 200) + 200);
     let shapes = [];
     let AppleKlick = 0;
@@ -34,7 +34,7 @@ var A;
     function touchApple() {
         AppleKlick++;
         if (AppleKlick == 1) {
-            clicked();
+            click();
         }
     }
     function touchPear() {
@@ -50,7 +50,7 @@ var A;
         }
         else {
             KlickIsaac++;
-            if (KlickIsaac == 8) {
+            if (KlickIsaac == 6) {
                 A.crc2.putImageData(BG, 0, 0);
                 BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
                 letItGlitter();
@@ -75,7 +75,7 @@ var A;
             if (HouseKlick == 5) {
                 A.crc2.putImageData(BG, 0, 0);
                 BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
-                clicked2();
+                click2();
                 alert("Super, du hast die falschen geweckt. Isaac wird das auch nicht helfen. \n Versuch es nochmal! ");
             }
         }
@@ -86,7 +86,7 @@ var A;
             alert("Was soll das werden? Du sollst Isaac wecken! \n Probier es nochmal!");
         }
     }
-    function clicked() {
+    function click() {
         A.crc2.putImageData(BG, 0, 0);
         drawAppleDown();
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -94,7 +94,7 @@ var A;
         alert("Isaac ist wach! Vielleicht gibt es aber noch andere M�glichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!");
         animate();
     }
-    function clicked2() {
+    function click2() {
         A.crc2.putImageData(BG, 0, 0);
         drawHouseDown();
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
@@ -102,8 +102,8 @@ var A;
     function letItGlitter() {
         for (let i = 0; i < glitterN; i++) {
             let color = "hsl(" + Math.random() * 360 + ", 50%, 50%)";
-            let x = Math.floor(Math.random() * (1551));
-            let y = Math.floor(Math.random() * (-700));
+            let x = Math.floor(Math.random() * (1270));
+            let y = Math.floor(Math.random() * (-720));
             let s = new A.glitter(x, y, color);
             A.glitterx.push(s);
         }
