@@ -9,6 +9,7 @@ namespace A {
     let PearKlick: number = 0;
     let KlickIsaac: number = 0;
 let BottleKlick: number = 0;
+let HouseKlick: number = 0;    
     
     let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
     crc2 = canvas.getContext("2d");
@@ -27,9 +28,9 @@ let BottleKlick: number = 0;
         document.getElementById("pear").addEventListener("touchstart", touchPear)
         document.getElementById("isaac").addEventListener("click", touchIsaac)
         document.getElementById("isaac").addEventListener("touchstart", touchIsaac)
-        
         document.getElementById("bottle").addEventListener("click", touchBottle)
         document.getElementById("bottle").addEventListener("touchstart", touchBottle)
+        
         document.getElementById("house").addEventListener("click", touchHouse)
         document.getElementById("house").addEventListener("touchstart", touchHouse)
         document.getElementById("moon").addEventListener("click", touchMoon)

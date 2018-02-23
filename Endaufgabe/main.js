@@ -8,6 +8,7 @@ var A;
     let PearKlick = 0;
     let KlickIsaac = 0;
     let BottleKlick = 0;
+    let HouseKlick = 0;
     let canvas = document.getElementsByTagName("canvas")[0];
     A.crc2 = canvas.getContext("2d");
     function init(_event) {
