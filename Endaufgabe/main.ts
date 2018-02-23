@@ -76,19 +76,10 @@ let BottleKlick: number = 0;
     BottleKlick++;
         if (BottleKlick == 1) {
             alert("Nein! Das bringt Isaac nur Probleme. \n Probier es nochmal!")
-         }
+         }}
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    }
 
     function touchHouse(): void { }
 
