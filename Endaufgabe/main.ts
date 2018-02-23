@@ -130,8 +130,7 @@ namespace A {
 
    function letItGlitter() {
         for (let i: number = 0; i < glitterN; i++) {
-            let color: string = "rgb(" + Math.floor(Math.random() * 200) + "," + Math.floor(Math.random() * 255) + ","
-                + Math.floor(Math.random() * 0) + ")";
+            let color: string = "hsl(" + Math.random() * 360 + ", 50%, 50%)";
             let x: number = Math.floor(Math.random() * (1551));
             let y: number = Math.floor(Math.random() * (-700));
             let s: glitter = new glitter(x, y, color);
@@ -281,12 +280,6 @@ namespace A {
         crc2.stroke();
 
         //Körper 
-        //         crc2.beginPath();
-        //            crc2.arc(370, 648, 35, 1 * Math.PI, 2 * Math.PI);
-        //            crc2.strokeStyle = "black";
-        //            crc2.closePath();
-        //            crc2.fillStyle = "grey";
-        //    crc2.fill();  //          1/2 Kreis
         crc2.beginPath();
         crc2.moveTo(320, 543);
         crc2.lineTo(330, 650);

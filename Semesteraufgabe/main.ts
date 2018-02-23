@@ -143,7 +143,7 @@ namespace Abschluss {
         saveBG = crc2.getImageData(0, 0, canvas.width, canvas.height);
         generateConfetti();
         console.log(confettis);
-        alert("JAAA, du hast es geschafft! Timmy freut sich jetzt. Aber bist du dir sicher, dass das die einzige Möglichkeit ist, den Zahn zu entfernen? Lade die Seite neu und versuche mal etwas rum!")
+        alert("JAAA, du hast es geschafft! Timmy freut sich jetzt. Aber bist du dir sicher, dass das die einzige M�glichkeit ist, den Zahn zu entfernen? Lade die Seite neu und versuche mal etwas rum!")
         animate();
         console.log("Animate startet");
     }
@@ -162,7 +162,7 @@ namespace Abschluss {
     function animate() {
         crc2.putImageData(saveBG, 0, 0);
 
-        for (let i: number = 0; i < confettis.length; i++) { // Zufällige Bewegung der Konfetti
+        for (let i: number = 0; i < confettis.length; i++) {
             let c: confetti = confettis[i];
             c.update();
         }

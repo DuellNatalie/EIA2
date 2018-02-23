@@ -13,7 +13,7 @@ var A;
         move() {
             this.y += Math.random() * (30);
             this.x += (Math.random() * (22) - -22) + (Math.random() * (-22) - 22);
-            if (this.y > 900) {
+            if (this.y > 720) {
                 this.xy = Math.random() * (5);
                 if (this.xy < 1) {
                     this.y = 10;
@@ -28,14 +28,10 @@ var A;
         }
         drawGlitter() {
             A.crc2.beginPath();
-            A.crc2.lineTo(this.x + 10, this.y);
-            A.crc2.lineTo(this.x + 10, this.y + 10);
-            A.crc2.lineTo(this.x, this.y + 10);
-            A.crc2.lineTo(this.x, this.y);
+            A.crc2.arc(this.x, this.y, 8, 0, 2 * Math.PI);
             A.crc2.closePath();
             A.crc2.fillStyle = this.color;
             A.crc2.fill();
-            A.crc2.stroke();
         }
     }
     A.glitter = glitter;

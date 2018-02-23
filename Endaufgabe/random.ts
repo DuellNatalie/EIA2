@@ -21,7 +21,7 @@ namespace A {
         move() {
             this.y += Math.random() * (30);
             this.x += (Math.random() * (22) - -22) + (Math.random() * (-22) - 22);
-            if (this.y > 900) {
+            if (this.y > 720) {
                 this.xy = Math.random() * (5);
                 if (this.xy < 1) {
                     this.y = 10;
@@ -37,14 +37,11 @@ namespace A {
 
         drawGlitter(): void {
             crc2.beginPath();
-            crc2.lineTo(this.x + 10, this.y);
-            crc2.lineTo(this.x + 10, this.y + 10);
-            crc2.lineTo(this.x, this.y + 10);
-            crc2.lineTo(this.x, this.y);
+            crc2.arc(this.x, this.y, 8, 0, 2 * Math.PI);
             crc2.closePath();
             crc2.fillStyle = this.color;
             crc2.fill();
-            crc2.stroke();
+         
         }
     }
 }
