@@ -2,7 +2,8 @@ var A;
 (function (A) {
     window.addEventListener("load", init);
     let BG;
-    // export let confettis: confetti[] = [];
+    A.glitterx = [];
+    let glitterN = Math.floor(Math.random() * (800 - 200) + 200);
     let shapes = [];
     let AppleKlick = 0;
     let PearKlick = 0;
@@ -52,7 +53,7 @@ var A;
             if (KlickIsaac == 8) {
                 A.crc2.putImageData(BG, 0, 0);
                 BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
-                // generateConfetti();
+                letItGlitter();
                 animate();
                 alert("Du hast es geschafft! Allerdings ist Isaac jetzt sauer und da w�re noch die Sache mit der Schwerkraft... \n Versuch es doch mal anders! ");
             }
@@ -89,14 +90,24 @@ var A;
         A.crc2.putImageData(BG, 0, 0);
         drawAppleDown();
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
-        // generateConfetti();
+        letItGlitter();
         alert("Isaac ist wach! Vielleicht gibt es aber noch andere M�glichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!");
-        //  animate();  
+        animate();
     }
     function clicked2() {
         A.crc2.putImageData(BG, 0, 0);
         drawHouseDown();
         BG = A.crc2.getImageData(0, 0, canvas.width, canvas.height);
+    }
+    function letItGlitter() {
+        for (let i = 0; i < glitterN; i++) {
+            let color = "rgb(" + Math.floor(Math.random() * 200) + "," + Math.floor(Math.random() * 255) + ","
+                + Math.floor(Math.random() * 0) + ")";
+            let x = Math.floor(Math.random() * (1551));
+            let y = Math.floor(Math.random() * (-700));
+            let s = new A.glitter(x, y, color);
+            A.glitterx.push(s);
+        }
     }
     function draw() {
         // Himmel
@@ -356,6 +367,10 @@ var A;
     //ANIMATAION/////////////////////////////////////////////////
     function animate() {
         A.crc2.putImageData(BG, 0, 0);
+        for (let i = 0; i < A.glitterx.length; i++) {
+            let s = A.glitterx[i];
+            s.update();
+        }
         for (let i = 0; i < shapes.length; i++) {
             let s = shapes[i];
             s.move();

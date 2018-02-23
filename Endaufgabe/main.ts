@@ -3,7 +3,8 @@ namespace A {
     window.addEventListener("load", init);
     export let crc2: CanvasRenderingContext2D;
     let BG: ImageData;
-    // export let confettis: confetti[] = [];
+    export let glitterx: glitter[] = [];
+    let glitterN: number = Math.floor(Math.random() * (800 - 200) + 200);
     let shapes: Move[] = [];
     let AppleKlick: number = 0;
     let PearKlick: number = 0;
@@ -68,7 +69,7 @@ namespace A {
                 crc2.putImageData(BG, 0, 0);
 
                 BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
-                // generateConfetti();
+                letItGlitter();
                 animate();
 
                 alert("Du hast es geschafft! Allerdings ist Isaac jetzt sauer und da wäre noch die Sache mit der Schwerkraft... \n Versuch es doch mal anders! ");
@@ -114,9 +115,9 @@ namespace A {
         crc2.putImageData(BG, 0, 0);
         drawAppleDown();
         BG = crc2.getImageData(0, 0, canvas.width, canvas.height);
-        // generateConfetti();
+        letItGlitter();
         alert("Isaac ist wach! Vielleicht gibt es aber noch andere Möglichkeiten ihn zu wecken. \n Lade die Seite neu und probier es!")
-        //  animate();  
+        animate();  
     }
 
     function clicked2() {
@@ -127,7 +128,16 @@ namespace A {
 
 
 
-
+   function letItGlitter() {
+        for (let i: number = 0; i < glitterN; i++) {
+            let color: string = "rgb(" + Math.floor(Math.random() * 200) + "," + Math.floor(Math.random() * 255) + ","
+                + Math.floor(Math.random() * 0) + ")";
+            let x: number = Math.floor(Math.random() * (1551));
+            let y: number = Math.floor(Math.random() * (-700));
+            let s: glitter = new glitter(x, y, color);
+            glitterx.push(s)
+        }
+    }
 
 
 
@@ -409,6 +419,10 @@ namespace A {
     function animate(): void {
         crc2.putImageData(BG, 0, 0);
 
+        for (let i: number = 0; i < glitterx.length; i++) { // Zufällige Bewegung der Konfetti
+            let s:glitter = glitterx[i];
+            s.update();}
+            
 
         for (let i: number = 0; i < shapes.length; i++) {
             let s: Move = shapes[i];
